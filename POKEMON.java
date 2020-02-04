@@ -105,6 +105,7 @@ public class POKEMON {
 // activity
 Scanner eventPerson = new Scanner(System.in);
   int i = 0;
+  
   int event ;
   int eventfarm ;
          do {
@@ -199,7 +200,7 @@ Scanner eventPerson = new Scanner(System.in);
                System.out.println("Current Partner XP : " + PartNer.CurrentXP);
               if(PartNer.CurrentXP % 100 == 0){
                 System.out.println("\n LEVEL UP !!! \n");
-                System.out.println("\n YOU ARE LEVEL "+PartNer.CurrentLV);
+                System.out.println(" YOU ARE LEVEL "+ (PartNer.CurrentLV = PartNer.CurrentLV+1));
               }
          }
          while (i != 5);
@@ -212,7 +213,7 @@ class Detail {
    int CurrentHP = 0;
    int CurrentMANA = 0;
    int CurrentDMG = 0;
-   int CurrentXP;
+   int CurrentXP = 0;
    int CurrentLV = 0;
    int CurrentSkill;
    int CurrentManacost;
