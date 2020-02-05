@@ -99,7 +99,7 @@ public class POKEMON {
 
 // activity
 Scanner eventPerson = new Scanner(System.in);
-
+IMPACT lvImpact = new IMPACT();
   int event ;
   int eventfarm ;
   
@@ -114,10 +114,13 @@ Scanner eventPerson = new Scanner(System.in);
 //  System.out.println(rand.nextInt(20)+1); // checkrandom
           // reset value
              // LV system
-            int curParthp = PartNer.CurrentHP + (PartNer.CurrentLV/4 * PartNer.CurrentHP) ;
-            int curPartmana = PartNer.CurrentMANA + (PartNer.CurrentLV/4 * PartNer.CurrentHP);     
-             
-            int curCreephp = PartNer.Creep_hp;
+            float curParthp = (float)PartNer.CurrentHP + ((float)PartNer.CurrentLV * (float)PartNer.CurrentHP)/12;
+            float curPartmana = (float)PartNer.CurrentMANA + ((float)PartNer.CurrentLV * (float)PartNer.CurrentHP)/12;     
+            float curPartDMG = (float)PartNer.CurrentDMG + ((float)PartNer.CurrentLV * (float)PartNer.CurrentDMG)/12; 
+            float curPartSkill = (float)PartNer.CurrentSkill + ((float)PartNer.CurrentLV * (float)PartNer.CurrentSkill)/12; 
+            float curPartManacost = (float)PartNer.CurrentManacost + ((float)PartNer.CurrentLV * (float)PartNer.CurrentManacost)/12;
+  
+            float curCreephp = PartNer.Creep_hp;
 
             // start farm 
           if (event == 1){
@@ -136,6 +139,12 @@ Scanner eventPerson = new Scanner(System.in);
               System.out.println(curParthp);
               System.out.print("Partner MANA : ");
               System.out.println(curPartmana);
+              System.out.print("Partner DAMAGE : ");
+              System.out.println(curPartDMG);
+              System.out.print("Partner LEVEL : ");
+              System.out.println(PartNer.CurrentLV);
+
+
             // current act
               System.out.println("\nWhat do you want to do ?");
               System.out.println(" 1 : Normal Hit ");
@@ -150,17 +159,17 @@ Scanner eventPerson = new Scanner(System.in);
     // normal hit
                  if(eventfarm == 1){
                   System.out.println(" Normal Hit ");
-                  curCreephp = curCreephp - PartNer.CurrentDMG;
+                  curCreephp = curCreephp - curPartDMG;
                   curParthp = curParthp - PartNer.Creep_dmg; 
                 }
     //use skill
                 else if(eventfarm == 2){
-                 int checkmana = curPartmana - PartNer.CurrentManacost ; // checkmana for use skill
+                 float checkmana = curPartmana -  curPartManacost ; // checkmana for use skill
                   if( checkmana > 0){
                   System.out.println(" Use Skill ");
-                  curCreephp = curCreephp - PartNer.CurrentSkill;
+                  curCreephp = curCreephp - curPartSkill;
                   curParthp = curParthp - PartNer.Creep_dmg;
-                  curPartmana = curPartmana - PartNer.CurrentManacost;
+                  curPartmana = curPartmana -  curPartManacost;
                 }
                  else{
                   System.out.println("Not enough mana to Use Skill ");

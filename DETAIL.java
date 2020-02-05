@@ -51,4 +51,5 @@ class Detail {
  int Creep_dmg = 50;
  int Roshan_dmg = 300;
   
+ 
    }
