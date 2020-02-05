@@ -105,10 +105,13 @@ public class POKEMON {
 // activity
 Scanner eventPerson = new Scanner(System.in);
   int i = 0;
-  
+  int check_part = 0 ;
+  int check_creep = 0;
   int event ;
   int eventfarm ;
          do {
+        
+
           System.out.println(" 1 : Farm Creep");
           System.out.println(" 2 : Attack Roshan");
           System.out.println(" 3 : Rest at Fountain");
@@ -117,9 +120,14 @@ Scanner eventPerson = new Scanner(System.in);
           System.out.println("What do you want to do ?");
           event = eventPerson.nextInt();
 //  System.out.println(rand.nextInt(20)+1); // checkrandom
-
+            int curCreephp = PartNer.Creep_hp;
+            int curParthp = PartNer.CurrentHP;
+            int curPartmana = PartNer.CurrentMANA;
+            int checkhpPart = curParthp - PartNer.Creep_dmg;
 
           if(event == 5){
+            check_part = curParthp ;
+            check_creep = curCreephp ;
             break;
           }
           else if (event == 1){
@@ -132,10 +140,7 @@ Scanner eventPerson = new Scanner(System.in);
             System.out.print("Partner MANA : ");
             System.out.println(PartNer.CurrentMANA);
 
-            int curCreephp = PartNer.Creep_hp;
-            int curParthp = PartNer.CurrentHP;
-            int curPartmana = PartNer.CurrentMANA;
-            int checkhpPart = curParthp - PartNer.Creep_dmg;
+            
             
               while(checkhpPart > 0 && curCreephp > 0){
     
@@ -156,6 +161,7 @@ Scanner eventPerson = new Scanner(System.in);
               System.out.println(curPartmana);
     // quit           
               if (eventfarm == 5){
+                System.out.println("\n OUT Form Battle Creep \n");
                   break;
                 }
     // normal hit
@@ -192,16 +198,23 @@ Scanner eventPerson = new Scanner(System.in);
                   curPartmana = curPartmana - 100 ;
                 } 
               }
-            } 
-            // show result & xp  
-            System.out.println("\n Creep is Death ");
+              }
+              if(check_creep < 0 ){
+               System.out.println("\n Creep is Death ");
                System.out.println("You Get XP : 50 ");
+              
                PartNer.CurrentXP = PartNer.CurrentXP + PartNer.creepxp;
                System.out.println("Current Partner XP : " + PartNer.CurrentXP);
-              if(PartNer.CurrentXP % 100 == 0){
+                  if(PartNer.CurrentXP % 100 == 0){
                 System.out.println("\n LEVEL UP !!! \n");
                 System.out.println(" YOU ARE LEVEL "+ (PartNer.CurrentLV = PartNer.CurrentLV+1));
-              }
+                  }
+                  else if (check_part < 0){
+                    System.out.println("\n It's Over Your Partner Death !!");
+                  }
+                  
+            // show result & xp               
+            }
          }
          while (i != 5);
   }
