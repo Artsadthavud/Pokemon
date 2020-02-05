@@ -39,7 +39,6 @@ public class POKEMON {
                 PartNer.CurrentSkill = PartNer.Injoker_skill;
                 PartNer.CurrentManacost = PartNer.Injoker_skill_mana;
 
-
               }
 
               else if (partner == 2){
@@ -105,33 +104,32 @@ Scanner eventPerson = new Scanner(System.in);
   int eventfarm ;
   
          do {
-          System.out.println("\n 1 : Farm Creep");
-          System.out.println(" 2 : Attack Roshan");
-          System.out.println(" 3 : Rest at Fountain");
-          System.out.println(" 4 : Figth with Other");
+          System.out.println("\n 1 : BATTLE Creep");
+          System.out.println(" 2 : Attack Roshan (Coming Soon)");
+          System.out.println(" 3 : Rest at Fountain (Coming Soon)");
+          System.out.println(" 4 : Figth with Other (Coming Soon)");
           System.out.println(" 5 : Quit the game");
           System.out.println("What do you want to do ?");
           event = eventPerson.nextInt();
 //  System.out.println(rand.nextInt(20)+1); // checkrandom
           // reset value
-            int curParthp = PartNer.CurrentHP;
-            int curPartmana = PartNer.CurrentMANA;     
+             // LV system
+            int curParthp = PartNer.CurrentHP + (PartNer.CurrentLV/4 * PartNer.CurrentHP) ;
+            int curPartmana = PartNer.CurrentMANA + (PartNer.CurrentLV/4 * PartNer.CurrentHP);     
+             
             int curCreephp = PartNer.Creep_hp;
-            int checkhpPart = 0 ;
-            int checkhpcreep = 0;
-            
-          
+
+            // start farm 
           if (event == 1){
     //main status       
                  int eventfarm_out = 0 ; 
-                  checkhpPart = curParthp - PartNer.Creep_dmg;
+            
               while(curParthp - PartNer.Creep_dmg > 0 && curCreephp > 0 && eventfarm_out != 5){
                 
-                System.out.println("\nFarm Creep\n");
-                
-                    
-    //current activity
+                System.out.println("\nFarm Creep\n");      
+            //current activity
             // current status
+              System.out.println("\n CURRENT STATUS ");
               System.out.print("Creep HP : ");
               System.out.println(curCreephp); 
               System.out.print("Partner HP : ");
@@ -163,7 +161,6 @@ Scanner eventPerson = new Scanner(System.in);
                   curCreephp = curCreephp - PartNer.CurrentSkill;
                   curParthp = curParthp - PartNer.Creep_dmg;
                   curPartmana = curPartmana - PartNer.CurrentManacost;
-              
                 }
                  else{
                   System.out.println("Not enough mana to Use Skill ");
@@ -171,13 +168,21 @@ Scanner eventPerson = new Scanner(System.in);
                 }
                 }
                 else if(eventfarm == 3){
+                  if(curPartmana + 100 < PartNer.CurrentMANA){
                   System.out.println("Regen your mana for Use Skill ");
                   curParthp = curParthp - PartNer.Creep_dmg;
                   curPartmana = curPartmana + 100 ;
+                  }
+                  else if(curPartmana + 100 > PartNer.CurrentMANA);{
+                    System.out.println("Your mana is Full !!");
+                    curPartmana = PartNer.CurrentMANA;
+                    curParthp = curParthp - PartNer.Creep_dmg;
+                  }
                 }
                 else if(eventfarm == 4){
                   System.out.println("Regen your HP for Alive ");
-                  curParthp = curParthp + 100;
+                  curParthp = curParthp + 150;
+                  curParthp = curParthp - PartNer.Creep_dmg;
                   curPartmana = curPartmana - 100 ;
                 } 
               }
@@ -199,6 +204,10 @@ Scanner eventPerson = new Scanner(System.in);
                 System.out.println("\n OUT Form Battle Creep \n");
               }
             } // end of farm
+
+
+
+
         } while (event != 5);
   }
 }
