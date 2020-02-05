@@ -1,4 +1,5 @@
 class Detail {
+    
     int CurrentHP = 0;
     int CurrentMANA = 0;
     int CurrentDMG = 0;

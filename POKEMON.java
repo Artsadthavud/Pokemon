@@ -12,12 +12,9 @@ public class POKEMON {
     String Nameper;
     System.out.print("Enter your name: ");
       Nameper = NamePerson.next();
-      
-         
-
 // Choose partner
       Detail PartNer = new Detail(); 
-
+      
          int partner;
 
          System.out.println("Choose your Partner: ");
@@ -103,15 +100,12 @@ public class POKEMON {
 
 // activity
 Scanner eventPerson = new Scanner(System.in);
-  int i = 0;
-  int check_part = 0 ;
-  int check_creep = 0;
+
   int event ;
   int eventfarm ;
+  
          do {
-        
-
-          System.out.println(" 1 : Farm Creep");
+          System.out.println("\n 1 : Farm Creep");
           System.out.println(" 2 : Attack Roshan");
           System.out.println(" 3 : Rest at Fountain");
           System.out.println(" 4 : Figth with Other");
@@ -119,31 +113,32 @@ Scanner eventPerson = new Scanner(System.in);
           System.out.println("What do you want to do ?");
           event = eventPerson.nextInt();
 //  System.out.println(rand.nextInt(20)+1); // checkrandom
-            int curCreephp = PartNer.Creep_hp;
+          // reset value
             int curParthp = PartNer.CurrentHP;
-            int curPartmana = PartNer.CurrentMANA;
-            int checkhpPart = curParthp - PartNer.Creep_dmg;
-
-          if(event == 5){
-            check_part = curParthp ;
-            check_creep = curCreephp ;
-            break;
-          }
-          else if (event == 1){
+            int curPartmana = PartNer.CurrentMANA;     
+            int curCreephp = PartNer.Creep_hp;
+            int checkhpPart = 0 ;
+            int checkhpcreep = 0;
+            
+          
+          if (event == 1){
     //main status       
-            System.out.println("\nFarm Creep\n");
-            System.out.print("Creep HP : ");
-            System.out.println(PartNer.Creep_hp); 
-            System.out.print("Partner HP : ");
-            System.out.println(PartNer.CurrentHP);
-            System.out.print("Partner MANA : ");
-            System.out.println(PartNer.CurrentMANA);
-
-            
-            
-              while(checkhpPart > 0 && curCreephp > 0){
-    
+                 int eventfarm_out = 0 ; 
+                  checkhpPart = curParthp - PartNer.Creep_dmg;
+              while(curParthp - PartNer.Creep_dmg > 0 && curCreephp > 0 && eventfarm_out != 5){
+                
+                System.out.println("\nFarm Creep\n");
+                
+                    
     //current activity
+            // current status
+              System.out.print("Creep HP : ");
+              System.out.println(curCreephp); 
+              System.out.print("Partner HP : ");
+              System.out.println(curParthp);
+              System.out.print("Partner MANA : ");
+              System.out.println(curPartmana);
+            // current act
               System.out.println("\nWhat do you want to do ?");
               System.out.println(" 1 : Normal Hit ");
               System.out.println(" 2 : Use Skill ");
@@ -153,28 +148,16 @@ Scanner eventPerson = new Scanner(System.in);
              
               eventfarm = eventPerson.nextInt();
 
-              System.out.print("Creep HP : ");
-              System.out.println(curCreephp); 
-              System.out.print("Partner HP : ");
-              System.out.println(curParthp);
-              System.out.print("Partner MANA : ");
-              System.out.println(curPartmana);
-    // quit           
-              if (eventfarm == 5){
-                System.out.println("\n OUT Form Battle Creep \n");
-                  break;
-                }
+              eventfarm_out = eventfarm ;
     // normal hit
-                else if(eventfarm == 1){
+                 if(eventfarm == 1){
                   System.out.println(" Normal Hit ");
                   curCreephp = curCreephp - PartNer.CurrentDMG;
                   curParthp = curParthp - PartNer.Creep_dmg; 
-        
                 }
     //use skill
                 else if(eventfarm == 2){
                  int checkmana = curPartmana - PartNer.CurrentManacost ; // checkmana for use skill
-
                   if( checkmana > 0){
                   System.out.println(" Use Skill ");
                   curCreephp = curCreephp - PartNer.CurrentSkill;
@@ -198,25 +181,25 @@ Scanner eventPerson = new Scanner(System.in);
                   curPartmana = curPartmana - 100 ;
                 } 
               }
+        // result of battle
+              if(curParthp - PartNer.Creep_dmg > 0 && curCreephp < 0){
+                      System.out.println("\n Creep is Death ");
+                      System.out.println("You Get XP : 50 ");
+                      PartNer.CurrentXP = PartNer.CurrentXP + PartNer.creepxp;
+                      System.out.println("Current Partner XP : " + PartNer.CurrentXP);
+                      if(PartNer.CurrentXP % 100 == 0){
+                      System.out.println("\n LEVEL UP !!! \n");
+                      System.out.println(" YOU ARE LEVEL "+ (PartNer.CurrentLV = PartNer.CurrentLV+1));
+                      }
               }
-              if(check_creep < 0 ){
-               System.out.println("\n Creep is Death ");
-               System.out.println("You Get XP : 50 ");
-              
-               PartNer.CurrentXP = PartNer.CurrentXP + PartNer.creepxp;
-               System.out.println("Current Partner XP : " + PartNer.CurrentXP);
-                  if(PartNer.CurrentXP % 100 == 0){
-                System.out.println("\n LEVEL UP !!! \n");
-                System.out.println(" YOU ARE LEVEL "+ (PartNer.CurrentLV = PartNer.CurrentLV+1));
-                  }
-                  else if (check_part < 0){
-                    System.out.println("\n It's Over Your Partner Death !!");
-                  }
-                  
-            // show result & xp               
-            }
-         }
-         while (i != 5);
+              else if (curParthp - PartNer.Creep_dmg <= 0){
+                      System.out.println("\n Your Partner is Death ");
+              }
+              else{
+                System.out.println("\n OUT Form Battle Creep \n");
+              }
+            } // end of farm
+        } while (event != 5);
   }
 }
 
