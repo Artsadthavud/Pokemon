@@ -14,7 +14,7 @@ class Detail {
     int Juggernaut_hp = 550;
     int Maiden_hp = 425;
     int Creep_hp = 150;
-    int Roshan_hp = 2000;
+   
  // MANA
    int Injoker_mana = 450 ;
    int PA_mana = 320;
@@ -31,7 +31,7 @@ class Detail {
    int level = 0 ;
    int xp = 0;
    int creepxp = 50 ;
-   int Otherxp = 250 ;
+   
  
  //skill
    int skill;
@@ -49,7 +49,7 @@ class Detail {
  int Juggernaut_dmg = 95;
  int Maiden_dmg = 55;
  int Creep_dmg = 50;
- int Roshan_dmg = 300;
+ 
   
  
    }

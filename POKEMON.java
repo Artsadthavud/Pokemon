@@ -13,8 +13,9 @@ public class POKEMON {
     System.out.print("Enter your name: ");
       Nameper = NamePerson.next();
 // Choose partner
-      Detail PartNer = new Detail(); 
-      
+      Detail PartNer = new Detail();  // for info
+      IMPACT lvImpact = new IMPACT(); // for lv
+      FOES infofoes = new FOES();
          int partner;
 
          System.out.println("Choose your Partner: ");
@@ -26,7 +27,7 @@ public class POKEMON {
           System.out.println("Your Name : "+ Nameper);
           System.out.print("Your Partner : ");
           partner = NamePerson.nextInt();
-              
+        
               if (partner == 1){
                 System.out.println("Your Partner is Carl The Injoker");
                 System.out.println("Injoker Hp   : " + PartNer.Injoker_hp);
@@ -38,6 +39,7 @@ public class POKEMON {
                 PartNer.CurrentDMG = PartNer.Injoker_dmg;
                 PartNer.CurrentSkill = PartNer.Injoker_skill;
                 PartNer.CurrentManacost = PartNer.Injoker_skill_mana;
+                PartNer.CurrentLV = lvImpact.Injokelv;
 
               }
 
@@ -52,6 +54,8 @@ public class POKEMON {
                 PartNer.CurrentDMG = PartNer.PA_dmg;
                 PartNer.CurrentSkill = PartNer.PA_skill;
                 PartNer.CurrentManacost = PartNer.PA_skill_mana;
+                PartNer.CurrentLV = lvImpact.PAlv;
+
               }
 
               else if (partner == 3){
@@ -65,6 +69,7 @@ public class POKEMON {
                 PartNer.CurrentDMG = PartNer.Juggernaut_dmg;
                 PartNer.CurrentSkill = PartNer.Juggernaut_skill;
                 PartNer.CurrentManacost = PartNer.Juggernaut_skill_mana;
+                PartNer.CurrentLV = lvImpact.Juggernautlv;
 
               }
 
@@ -79,6 +84,7 @@ public class POKEMON {
                 PartNer.CurrentDMG = PartNer.TA_dmg;
                 PartNer.CurrentSkill = PartNer.TA_skill;
                 PartNer.CurrentManacost = PartNer.TA_skill_mana;
+                PartNer.CurrentLV = lvImpact.TAlv;
 
               }
 
@@ -93,19 +99,19 @@ public class POKEMON {
                 PartNer.CurrentDMG = PartNer.Maiden_dmg;
                 PartNer.CurrentSkill = PartNer.Maiden_skill;
                 PartNer.CurrentManacost = PartNer.Maiden_skill_mana;
+                PartNer.CurrentLV = lvImpact.Maidenlv;
 
               }
 
-
 // activity
 Scanner eventPerson = new Scanner(System.in);
-IMPACT lvImpact = new IMPACT();
+
   int event ;
   int eventfarm ;
   
          do {
           System.out.println("\n 1 : BATTLE Creep");
-          System.out.println(" 2 : Attack Roshan (Coming Soon)");
+          System.out.println(" 2 : Attack The Roshan (Recommend LV 35+)");
           System.out.println(" 3 : Rest at Fountain (Coming Soon)");
           System.out.println(" 4 : Figth with Other (Coming Soon)");
           System.out.println(" 5 : Quit the game");
@@ -119,9 +125,8 @@ IMPACT lvImpact = new IMPACT();
             float curPartDMG = (float)PartNer.CurrentDMG + ((float)PartNer.CurrentLV * (float)PartNer.CurrentDMG)/12; 
             float curPartSkill = (float)PartNer.CurrentSkill + ((float)PartNer.CurrentLV * (float)PartNer.CurrentSkill)/12; 
             float curPartManacost = (float)PartNer.CurrentManacost + ((float)PartNer.CurrentLV * (float)PartNer.CurrentManacost)/12;
-  
             float curCreephp = PartNer.Creep_hp;
-
+            float curRosharn = infofoes.Roshan_hp;
             // start farm 
           if (event == 1){
     //main status       
@@ -132,15 +137,17 @@ IMPACT lvImpact = new IMPACT();
                 System.out.println("\nFarm Creep\n");      
             //current activity
             // current status
-              System.out.println("\n CURRENT STATUS ");
+              System.out.println("\n CURRENT STATUS \n");
               System.out.print("Creep HP : ");
               System.out.println(curCreephp); 
-              System.out.print("Partner HP : ");
+              System.out.print("\nPartner HP : ");
               System.out.println(curParthp);
               System.out.print("Partner MANA : ");
               System.out.println(curPartmana);
               System.out.print("Partner DAMAGE : ");
               System.out.println(curPartDMG);
+              System.out.print("Partner SKILL : ");
+              System.out.println(curPartSkill);
               System.out.print("Partner LEVEL : ");
               System.out.println(PartNer.CurrentLV);
 
@@ -216,6 +223,101 @@ IMPACT lvImpact = new IMPACT();
 
 
 
+            // start roshan
+            else if (event == 2){
+              int eventfarm_out = 0;
+
+              
+              while(curParthp - infofoes.Roshan_dmg > 0 && curRosharn > 0 && eventfarm_out != 5){
+                System.out.println("\n Attack The Roshan (Recommend LV 35+)\n");
+                 
+            //current activity
+            // current status
+              System.out.println("\n CURRENT STATUS \n");
+              System.out.print("Roshan HP : ");
+              System.out.println(curRosharn); 
+              System.out.print("\nPartner HP : ");
+              System.out.println(curParthp);
+              System.out.print("Partner MANA : ");
+              System.out.println(curPartmana);
+              System.out.print("Partner DAMAGE : ");
+              System.out.println(curPartDMG);
+              System.out.print("Partner SKILL : ");
+              System.out.println(curPartSkill);
+              System.out.print("Partner LEVEL : ");
+              System.out.println(PartNer.CurrentLV);
+
+
+            // current act
+              System.out.println("\nWhat do you want to do ?");
+              System.out.println(" 1 : Normal Hit ");
+              System.out.println(" 2 : Use Skill ");
+              System.out.println(" 3 : Regen MANA ");
+              System.out.println(" 4 : Regen HP ");
+              System.out.println(" 5 : Quit the battle ");
+             
+              eventfarm = eventPerson.nextInt();
+
+              eventfarm_out = eventfarm ;
+    // normal hit
+                 if(eventfarm == 1){
+                  System.out.println(" Normal Hit ");
+                  curRosharn = curRosharn - curPartDMG;
+                  curParthp = curParthp - infofoes.Roshan_dmg; 
+                }
+    //use skill
+                else if(eventfarm == 2){
+                 float checkmana = curPartmana -  curPartManacost ; // checkmana for use skill
+                  if( checkmana > 0){
+                  System.out.println(" Use Skill ");
+                  curRosharn = curRosharn - curPartSkill;
+                  curParthp = curParthp - infofoes.Roshan_dmg;
+                  curPartmana = curPartmana -  curPartManacost;
+                }
+                 else{
+                  System.out.println("Not enough mana to Use Skill ");
+                  curParthp = curParthp - infofoes.Roshan_dmg;
+                }
+                }
+                else if(eventfarm == 3){
+                  if(curPartmana + 100 < PartNer.CurrentMANA){
+                  System.out.println("Regen your mana for Use Skill ");
+                  curParthp = curParthp - infofoes.Roshan_dmg;
+                  curPartmana = curPartmana + 100 ;
+                  }
+                  else if(curPartmana + 100 > PartNer.CurrentMANA);{
+                    System.out.println("Your mana is Full !!");
+                    curPartmana = PartNer.CurrentMANA;
+                    curParthp = curParthp - infofoes.Roshan_dmg;
+                  }
+                }
+                else if(eventfarm == 4){
+                  System.out.println("Regen your HP for Alive ");
+                  curParthp = curParthp + 150;
+                  curParthp = curParthp - infofoes.Roshan_dmg;
+                  curPartmana = curPartmana - 100 ;
+                } 
+              }
+        // result of battle
+              if(curParthp - infofoes.Roshan_dmg > 0 && curRosharn < 0){
+                      System.out.println("\n Creep is Death ");
+                      System.out.println("You Get XP : 50 ");
+                      PartNer.CurrentXP = PartNer.CurrentXP + infofoes.Otherxp;
+                      System.out.println("Current Partner XP : " + PartNer.CurrentXP);
+                      if(PartNer.CurrentXP % 100 == 0){
+                      System.out.println("\n LEVEL UP !!! \n");
+                      System.out.println(" YOU ARE LEVEL "+ (PartNer.CurrentLV = PartNer.CurrentLV+1));
+                      }
+              }
+              else if (curParthp - infofoes.Roshan_dmg <= 0){
+                      System.out.println("\n Your Partner is Death ");
+              }
+              else{
+                System.out.println("\n OUT Form Battle Creep \n");
+
+
+            } 
+          }// end roshan
 
         } while (event != 5);
   }
