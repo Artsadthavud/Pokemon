@@ -18,7 +18,7 @@ public class POKEMON {
       FOES infofoes = new FOES();
          int partner;
 
-         System.out.println("Choose your Partner: ");
+         System.out.println("\nChoose your Partner: ");
           System.out.println(" 1 : Carl The Injoker");
           System.out.println(" 2 : Mortred The Phantom Assassin");
           System.out.println(" 3 : Yanero The Juggernaut");
@@ -29,9 +29,12 @@ public class POKEMON {
           partner = NamePerson.nextInt();
         
               if (partner == 1){
-                System.out.println("Your Partner is Carl The Injoker");
+                System.out.println("\nYour Partner is Carl The Injoker");
                 System.out.println("Injoker Hp   : " + PartNer.Injoker_hp);
                 System.out.println("Injoker MANA : " + PartNer.Injoker_mana );
+                System.out.println("Injoker DAMAGE : "+ PartNer.Injoker_dmg);
+                System.out.println("Injoker SKILL : " + PartNer.Injoker_skill);
+                System.out.println("Injoker SKILL MANACOST : "+ PartNer.Injoker_skill_mana);
                 System.out.println("Injoker LEVEL : " + PartNer.level);
                 System.out.println("Injoker XP :"+ PartNer.xp);
                 PartNer.CurrentHP = PartNer.Injoker_hp;
@@ -47,6 +50,9 @@ public class POKEMON {
                 System.out.println("Your Partner is Mortred The Phantom Assassin");
                 System.out.println("Phantom Assassin Hp   : " + PartNer.PA_hp);
                 System.out.println("Phantom Assassin MANA : " + PartNer.PA_mana);
+                System.out.println("Phantom Assassin DAMAGE : "+ PartNer.PA_dmg);
+                System.out.println("Phantom Assassin SKILL : " + PartNer.PA_skill);
+                System.out.println("Phantom Assassin SKILL MANACOST : "+ PartNer.PA_skill_mana);
                 System.out.println("Phantom Assassin LEVEL : " + PartNer.level);
                 System.out.println("Phantom Assassin XP :"+ PartNer.xp);
                 PartNer.CurrentHP = PartNer.PA_hp;
@@ -62,6 +68,9 @@ public class POKEMON {
                 System.out.println("Your Partner is Yanero The Juggernaut");
                 System.out.println("Juggernaut Hp   : " + PartNer.Juggernaut_hp);
                 System.out.println("Juggernaut MANA : " + PartNer.Juggernaut_mana);
+                System.out.println("Juggernaut DAMAGE : "+ PartNer.Juggernaut_dmg);
+                System.out.println("Juggernaut SKILL : " + PartNer.Juggernaut_skill);
+                System.out.println("Juggernaut SKILL MANACOST : "+ PartNer.Juggernaut_skill_mana);
                 System.out.println("Juggernaut LEVEL : " + PartNer.level );
                 System.out.println("Juggernaut XP :"+ PartNer.xp);
                 PartNer.CurrentHP = PartNer.Juggernaut_hp;
@@ -77,6 +86,9 @@ public class POKEMON {
                 System.out.println("Your Partner is Lanaya The Templar Assassin");
                 System.out.println("Templar Assassin Hp   : " + PartNer.TA_hp);
                 System.out.println("Templar Assassin MANA : " + PartNer.TA_mana);
+                System.out.println("Templar Assassin DAMAGE : "+ PartNer.TA_dmg);
+                System.out.println("Templar Assassin SKILL : " + PartNer.TA_skill);
+                System.out.println("Templar Assassin SKILL MANACOST : "+ PartNer.TA_skill_mana);
                 System.out.println("Templar Assassin LEVEL : " + PartNer.level);
                 System.out.println("Templar Assassin XP :"+ PartNer.xp);
                 PartNer.CurrentHP = PartNer.TA_hp;
@@ -90,8 +102,11 @@ public class POKEMON {
 
               else if (partner == 5){
                 System.out.println("Your Partner is Rylai The Crystal Maiden");
-                System.out.println(" Crystal Maiden Hp   : " + PartNer.Maiden_hp);
+                System.out.println("Crystal Maiden Hp   : " + PartNer.Maiden_hp);
                 System.out.println("Crystal Maiden  MANA : " + PartNer.Maiden_mana);
+                System.out.println("Crystal Maiden DAMAGE : "+ PartNer.Maiden_dmg);
+                System.out.println("Crystal Maiden SKILL : " + PartNer.Maiden_skill);
+                System.out.println("Crystal Maiden SKILL MANACOST : "+ PartNer.Maiden_skill_mana);
                 System.out.println("Crystal Maiden LEVEL : " + PartNer.level );
                 System.out.println("Crystal Maiden XP :"+ PartNer.xp);
                 PartNer.CurrentHP = PartNer.Maiden_hp;
@@ -148,6 +163,8 @@ Scanner eventPerson = new Scanner(System.in);
               System.out.println(curPartDMG);
               System.out.print("Partner SKILL : ");
               System.out.println(curPartSkill);
+              System.out.print("Partner SKILL MANACOST : ");
+              System.out.println(curPartManacost);
               System.out.print("Partner LEVEL : ");
               System.out.println(PartNer.CurrentLV);
 
@@ -244,6 +261,8 @@ Scanner eventPerson = new Scanner(System.in);
               System.out.println(curPartDMG);
               System.out.print("Partner SKILL : ");
               System.out.println(curPartSkill);
+              System.out.print("Partner SKILL MANACOST : ");
+              System.out.println(curPartManacost);
               System.out.print("Partner LEVEL : ");
               System.out.println(PartNer.CurrentLV);
 
@@ -300,8 +319,8 @@ Scanner eventPerson = new Scanner(System.in);
               }
         // result of battle
               if(curParthp - infofoes.Roshan_dmg > 0 && curRosharn < 0){
-                      System.out.println("\n Creep is Death ");
-                      System.out.println("You Get XP : 50 ");
+                      System.out.println("\n ROSHAN is Death ");
+                      System.out.println("You Get XP : 500 ");
                       PartNer.CurrentXP = PartNer.CurrentXP + infofoes.Otherxp;
                       System.out.println("Current Partner XP : " + PartNer.CurrentXP);
                       if(PartNer.CurrentXP % 100 == 0){
@@ -313,11 +332,11 @@ Scanner eventPerson = new Scanner(System.in);
                       System.out.println("\n Your Partner is Death ");
               }
               else{
-                System.out.println("\n OUT Form Battle Creep \n");
-
-
+                System.out.println("\n OUT Form ATTACK THE ROSHAN \n");
             } 
           }// end roshan
+
+
 
         } while (event != 5);
   }

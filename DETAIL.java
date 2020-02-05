@@ -45,7 +45,7 @@ class Detail {
  int damage;
  int Injoker_dmg = 65 ;
  int PA_dmg = 99;
- int TA_dmg = 88;
+ int TA_dmg = 98;
  int Juggernaut_dmg = 95;
  int Maiden_dmg = 55;
  int Creep_dmg = 50;
