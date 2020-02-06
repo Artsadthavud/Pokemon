@@ -1,5 +1,4 @@
-package CURRENT;
-
+package PROFILEPLAYER;
 
 public class Detail {
       
