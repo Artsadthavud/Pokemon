@@ -1,3 +1,5 @@
+package FOES;
+
 public class FOESLV2{
     // LV 2 normal
     int foeslv2_dmg = 59 ;

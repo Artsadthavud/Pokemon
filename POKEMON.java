@@ -1,6 +1,8 @@
 
 import java.util.*;
+import FOES.*;
 import PARTNER.*;
+import CURRENT.*;
 
 public class POKEMON {
   public static void main(String[] args) {
@@ -16,10 +18,9 @@ public class POKEMON {
 
 // Choose partner
       Detail PartNer = new Detail();  // for info
-      FOES infofoes = new FOES();
-      int partner;
+      int partner; // choose partner
 
-         System.out.println("\nChoose your Partner: ");
+          System.out.println("\nChoose your Partner: ");
           System.out.println(" 1 : Carl The Injoker");
           System.out.println(" 2 : Mortred The Phantom Assassin");
           System.out.println(" 3 : Yanero The Juggernaut");
@@ -30,24 +31,22 @@ public class POKEMON {
           partner = NamePerson.nextInt();
         
               if (partner == 1){
-                InJoker infopartner = new InJoker();
-                System.out.println("\nYour Partner is Carl The Injoker");
-                System.out.println("Injoker Hp   : " + infopartner.Injoker_hp);
-                System.out.println("Injoker MANA : " + infopartner.Injoker_mana );
-                System.out.println("Injoker DAMAGE : "+ infopartner.Injoker_dmg);
-                System.out.println("Injoker SKILL : " + infopartner.Injoker_skill);
-                System.out.println("Injoker SKILL MANACOST : "+ infopartner.Injoker_skill_mana);
-                System.out.println("Injoker LEVEL : " + PartNer.level);
-                System.out.println("Injoker XP :"+ PartNer.xp);
-                PartNer.CurrentHP = infopartner.Injoker_hp;
-                PartNer.CurrentMANA = infopartner.Injoker_mana;
-                PartNer.CurrentDMG = infopartner.Injoker_dmg;
-                PartNer.CurrentSkill = infopartner.Injoker_skill;
-                PartNer.CurrentManacost = infopartner.Injoker_skill_mana;
-                PartNer.CurrentLV = infopartner.Injokelv;
-
+                PA infopartner = new PA();
+                System.out.println("Your Partner is Mortred The Phantom Assassin");
+                System.out.println("Phantom Assassin Hp   : " + infopartner.PA_hp);
+                System.out.println("Phantom Assassin MANA : " + infopartner.PA_mana);
+                System.out.println("Phantom Assassin DAMAGE : "+ infopartner.PA_dmg);
+                System.out.println("Phantom Assassin SKILL : " + infopartner.PA_skill);
+                System.out.println("Phantom Assassin SKILL MANACOST : "+ infopartner.PA_skill_mana);
+                System.out.println("Phantom Assassin LEVEL : " + PartNer.level);
+                System.out.println("Phantom Assassin XP :"+ PartNer.xp);
+                PartNer.CurrentHP = infopartner.PA_hp;
+                PartNer.CurrentMANA = infopartner.PA_mana;
+                PartNer.CurrentDMG = infopartner.PA_dmg;
+                PartNer.CurrentSkill = infopartner.PA_skill;
+                PartNer.CurrentManacost = infopartner.PA_skill_mana;
+                PartNer.CurrentLV = infopartner.PAlv;
               }
-
               else if (partner == 2){
                 PA infopartner = new PA();
                 System.out.println("Your Partner is Mortred The Phantom Assassin");
@@ -64,9 +63,7 @@ public class POKEMON {
                 PartNer.CurrentSkill = infopartner.PA_skill;
                 PartNer.CurrentManacost = infopartner.PA_skill_mana;
                 PartNer.CurrentLV = infopartner.PAlv;
-
               }
-
               else if (partner == 3){
                Juggernaut infopartner = new Juggernaut();
                 System.out.println("Your Partner is Yanero The Juggernaut");
@@ -85,7 +82,6 @@ public class POKEMON {
                 PartNer.CurrentLV = infopartner.Juggernautlv;
 
               }
-
               else if (partner == 4){
                 TA infopartner = new TA();
                 System.out.println("Your Partner is Lanaya The Templar Assassin");
@@ -104,7 +100,6 @@ public class POKEMON {
                 PartNer.CurrentLV = infopartner.TAlv;
 
               }
-
               else if (partner == 5){
                 Maiden infopartner = new Maiden();
                 System.out.println("Your Partner is Rylai The Crystal Maiden");
@@ -121,7 +116,6 @@ public class POKEMON {
                 PartNer.CurrentSkill = infopartner.Maiden_skill;
                 PartNer.CurrentManacost = infopartner.Maiden_skill_mana;
                 PartNer.CurrentLV = infopartner.Maidenlv;
-
               }
 
 // activity
@@ -140,8 +134,11 @@ Scanner eventPerson = new Scanner(System.in);
           event = eventPerson.nextInt();
 //  System.out.println(rand.nextInt(20)+1); // checkrandom
           // reset value
+
              // LV system
             Creep creep = new Creep();
+            Roshan infofoes = new Roshan();
+            
             float curParthp = (float)PartNer.CurrentHP + ((float)PartNer.CurrentLV * (float)PartNer.CurrentHP)/12;
             float curPartmana = (float)PartNer.CurrentMANA + ((float)PartNer.CurrentLV * (float)PartNer.CurrentHP)/12;     
             float curPartDMG = (float)PartNer.CurrentDMG + ((float)PartNer.CurrentLV * (float)PartNer.CurrentDMG)/12; 
@@ -341,6 +338,8 @@ Scanner eventPerson = new Scanner(System.in);
 
         } while (event != 5);
   }
+
+  
 }
 
 
