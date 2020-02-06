@@ -1,4 +1,4 @@
-class Detail {
+public class Detail {
     
     int CurrentHP = 0;
     int CurrentMANA = 0;
@@ -49,7 +49,4 @@ class Detail {
  int Juggernaut_dmg = 95;
  int Maiden_dmg = 55;
  int Creep_dmg = 50;
- 
-  
- 
    }

@@ -12,11 +12,12 @@ public class POKEMON {
     String Nameper;
     System.out.print("Enter your name: ");
       Nameper = NamePerson.next();
+
 // Choose partner
       Detail PartNer = new Detail();  // for info
       IMPACT lvImpact = new IMPACT(); // for lv
       FOES infofoes = new FOES();
-         int partner;
+      int partner;
 
          System.out.println("\nChoose your Partner: ");
           System.out.println(" 1 : Carl The Injoker");
@@ -168,7 +169,6 @@ Scanner eventPerson = new Scanner(System.in);
               System.out.print("Partner LEVEL : ");
               System.out.println(PartNer.CurrentLV);
 
-
             // current act
               System.out.println("\nWhat do you want to do ?");
               System.out.println(" 1 : Normal Hit ");
@@ -237,13 +237,9 @@ Scanner eventPerson = new Scanner(System.in);
                 System.out.println("\n OUT Form Battle Creep \n");
               }
             } // end of farm
-
-
-
             // start roshan
             else if (event == 2){
               int eventfarm_out = 0;
-
               
               while(curParthp - infofoes.Roshan_dmg > 0 && curRosharn > 0 && eventfarm_out != 5){
                 System.out.println("\n Attack The Roshan (Recommend LV 35+)\n");
@@ -265,7 +261,6 @@ Scanner eventPerson = new Scanner(System.in);
               System.out.println(curPartManacost);
               System.out.print("Partner LEVEL : ");
               System.out.println(PartNer.CurrentLV);
-
 
             // current act
               System.out.println("\nWhat do you want to do ?");
