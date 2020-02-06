@@ -14,10 +14,5 @@ public class Detail {
    public int level = 0 ;
    public int xp = 0;
 
- //skill
-   int skill;
-
- //damage
- int damage;
-
+   
    }

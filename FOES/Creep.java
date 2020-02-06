@@ -1,4 +1,4 @@
-package PARTNER ;
+package FOES;
 
 public class Creep{
 
