@@ -1,7 +1,5 @@
 package PARTNER;
 
-import PROFILEPLAYER.*;
-
 public class MainChoosePartner {
 
     public static int choosemainhp(int event) {
@@ -125,6 +123,50 @@ public class MainChoosePartner {
         }
         return ans;
     }
+    public static int mainlv(int event) {
+        int ans = 0;
+        if(event == 1){
+            InJoker infopartner = new InJoker(); 
+            ans = infopartner.Injokelv ;
+        }
+        else if(event == 2){
+            PA infopartner = new PA();
+            ans = infopartner.PAlv ;
+        }
+        else if (event == 3){
+            Juggernaut infopartner = new Juggernaut();
+            ans = infopartner.Juggernautlv ;
+        }
+        else if (event == 4){
+            TA infopartner = new TA();
+            ans = infopartner.TAlv ;
+        }
+        else if (event == 5){
+            Maiden infopartner = new Maiden();
+            ans = infopartner.Maidenlv ;
+        }
+        return ans;
+    }
 
+    public static void maindetailpart(int event) {
+        
+        if(event == 1){
+            InJoker.infoInjoker();
+        }
+        else if(event == 2){
+            PA.infoPA();
+        }
+        else if (event == 3){
+            Juggernaut.infoJuggernaut();
+        }
+        else if (event == 4){
+            TA.infoTA();
+        }
+        else if (event == 5){
+            Maiden.infoMaiden();
+           
+        }
+     
+    }
 
 }

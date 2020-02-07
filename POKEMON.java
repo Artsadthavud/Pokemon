@@ -20,59 +20,15 @@ public class POKEMON {
           System.out.println("Your Name : "+ Nameper);
           System.out.print("Your Partner : ");
           partner = NamePerson.nextInt();
-          if (partner == 1){
-            InJoker.infoInjoker();
-            InJoker infopartner = new InJoker();
-            PartNer.CurrentHP = infopartner.Injoker_hp;
-            PartNer.CurrentMANA = infopartner.Injoker_mana;
-            PartNer.CurrentDMG = infopartner.Injoker_dmg;
-            PartNer.CurrentSkill = infopartner.Injoker_skill;
-            PartNer.CurrentManacost = infopartner.Injoker_skill_mana;
-            PartNer.CurrentLV = infopartner.Injokelv;
-          
-          }
-          else if (partner == 2){
-            PA.infoPA();
-            PA infopartner = new PA();
-            PartNer.CurrentHP = infopartner.PA_hp;
-            PartNer.CurrentMANA = infopartner.PA_mana;
-            PartNer.CurrentDMG = infopartner.PA_dmg;
-            PartNer.CurrentSkill = infopartner.PA_skill;
-            PartNer.CurrentManacost = infopartner.PA_skill_mana;
-            PartNer.CurrentLV = infopartner.PAlv;
-          }
-          else if (partner == 3){
-            Juggernaut.infoJuggernaut();
-            Juggernaut infopartner = new Juggernaut();
-            PartNer.CurrentHP = infopartner.Juggernaut_hp;
-            PartNer.CurrentMANA = infopartner.Juggernaut_mana;
-            PartNer.CurrentDMG = infopartner.Juggernaut_dmg;
-            PartNer.CurrentSkill = infopartner.Juggernaut_skill;
-            PartNer.CurrentManacost = infopartner.Juggernaut_skill_mana;
-            PartNer.CurrentLV = infopartner.Juggernautlv;
-          }
-          else if (partner == 4){
-            TA.infoTA();
-            TA infopartner = new TA();
-            PartNer.CurrentHP = infopartner.TA_hp;
-            PartNer.CurrentMANA = infopartner.TA_mana;
-            PartNer.CurrentDMG = infopartner.TA_dmg;
-            PartNer.CurrentSkill = infopartner.TA_skill;
-            PartNer.CurrentManacost = infopartner.TA_skill_mana;
-            PartNer.CurrentLV = infopartner.TAlv;
-
-          }
-          else if (partner == 5){
-            Maiden.infoMaiden();
-            Maiden infopartner = new Maiden();
-            PartNer.CurrentHP = infopartner.Maiden_hp;
-            PartNer.CurrentMANA = infopartner.Maiden_mana;
-            PartNer.CurrentDMG = infopartner.Maiden_dmg;
-            PartNer.CurrentSkill = infopartner.Maiden_skill;
-            PartNer.CurrentManacost = infopartner.Maiden_skill_mana;
-            PartNer.CurrentLV = infopartner.Maidenlv;
-          }
-             
+         
+            MainChoosePartner.maindetailpart(partner);
+            PartNer.CurrentHP = MainChoosePartner.choosemainhp(partner);
+            PartNer.CurrentMANA = MainChoosePartner.choosemainmana(partner);
+            PartNer.CurrentDMG = MainChoosePartner.choosemaindmg(partner);
+            PartNer.CurrentSkill = MainChoosePartner.choosemainskill(partner);
+            PartNer.CurrentManacost = MainChoosePartner.choosemainmanacost(partner);
+            PartNer.CurrentLV = MainChoosePartner.mainlv(partner);
+           
   Scanner eventPerson = new Scanner(System.in);
   int event ;
   int eventfarm ;
@@ -252,8 +208,6 @@ public class POKEMON {
           else if (event == 3){
 
           }          
-
-
         } while (event != 5);
   }
   
