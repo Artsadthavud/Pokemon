@@ -24,4 +24,61 @@ package PARTNER;
             System.out.println(" 4 : Regen HP ");
             System.out.println(" 5 : Quit the battle ");
         }
+
+        // status current while fight BATTLE CREEP
+        public static void statucurhp(float creephp, float parthp) {
+            System.out.println("\n CURRENT STATUS \n");
+            System.out.print("Creep HP : ");
+            System.out.println(creephp); 
+            System.out.print("\nPartner HP : ");
+            System.out.println(parthp);
+        }
+        public static void statuscurmana(float mana) {
+            System.out.print("Partner MANA : ");
+            System.out.println(mana);
+        }
+        public static void statuscurdmg(float dmg) {
+            System.out.print("Partner DAMAGE : ");
+            System.out.println(dmg);
+        }
+        public static void statuscurskillmanacost(float skill,float manacost){
+            System.out.print("Partner SKILL : ");
+            System.out.println(skill);
+            System.out.print("Partner SKILL MANACOST : ");
+            System.out.println(manacost);
+        }
+        public static void statuslv(int lv) {
+            System.out.print("Partner LEVEL : ");
+            System.out.println(lv);
+        }
+    
+        
+        // status current while ATTACK ROSHAN
+        public static void statucurhpRS(float creephp, float parthp) {
+            System.out.println("\n CURRENT STATUS \n");
+            System.out.print("Creep HP : ");
+            System.out.println(creephp); 
+            System.out.print("\nPartner HP : ");
+            System.out.println(parthp);
+        }
+        public static void statuscurmanaRS(float mana) {
+            System.out.print("Partner MANA : ");
+            System.out.println(mana);
+        }
+        public static void statuscurdmgRS(float dmg) {
+            System.out.print("Partner DAMAGE : ");
+            System.out.println(dmg);
+        }
+        public static void statuscurskillmanacostRS(float skill,float manacost){
+            System.out.print("Partner SKILL : ");
+            System.out.println(skill);
+            System.out.print("Partner SKILL MANACOST : ");
+            System.out.println(manacost);
+        }
+        public static void statuslvRS(int lv) {
+            System.out.print("Partner LEVEL : ");
+            System.out.println(lv);
+        }
+
+
     }

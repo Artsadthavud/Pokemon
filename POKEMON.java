@@ -5,13 +5,13 @@ import PROFILEPLAYER.*;
 
 public class POKEMON {
   public static void main(String[] args) {
-
 // Choose name
     Scanner NamePerson = new Scanner(System.in);
     String Nameper;
+
     System.out.print("Enter your name: ");
     Nameper = NamePerson.next();
-
+    
 // Choose partner
     Detail PartNer = new Detail();  // for info
     int partner; 
@@ -20,61 +20,60 @@ public class POKEMON {
           System.out.println("Your Name : "+ Nameper);
           System.out.print("Your Partner : ");
           partner = NamePerson.nextInt();
-        
-              if (partner == 1){
-                InJoker.infoInjoker();
-                InJoker infopartner = new InJoker();
-                PartNer.CurrentHP = infopartner.Injoker_hp;
-                PartNer.CurrentMANA = infopartner.Injoker_mana;
-                PartNer.CurrentDMG = infopartner.Injoker_dmg;
-                PartNer.CurrentSkill = infopartner.Injoker_skill;
-                PartNer.CurrentManacost = infopartner.Injoker_skill_mana;
-                PartNer.CurrentLV = infopartner.Injokelv;
-              }
-              else if (partner == 2){
-                PA.infoPA();
-                PA infopartner = new PA();
-                PartNer.CurrentHP = infopartner.PA_hp;
-                PartNer.CurrentMANA = infopartner.PA_mana;
-                PartNer.CurrentDMG = infopartner.PA_dmg;
-                PartNer.CurrentSkill = infopartner.PA_skill;
-                PartNer.CurrentManacost = infopartner.PA_skill_mana;
-                PartNer.CurrentLV = infopartner.PAlv;
-              }
-              else if (partner == 3){
-                Juggernaut.infoJuggernaut();
-                Juggernaut infopartner = new Juggernaut();
-                PartNer.CurrentHP = infopartner.Juggernaut_hp;
-                PartNer.CurrentMANA = infopartner.Juggernaut_mana;
-                PartNer.CurrentDMG = infopartner.Juggernaut_dmg;
-                PartNer.CurrentSkill = infopartner.Juggernaut_skill;
-                PartNer.CurrentManacost = infopartner.Juggernaut_skill_mana;
-                PartNer.CurrentLV = infopartner.Juggernautlv;
-              }
-              else if (partner == 4){
-                TA.infoTA();
-                TA infopartner = new TA();
-                PartNer.CurrentHP = infopartner.TA_hp;
-                PartNer.CurrentMANA = infopartner.TA_mana;
-                PartNer.CurrentDMG = infopartner.TA_dmg;
-                PartNer.CurrentSkill = infopartner.TA_skill;
-                PartNer.CurrentManacost = infopartner.TA_skill_mana;
-                PartNer.CurrentLV = infopartner.TAlv;
+          if (partner == 1){
+            InJoker.infoInjoker();
+            InJoker infopartner = new InJoker();
+            PartNer.CurrentHP = infopartner.Injoker_hp;
+            PartNer.CurrentMANA = infopartner.Injoker_mana;
+            PartNer.CurrentDMG = infopartner.Injoker_dmg;
+            PartNer.CurrentSkill = infopartner.Injoker_skill;
+            PartNer.CurrentManacost = infopartner.Injoker_skill_mana;
+            PartNer.CurrentLV = infopartner.Injokelv;
+          
+          }
+          else if (partner == 2){
+            PA.infoPA();
+            PA infopartner = new PA();
+            PartNer.CurrentHP = infopartner.PA_hp;
+            PartNer.CurrentMANA = infopartner.PA_mana;
+            PartNer.CurrentDMG = infopartner.PA_dmg;
+            PartNer.CurrentSkill = infopartner.PA_skill;
+            PartNer.CurrentManacost = infopartner.PA_skill_mana;
+            PartNer.CurrentLV = infopartner.PAlv;
+          }
+          else if (partner == 3){
+            Juggernaut.infoJuggernaut();
+            Juggernaut infopartner = new Juggernaut();
+            PartNer.CurrentHP = infopartner.Juggernaut_hp;
+            PartNer.CurrentMANA = infopartner.Juggernaut_mana;
+            PartNer.CurrentDMG = infopartner.Juggernaut_dmg;
+            PartNer.CurrentSkill = infopartner.Juggernaut_skill;
+            PartNer.CurrentManacost = infopartner.Juggernaut_skill_mana;
+            PartNer.CurrentLV = infopartner.Juggernautlv;
+          }
+          else if (partner == 4){
+            TA.infoTA();
+            TA infopartner = new TA();
+            PartNer.CurrentHP = infopartner.TA_hp;
+            PartNer.CurrentMANA = infopartner.TA_mana;
+            PartNer.CurrentDMG = infopartner.TA_dmg;
+            PartNer.CurrentSkill = infopartner.TA_skill;
+            PartNer.CurrentManacost = infopartner.TA_skill_mana;
+            PartNer.CurrentLV = infopartner.TAlv;
 
-              }
-              else if (partner == 5){
-                Maiden.infoMaiden();
-                Maiden infopartner = new Maiden();
-                PartNer.CurrentHP = infopartner.Maiden_hp;
-                PartNer.CurrentMANA = infopartner.Maiden_mana;
-                PartNer.CurrentDMG = infopartner.Maiden_dmg;
-                PartNer.CurrentSkill = infopartner.Maiden_skill;
-                PartNer.CurrentManacost = infopartner.Maiden_skill_mana;
-                PartNer.CurrentLV = infopartner.Maidenlv;
-              }
-
-Scanner eventPerson = new Scanner(System.in);
-
+          }
+          else if (partner == 5){
+            Maiden.infoMaiden();
+            Maiden infopartner = new Maiden();
+            PartNer.CurrentHP = infopartner.Maiden_hp;
+            PartNer.CurrentMANA = infopartner.Maiden_mana;
+            PartNer.CurrentDMG = infopartner.Maiden_dmg;
+            PartNer.CurrentSkill = infopartner.Maiden_skill;
+            PartNer.CurrentManacost = infopartner.Maiden_skill_mana;
+            PartNer.CurrentLV = infopartner.Maidenlv;
+          }
+             
+  Scanner eventPerson = new Scanner(System.in);
   int event ;
   int eventfarm ;
   // main activity
@@ -103,22 +102,12 @@ Scanner eventPerson = new Scanner(System.in);
                 System.out.println("\nBATTLE Creep\n");      
             //current activity
             // current status
-              System.out.println("\n CURRENT STATUS \n");
-              System.out.print("Creep HP : ");
-              System.out.println(curCreephp); 
-              System.out.print("\nPartner HP : ");
-              System.out.println(curParthp);
-              System.out.print("Partner MANA : ");
-              System.out.println(curPartmana);
-              System.out.print("Partner DAMAGE : ");
-              System.out.println(curPartDMG);
-              System.out.print("Partner SKILL : ");
-              System.out.println(curPartSkill);
-              System.out.print("Partner SKILL MANACOST : ");
-              System.out.println(curPartManacost);
-              System.out.print("Partner LEVEL : ");
-              System.out.println(PartNer.CurrentLV);
-
+              Information.statucurhp(curCreephp,curParthp);
+              Information.statuscurmana(curPartmana);
+              Information.statuscurdmg(curPartDMG);
+              Information.statuscurskillmanacost(curPartSkill, curPartManacost);
+              Information.statuslv(PartNer.CurrentLV);
+            
             // current act
             Information.currentact();
               eventfarm = eventPerson.nextInt();
@@ -181,7 +170,6 @@ Scanner eventPerson = new Scanner(System.in);
               }
             } // end of farm
 
-            
             // start roshan
             else if (event == 2){
               int eventfarm_out = 0;
@@ -191,29 +179,14 @@ Scanner eventPerson = new Scanner(System.in);
                  
             //current activity
             // current status
-              System.out.println("\n CURRENT STATUS \n");
-              System.out.print("Roshan HP : ");
-              System.out.println(curRosharn); 
-              System.out.print("\nPartner HP : ");
-              System.out.println(curParthp);
-              System.out.print("Partner MANA : ");
-              System.out.println(curPartmana);
-              System.out.print("Partner DAMAGE : ");
-              System.out.println(curPartDMG);
-              System.out.print("Partner SKILL : ");
-              System.out.println(curPartSkill);
-              System.out.print("Partner SKILL MANACOST : ");
-              System.out.println(curPartManacost);
-              System.out.print("Partner LEVEL : ");
-              System.out.println(PartNer.CurrentLV);
-
+            Information.statucurhpRS(curRosharn,curParthp);
+            Information.statuscurmanaRS(curPartmana);
+            Information.statuscurdmgRS(curPartDMG);
+            Information.statuscurskillmanacostRS(curPartSkill, curPartManacost);
+            Information.statuslvRS(PartNer.CurrentLV);
+          
             // current act
-              System.out.println("\nWhat do you want to do ?");
-              System.out.println(" 1 : Normal Hit ");
-              System.out.println(" 2 : Use Skill ");
-              System.out.println(" 3 : Regen MANA ");
-              System.out.println(" 4 : Regen HP ");
-              System.out.println(" 5 : Quit the battle ");
+            Information.currentact();
              
               eventfarm = eventPerson.nextInt();
 
@@ -275,7 +248,10 @@ Scanner eventPerson = new Scanner(System.in);
                 System.out.println("\n OUT Form ATTACK THE ROSHAN \n");
             } 
           }// end roshan
+          // start mode 3
+          else if (event == 3){
 
+          }          
 
 
         } while (event != 5);

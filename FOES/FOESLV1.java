@@ -4,5 +4,5 @@ public class FOESLV1 {
     int foeslv1_dmg = 53 ;
     int foeslv1_hp = 350 ;
     int foeslv1_skill = 125 ;
-    int Otherxp = 500 ;
+    int foeslv1xp = 60 ;
 }
