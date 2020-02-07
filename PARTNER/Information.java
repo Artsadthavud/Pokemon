@@ -11,8 +11,8 @@ public class Information {
         }
         public static void mainAct() {
             System.out.println("\n 1 : BATTLE Creep");
-            System.out.println(" 2 : Attack The Roshan (Recommend LV 35+)");
-            System.out.println(" 3 : Profile  (Coming Soon)");
+            System.out.println(" 2 : Attack The Roshan (Recommend LV 40+)");
+            System.out.println(" 3 : Profile ");
             System.out.println(" 4 : Figth with Other (Coming Soon)");
             System.out.println(" 5 : Quit the game");
             System.out.println("What do you want to do ?");   

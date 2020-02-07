@@ -133,7 +133,7 @@ public class POKEMON {
               int eventfarm_out = 0;
               
               while(curParthp - infofoes.Roshan_dmg > 0 && curRosharn > 0 && eventfarm_out != 5){
-                System.out.println("\n Attack The Roshan (Recommend LV 35+)\n");
+                System.out.println("\n Attack The Roshan (Recommend LV 40+)\n");
             //current activity
             // current status
             Information.statucurhpRS(curRosharn,curParthp);
@@ -212,9 +212,9 @@ public class POKEMON {
                 Information.mode3();
                 eventstatus = eventPerson.nextInt();
                 Information.statusmode3(eventstatus,checkformode3,PartNer.CurrentLV,curParthp,curPartmana,curPartDMG,curPartSkill,curPartManacost );
-                
               }while(eventstatus < 3);
-          }          
+          }         
+
         } while (event != 5);
   }
   
