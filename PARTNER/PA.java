@@ -20,4 +20,7 @@ import PROFILEPLAYER.Detail;
             System.out.println("Phantom Assassin LEVEL : " + PartNer.level);
             System.out.println("Phantom Assassin XP :"+ PartNer.xp);
         }
+        public static void storyPA() {
+            System.out.println("\n Mortred : ' I'm here to blur the line between life and death '\n");
+        }
     }

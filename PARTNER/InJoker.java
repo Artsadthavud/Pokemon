@@ -19,4 +19,8 @@ public class InJoker{
             System.out.println("Injoker LEVEL : " + PartNer.level);
             System.out.println("Injoker XP :"+ PartNer.xp);
         }
+        public static void storyInjoker() {
+            System.out.println("\n Carl : 'I am a beacon of knowledge blazing out across a black sea of ignorance'\n");
+        }
     }
+

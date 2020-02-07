@@ -20,4 +20,7 @@ import PROFILEPLAYER.Detail;
             System.out.println("Crystal Maiden LEVEL : " + PartNer.level );
             System.out.println("Crystal Maiden XP :"+ PartNer.xp);
         }
+        public static void storyMaiden() {
+            System.out.println("\n Rylai : ' When Hell freezes over, I'll start calling it Heaven '\n");
+        }
     }

@@ -1,17 +1,18 @@
 package PARTNER;
-    public  class Information {
+
+public class Information {
         public static void choosepartner() {
             System.out.println("\nChoose your Partner: ");
             System.out.println(" 1 : Carl The Injoker");
             System.out.println(" 2 : Mortred The Phantom Assassin");
-            System.out.println(" 3 : Yanero The Juggernaut");
+            System.out.println(" 3 : Yurnero The Juggernaut");
             System.out.println(" 4 : Lanaya The Templar Assassin");
             System.out.println(" 5 : Rylai The Crystal Maiden");
         }
         public static void mainAct() {
             System.out.println("\n 1 : BATTLE Creep");
             System.out.println(" 2 : Attack The Roshan (Recommend LV 35+)");
-            System.out.println(" 3 : Rest at Fountain (Coming Soon)");
+            System.out.println(" 3 : Profile  (Coming Soon)");
             System.out.println(" 4 : Figth with Other (Coming Soon)");
             System.out.println(" 5 : Quit the game");
             System.out.println("What do you want to do ?");   
@@ -79,6 +80,48 @@ package PARTNER;
             System.out.print("Partner LEVEL : ");
             System.out.println(lv);
         }
+        public static void mode3() {
+            System.out.println("\n 1 : Show Current Partner Status");
+            System.out.println(" 2 : Show Story Partner ");
+            System.out.print(" 3 : Back to main menu\n");
+        }
 
+        public static void statusmode3(int eventmode3,int eventmode1,int lv, float curParthp2, float curPartmana2, float curPartDMG2, float curPartSkill2, float curPartManacost2) {
+         
+            if(eventmode3 == 1){
+                System.out.println("\n CURRENT STATUS \n");
+                System.out.print("Partner HP : ");
+                System.out.println(curParthp2);
+                System.out.print("Partner MANA : ");
+                System.out.println(curPartmana2);
+                System.out.print("Partner DAMAGE : ");
+                System.out.println(curPartDMG2);
+                System.out.print("Partner SKILL : ");
+                System.out.println(curPartSkill2);
+                System.out.print("Partner SKILL MANACOST : ");
+                System.out.println(curPartManacost2);
+                System.out.print("Partner LEVEL : ");
+                System.out.println(lv);
+            }
+               else if (eventmode3 == 2){
+                  if(eventmode1 == 1){
+                    InJoker.storyInjoker();
+                  }
+                  else if (eventmode1 == 2){
+                    PA.storyPA();
+                  }
+                  else if (eventmode1 == 3){
+                      Juggernaut.storyJuggernaut();
+                  }
+                  else if (eventmode1 == 4){
+                      TA.storyTA();
+                  }
+                  else if (eventmode1 == 5){
+                      Maiden.storyMaiden();
+                  }
+
+               }
+               
+        }
 
     }

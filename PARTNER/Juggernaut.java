@@ -11,7 +11,7 @@ import PROFILEPLAYER.Detail;
         public static void infoJuggernaut() {
             Juggernaut infopartner = new Juggernaut();
             Detail PartNer = new Detail();
-            System.out.println("\nYour Partner is Yanero The Juggernaut");
+            System.out.println("\nYour Partner is Yurnero The Juggernaut");
             System.out.println("Juggernaut Hp   : " + infopartner.Juggernaut_hp);
             System.out.println("Juggernaut MANA : " + infopartner.Juggernaut_mana);
             System.out.println("Juggernaut DAMAGE : "+ infopartner.Juggernaut_dmg);
@@ -19,5 +19,8 @@ import PROFILEPLAYER.Detail;
             System.out.println("Juggernaut SKILL MANACOST : "+ infopartner.Juggernaut_skill_mana);
             System.out.println("Juggernaut LEVEL : " + PartNer.level );
             System.out.println("Juggernaut XP :"+ PartNer.xp);
+        }
+        public static void storyJuggernaut() {
+            System.out.println("\n Yurnero : ' By the Visage of Vengeance, which drowned in the Isle of Masks, I will carry on the rites of the Faceless Ones '\n");
         }
     }

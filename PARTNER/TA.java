@@ -21,4 +21,7 @@ import PROFILEPLAYER.Detail;
             System.out.println("Templar Assassin XP :"+ PartNer.xp);
             
         }
+        public static void storyTA() {
+            System.out.println("\n Lanaya : 'Where the Hidden Ones send me, I go without question. I do not even question why I question not '\n");
+        }
     }

@@ -37,6 +37,7 @@ public class CalculatStatus{
         anscurhp = curhp - creepdamage;
         return anscurhp;
     }
+    
 
 }
 

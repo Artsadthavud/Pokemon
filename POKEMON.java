@@ -17,10 +17,9 @@ public class POKEMON {
     int partner; 
           // choose partner
           Information.choosepartner();
-          System.out.println("Your Name : "+ Nameper);
-          System.out.print("Your Partner : ");
+          ADDNAME.addname(Nameper);
           partner = NamePerson.nextInt();
-         
+      int checkformode3 = partner; 
             MainChoosePartner.maindetailpart(partner);
             PartNer.CurrentHP = MainChoosePartner.choosemainhp(partner);
             PartNer.CurrentMANA = MainChoosePartner.choosemainmana(partner);
@@ -44,7 +43,9 @@ public class POKEMON {
             float curPartmana = CalculatStatus.calculatStatusmana(PartNer.CurrentMANA, PartNer.CurrentLV);
             float curPartDMG = CalculatStatus.calculatStatusdmg(PartNer.CurrentDMG,PartNer.CurrentLV);
             float curPartSkill = CalculatStatus.calculatStatusskill(PartNer.CurrentSkill,PartNer.CurrentLV);
-            float curPartManacost =CalculatStatus.calculatStatusmanacost(PartNer.CurrentManacost,PartNer.CurrentLV);
+            float curPartManacost = CalculatStatus.calculatStatusmanacost(PartNer.CurrentManacost,PartNer.CurrentLV);
+            
+            //set value
             float curCreephp = creep.Creep_hp;
             float curRosharn = infofoes.Roshan_hp;
             float curCreepdmg = creep.Creep_dmg;
@@ -120,9 +121,10 @@ public class POKEMON {
               }
               else if (curParthp - creep.Creep_dmg <= 0){
                       System.out.println("\n Your Partner is Death ");
+
               }
               else{
-                System.out.println("\n OUT Form Battle Creep \n");
+                      System.out.println("\n OUT Form Battle Creep \n");
               }
             } // end of farm
 
@@ -132,7 +134,6 @@ public class POKEMON {
               
               while(curParthp - infofoes.Roshan_dmg > 0 && curRosharn > 0 && eventfarm_out != 5){
                 System.out.println("\n Attack The Roshan (Recommend LV 35+)\n");
-                 
             //current activity
             // current status
             Information.statucurhpRS(curRosharn,curParthp);
@@ -194,7 +195,7 @@ public class POKEMON {
                       System.out.println("Current Partner XP : " + PartNer.CurrentXP);
                       if(PartNer.CurrentXP % 100 == 0){
                       System.out.println("\n LEVEL UP !!! \n");
-                      System.out.println(" YOU ARE LEVEL "+ (PartNer.CurrentLV = PartNer.CurrentLV+1));
+                      System.out.println(" YOU ARE LEVEL "+ (PartNer.CurrentLV = PartNer.CurrentLV+5));
                       }
               }
               else if (curParthp - infofoes.Roshan_dmg <= 0){
@@ -206,7 +207,13 @@ public class POKEMON {
           }// end roshan
           // start mode 3
           else if (event == 3){
-
+            int eventstatus = 0 ;
+              do{
+                Information.mode3();
+                eventstatus = eventPerson.nextInt();
+                Information.statusmode3(eventstatus,checkformode3,PartNer.CurrentLV,curParthp,curPartmana,curPartDMG,curPartSkill,curPartManacost );
+                
+              }while(eventstatus < 3);
           }          
         } while (event != 5);
   }
