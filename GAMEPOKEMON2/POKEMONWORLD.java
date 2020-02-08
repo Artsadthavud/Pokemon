@@ -1,14 +1,13 @@
 package GAMEPOKEMON2;
 
-import java.util.Scanner;
+import java.util.*;
 
 
-public class POKEMONWORLD{
+public class POKEMONWORLD extends GAMEPOKEMON2{
 
     private static String namePlayer;
     private String namePartner;
     private static int checkcode = 99;
-   
     private static String curname ;
     private static int curcode = 99 ;
     private static int curHP = 0 ;
@@ -27,10 +26,12 @@ public class POKEMONWORLD{
     }
 
     public static void MainMenu() {
-        System.out.println("\n\t        MAIN MENU ");
-        System.out.println("\t1 : Choose Your Partner ");
-        System.out.println("\t2 : Choose You Activity ");
-        System.out.println("\t3 :       Quit ");
+        System.out.println("._____________________________________.");
+        System.out.println("|\t        MAIN MENU             |");
+        System.out.println("|\t1 : Choose Your Partner       |");
+        System.out.println("|\t2 : Choose You Activity       |");
+        System.out.println("|\t3 :       Quit                |");
+        System.out.println("|_____________________________________|");
     }
 
     public static void ChoosePartner() {
@@ -40,12 +41,14 @@ public class POKEMONWORLD{
         Scanner eventtype = new Scanner(System.in);
 
         do {
-            System.out.println("\t   Choose Your Partner ");
-            System.out.println("\t Choose Your Partner Type ");
-            System.out.println("\t       1 : FIRE ");
-            System.out.println("\t       2 : DIRT ");
-            System.out.println("\t       3 : WATER ");
-            System.out.println("\t       4 : Back to main menu ");
+            System.out.println("._______________________________________.");
+            System.out.println("|\t   Choose Your Partner          |");
+            System.out.println("|\t Choose Your Partner Type       |");
+            System.out.println("|\t       1 : FIRE                 |");
+            System.out.println("|\t       2 : DIRT                 |");
+            System.out.println("|\t       3 : WATER                |");
+            System.out.println("|\t       4 : Back to main menu    |");
+            System.out.println("|_______________________________________|");
             System.out.println("\t  What do you want : ");
             event = eventtype.nextInt();
             do {
@@ -66,6 +69,7 @@ public class POKEMONWORLD{
                         break;
                     } else {
                         System.out.println("\tBack");
+                        break;
 
                     }
                 }
@@ -86,6 +90,7 @@ public class POKEMONWORLD{
                         break;
                     } else {
                         System.out.println("\tBack");
+                        break;
                     }
                 }
                 if (event == 3 && part != 3) {
@@ -105,10 +110,12 @@ public class POKEMONWORLD{
                         break;
                     } else {
                         System.out.println("\tBack");
+                        break;
                     }
                 }
-            } while (part != 3);
+            part = 0;} while (part != 3);
         } while (event != 4 && (part == 0 || part == 3));
+       // eventtype.close();
     }
 
     public static int returnCode() {
@@ -179,7 +186,50 @@ public class POKEMONWORLD{
         }
     }
 
+    public static void mainAct(){
+        int event = 0;
+        Scanner EventPersonAct = new Scanner(System.in);
+        do{
+            System.out.println("._____________________________________.");
+            System.out.println("|\t  MAIN ACTIVITY               |");
+            System.out.println("|\t 1 : SIMULATE FIGHT           |");
+            System.out.println("|\t 2 :  TOWER FIGHT             |");
+            System.out.println("|\t 3 : Status FIGHT             |");
+            System.out.println("|\t 4 : BACK TO MAIN MENU        |");
+            System.out.println("|_____________________________________|");
+            event = EventPersonAct.nextInt();
+            if(event == 1){
+                Random ran = new Random();
+                int randx = 99 ;
+                System.out.println("|\t 1 : SIMULATE FIGHT           |");
+                randx = ran.nextInt(6);
+                if(randx == 0){
+                    System.out.println("|\tYour foes is MURASAME         |");
+                }
+                else if (randx == 1){
+                    System.out.println("|\tYour foes is ASTRE            |");
+                }
+                else if (randx == 2){
+                    System.out.println("|\tYour foes is WINDOM           |");
+                }
+                else if (randx == 3){
+                    System.out.println("|\tYour foes is DAGGER           |");
+                }
+                else if(randx == 4){
+                    System.out.println("|\tYour foes is GINN             |");
+                }
+                else if (randx == 5){
+                    System.out.println("|\tYour foes is GOUF             |");
+                }
+            }
+            else if(event == 3){
 
+            }
+           else if(event == 4){
+               break;
+           }
+       }while(event != 4); //EventPersonAct.close();
+    }
 
 }
    

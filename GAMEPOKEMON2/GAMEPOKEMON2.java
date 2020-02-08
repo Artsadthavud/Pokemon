@@ -7,26 +7,33 @@ public class GAMEPOKEMON2 {
 
          Scanner NamePerson = new Scanner(System.in);
          Scanner EventPerson = new Scanner(System.in);
-         Scanner eventtype = new Scanner(System.in);
+        
 // Set name player         
          System.out.print("\nEnter Your Name : ");
          String Nameper = NamePerson.next();
          POKEMONWORLD.setnamePlayer(Nameper);
-         System.out.print("\nYour Name : "+ (POKEMONWORLD.getnamePlayer() ));
-        
-         int event = 0;
-         int codepart = 99 ;
+         System.out.print("\nYour Name : "+ (POKEMONWORLD.getnamePlayer() )+"\n");
+         int eventmain = 0;
+         int checkCode = 99 ;
         do{
             POKEMONWORLD.MainMenu ();
-            event = EventPerson.nextInt();
-            if(event == 1){
+            eventmain = EventPerson.nextInt();
+            
+            if(eventmain == 1){
                 POKEMONWORLD.ChoosePartner();
-                codepart = POKEMONWORLD.returnCode() ;
-               POKEMONWORLD.setStatusPartner();
+                POKEMONWORLD.setStatusPartner();
+                checkCode = POKEMONWORLD.returnCode();
             }
-            System.out.print(codepart);
-
-        }while(event != 3);EventPerson.close();NamePerson.close();eventtype.close();
+            else if (eventmain == 2){
+                if(eventmain == 2 && checkCode >= 0 && checkCode < 6){
+                POKEMONWORLD.mainAct();
+                }
+                else {
+                  System.out.println("\n**\tYOU SHOULD GO TO CHOOSE PARTNER FIRST    **");
+                }
+            }
+        }while(eventmain != 3);
+        EventPerson.close();NamePerson.close();
      } 
 
    
