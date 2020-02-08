@@ -53,11 +53,10 @@ public class Information {
             System.out.println(lv);
         }
     
-        
         // status current while ATTACK ROSHAN
         public static void statucurhpRS(float creephp, float parthp) {
             System.out.println("\n CURRENT STATUS \n");
-            System.out.print("Creep HP : ");
+            System.out.print("Roshan HP : ");
             System.out.println(creephp); 
             System.out.print("\nPartner HP : ");
             System.out.println(parthp);
@@ -86,6 +85,7 @@ public class Information {
             System.out.print(" 3 : Back to main menu\n");
         }
 
+        // PROFILE STATUS && STORY
         public static void statusmode3(int eventmode3,int eventmode1,int lv, float curParthp2, float curPartmana2, float curPartDMG2, float curPartSkill2, float curPartManacost2) {
          
             if(eventmode3 == 1){
@@ -111,13 +111,13 @@ public class Information {
                     PA.storyPA();
                   }
                   else if (eventmode1 == 3){
-                      Juggernaut.storyJuggernaut();
+                    Juggernaut.storyJuggernaut();
                   }
                   else if (eventmode1 == 4){
-                      TA.storyTA();
+                    TA.storyTA();
                   }
                   else if (eventmode1 == 5){
-                      Maiden.storyMaiden();
+                    Maiden.storyMaiden();
                   }
 
                }
