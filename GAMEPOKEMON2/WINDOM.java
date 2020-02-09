@@ -1,39 +1,32 @@
 package GAMEPOKEMON2;
 public class WINDOM extends DIRT {
     private static String codename = "WINDOM";
-    private int code = 2;
-    private static int HP = 400;
-    private static int SP = 230;
-    private static int DMG = 55;
-    private static int skill1 = 75;
-    private static int skill2 = 125;
-    private static String type = "Dirt";
-
+    
     public static int getHPwindom() {
-        return HP;
+        return HP = 870;
     }
-
     public static int getSPwindom() {
-        return SP;
+        return SP = 150;
     }
-
     public static int getDMGwindom() {
-        return DMG;
+        return DAMAGE = 105;
     }
-
     public static int getSKILL1windom() {
-        return skill1;
+        return skill1 = 85;
     }
-
     public static int getSKILL2windom() {
-        return skill2;
+        return skill2 = 120;
     }
-
     public static String getTYPEwindom() {
         return type;
     }
-
     public static String getNAMEwindom() {
-        return codename;
+        return codename = "WINDOM";
+    }
+    public static String getStrongwindom() {
+        return StrongWith;
+    }
+    public static String getWeakwindom() {
+        return WeakWith;
     }
 }

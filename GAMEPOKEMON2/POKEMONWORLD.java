@@ -6,7 +6,7 @@ import java.util.*;
 public class POKEMONWORLD extends GAMEPOKEMON2{
 
     private static String namePlayer;
-    private String namePartner;
+    private static String namePartner;
     private static int checkcode = 99;
     private static String curname ;
     private static int curcode = 99 ;
@@ -16,11 +16,13 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
     private static int curSkill1 = 0 ;
     private static int curSkill2 = 0 ;
     private static String curType  ;
+    private static String curWeak ;
+    private static String curStrong ;
 
     public static void setnamePlayer(String namePlay) {
         namePlayer = namePlay;
     }
-
+    
     public static String getnamePlayer() {
         return namePlayer;
     }
@@ -30,7 +32,8 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
         System.out.println("|\t        MAIN MENU             |");
         System.out.println("|\t1 : Choose Your Partner       |");
         System.out.println("|\t2 : Choose You Activity       |");
-        System.out.println("|\t3 :       Quit                |");
+        System.out.println("|\t3 :   THE DARK TOWER          |");
+        System.out.println("|\t4 :       Quit                |");
         System.out.println("|_____________________________________|");
     }
 
@@ -51,12 +54,17 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
             System.out.println("|_______________________________________|");
             System.out.println("\t  What do you want : ");
             event = eventtype.nextInt();
+            if (event == 4){
+                break;
+            }
             do {
                 if (event == 1 && part != 3) {
+                    System.out.println("._____________________________________.");
                     System.out.println("\t   Choose Your Partner FIRE");
                     System.out.println("\t       1 : MURASAME ");
                     System.out.println("\t       2 : ASTREY ");
-                    System.out.println("\n\t       3 : ฺ Back ");
+                    System.out.println("\t       3 : ฺ Back ");
+                    System.out.println("._____________________________________.");
                     System.out.println("\t  What do you want : ");
                     part = eventtype.nextInt();
                     if (part == 1) {
@@ -67,17 +75,19 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
                         System.out.println("\n\tYour Partner : ASTREY");
                         checkcode = 1;
                         break;
-                    } else {
+                    } else if(part == 3){
                         System.out.println("\tBack");
                         break;
 
                     }
                 }
-                if (event == 2 && part != 3) {
+                else if (event == 2 && part != 3) {
+                    System.out.println("._____________________________________.");
                     System.out.println("\t   Choose Your Partner DIRT");
                     System.out.println("\t       1 : WINDOM ");
                     System.out.println("\t       2 : DAGGER ");
-                    System.out.println("\n\t       3 : ฺ Back ");
+                    System.out.println("\t       3 : ฺ Back ");
+                    System.out.println("._____________________________________.");
                     System.out.println("\t  What do you want : ");
                     part = eventtype.nextInt();
                     if (part == 1) {
@@ -88,16 +98,18 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
                         System.out.println("\n\tYour Partner : DAGGER");
                         checkcode = 4;
                         break;
-                    } else {
+                    } else if(part == 3){
                         System.out.println("\tBack");
                         break;
                     }
                 }
-                if (event == 3 && part != 3) {
+                else if (event == 3 && part != 3) {
+                    System.out.println("._____________________________________.");
                     System.out.println("\t   Choose Your Partner WATER");
                     System.out.println("\t       1 : GINN ");
                     System.out.println("\t       2 : GOUF ");
-                    System.out.println("\n\t       3 : ฺ Back ");
+                    System.out.println("\t       3 : ฺ Back ");
+                    System.out.println("._____________________________________.");
                     System.out.println("\t  What do you want : ");
                     part = eventtype.nextInt();
                     if (part == 1) {
@@ -108,13 +120,15 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
                         System.out.println("\n\tYour Partner : GOUF");
                         checkcode = 6;
                         break;
-                    } else {
+                    } else if(part == 3){
                         System.out.println("\tBack");
                         break;
                     }
                 }
-            part = 0;} while (part != 3);
-        } while (event != 4 && (part == 0 || part == 3));
+           
+            } while (part != 3);
+            
+    } while (event != 4 );
        // eventtype.close();
     }
 
@@ -132,6 +146,8 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
             curSkill2 = MURASAME.getSKILL2murasame();
             curType = MURASAME.getTYPEmurasame();
             curname = MURASAME.getNAMEmurasame();
+            curWeak = MURASAME.getWeakmurasame();
+            curStrong = MURASAME.getStrongmurasame();
             curcode = checkcode ;
         }
         else if (checkcode == 1){
@@ -142,6 +158,8 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
             curSkill2 = ASTREY.getSKILL2astrey();
             curType = ASTREY.getTYPEastrey();
             curname = ASTREY.getNAMEastrey();
+            curWeak = ASTREY.getWeakastrey();
+            curStrong = ASTREY.getStrongastrey();
             curcode = checkcode;
         }
         else if (checkcode == 2){
@@ -152,6 +170,8 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
             curSkill2 = WINDOM.getSKILL2windom();
             curType = WINDOM.getTYPEwindom();
             curname = WINDOM.getNAMEwindom();
+            curWeak = WINDOM.getWeakwindom();
+            curStrong = WINDOM.getStrongwindom();
             curcode = checkcode;
         }
         else if (checkcode == 3){
@@ -162,6 +182,8 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
             curSkill2 = DAGGER.getSKILL2dagger();
             curType = DAGGER.getTYPEdagger();
             curname = DAGGER.getNAMEdagger();
+            curWeak = DAGGER.getWeakdagger();
+            curStrong = DAGGER.getStrongdagger();
             curcode = checkcode;
         }
         else if (checkcode == 4){
@@ -172,6 +194,8 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
             curSkill2 = GINN.getSKILL2ginn();
             curType = GINN.getTYPEginn();
             curname = GINN.getNAMEginn();
+            curWeak = GINN.getWeakginn();
+            curStrong = GINN.getStrongginn();
             curcode = checkcode;
         }
         else if (checkcode == 5){
@@ -182,8 +206,34 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
             curSkill2 = GOUF.getSKILL2gouf();
             curType = GOUF.getTYPEgouf();
             curname = GOUF.getNAMEgouf();
+            curWeak = GOUF.getWeakgouf();
+            curStrong = GOUF.getStronggouf();
             curcode = checkcode;
         }
+    }
+    public static int getStatusHpPartner(){
+        return curHP ;
+    }
+    public static int getStatusSpPartner(){
+        return curSP ;
+    }
+    public static int getStatusDmgPartner(){
+        return curDMG ;
+    }
+    public static int getStatusSkill1Partner(){
+        return curSkill1 ;
+    }
+    public static int getStatusSkill2Partner(){
+        return curSkill2 ;
+    }
+    public static String getStatusTypePartner(){
+        return curType ;
+    }
+    public static String getStatusNamePartner(){
+        return curname ;
+    }
+    public static int getStatusCodePartner(){
+        return curcode ;
     }
 
     public static void mainAct(){
@@ -193,42 +243,59 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
             System.out.println("._____________________________________.");
             System.out.println("|\t  MAIN ACTIVITY               |");
             System.out.println("|\t 1 : SIMULATE FIGHT           |");
-            System.out.println("|\t 2 :  TOWER FIGHT             |");
-            System.out.println("|\t 3 : Status FIGHT             |");
-            System.out.println("|\t 4 : BACK TO MAIN MENU        |");
+            System.out.println("|\t 2 : Status PARTs             |");
+            System.out.println("|\t 3 : BACK TO MAIN MENU        |");
             System.out.println("|_____________________________________|");
             event = EventPersonAct.nextInt();
             if(event == 1){
                 Random ran = new Random();
-                int randx = 99 ;
+                int randx = ran.nextInt(6);
+               
                 System.out.println("|\t 1 : SIMULATE FIGHT           |");
-                randx = ran.nextInt(6);
                 if(randx == 0){
-                    System.out.println("|\tYour foes is MURASAME         |");
+                    System.out.println("|\tYour foes is MURASAME (Fire)  |");
+                    FIRE.simulateFight(randx);
                 }
                 else if (randx == 1){
-                    System.out.println("|\tYour foes is ASTRE            |");
+                    System.out.println("|\tYour foes is ASTRE (Fire)     |");
+                    FIRE.simulateFight(randx);
                 }
                 else if (randx == 2){
-                    System.out.println("|\tYour foes is WINDOM           |");
+                    System.out.println("|\tYour foes is WINDOM (Dirt)    |");
+                    DIRT.simulateFight(randx);
+
                 }
                 else if (randx == 3){
-                    System.out.println("|\tYour foes is DAGGER           |");
+                    System.out.println("|\tYour foes is DAGGER (Dirt)    |");
+                    DIRT.simulateFight(randx);
                 }
                 else if(randx == 4){
-                    System.out.println("|\tYour foes is GINN             |");
+                    System.out.println("|\tYour foes is GINN (Water)     |");
+                    WATER.simulateFight(randx);
                 }
                 else if (randx == 5){
-                    System.out.println("|\tYour foes is GOUF             |");
+                    System.out.println("|\tYour foes is GOUF (Water)     |");
+                    WATER.simulateFight(randx);
                 }
             }
-            else if(event == 3){
-
+            else if(event == 2){
+                System.out.println("._____________________________________.");
+                System.out.println("|\t 3 : Status PARTs             |");
+                System.out.println("|\tYour Partner is "+ curname );
+                System.out.println("|\tYour HP Partner is "+ curHP );
+                System.out.println("|\tYour SP Partner is "+ curSP );
+                System.out.println("|\tYour DMG Partner is "+ curDMG  );
+                System.out.println("|\tYour SKILL1 Partner is "+ curSkill1 );
+                System.out.println("|\tYour SKILL2 Partner is "+ curSkill2 );
+                System.out.println("|\tYour TYPE Partner is "+ curType);
+                System.out.println("|\tYour Partner Strong with "+ curStrong);
+                System.out.println("|\tYour Partner Weak with "+ curWeak);
+                System.out.println("|_____________________________________|");
             }
-           else if(event == 4){
+           else if(event == 3){
                break;
            }
-       }while(event != 4); //EventPersonAct.close();
+       }while(event != 3); //EventPersonAct.close();
     }
 
 }

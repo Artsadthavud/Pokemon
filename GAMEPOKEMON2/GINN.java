@@ -1,39 +1,31 @@
 package GAMEPOKEMON2;
 public class GINN extends WATER {
-    private static String codename = "GINN";
-    private int code = 4;
-    private static int HP = 370;
-    private static int SP = 230;
-    private static int DMG = 74;
-    private static int skill1 = 90;
-    private static int skill2 = 125;
-    private static String type = "Water";
-
+    
     public static int getHPginn() {
-        return HP;
+        return HP = 1080;
     }
-
     public static int getSPginn() {
-        return SP;
+        return SP = 350;
     }
-
     public static int getDMGginn() {
-        return DMG;
+        return DAMAGE = 75;
     }
-
     public static int getSKILL1ginn() {
-        return skill1;
+        return skill1 = 120;
     }
-
     public static int getSKILL2ginn() {
-        return skill2;
+        return skill2 = 180;
     }
-
     public static String getTYPEginn() {
         return type;
     }
-
     public static String getNAMEginn() {
-        return codename;
+        return codename = "GINN";
+    }
+    public static String getStrongginn() {
+        return StrongWith;
+    }
+    public static String getWeakginn() {
+        return WeakWith;
     }
 }

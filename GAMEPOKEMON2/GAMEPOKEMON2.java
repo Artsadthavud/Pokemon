@@ -29,11 +29,20 @@ public class GAMEPOKEMON2 {
                 POKEMONWORLD.mainAct();
                 }
                 else {
-                  System.out.println("\n**\tYOU SHOULD GO TO CHOOSE PARTNER FIRST    **");
+                    System.out.println("\n**\tYOU SHOULD GO TO CHOOSE PARTNER FIRST    **");
+                    }
+            }
+            else if (eventmain == 3 && checkCode >= 0 && checkCode < 6){
+                if(checkCode >= 0 && checkCode < 6){
+                MAINTOWER.MainState();
+                MAINTOWER.getCurStatusPartner();
+                }
+                else{
+                    System.out.println("\n**\tYOU SHOULD GO TO CHOOSE PARTNER FIRST    **");  
                 }
             }
-        }while(eventmain != 3);
-        EventPerson.close();NamePerson.close();
+            
+        }while(eventmain != 4);
      } 
 
    

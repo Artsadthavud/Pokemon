@@ -1,39 +1,31 @@
 package GAMEPOKEMON2;
-class GOUF {
-    private static String codename = "GOUF";
-    private int code = 5;
-    private static int HP = 390;
-    private static int SP = 220;
-    private static int DMG = 54;
-    private static int skill1 = 90;
-    private static int skill2 = 145;
-    private static String type = "Water";
+class GOUF extends WATER {
 
     public static int getHPgouf() {
-        return HP;
+        return HP = 980;
     }
-
     public static int getSPgouf() {
-        return SP;
+        return SP = 230;
     }
-
     public static int getDMGgouf() {
-        return DMG;
+        return DAMAGE = 120;
     }
-
     public static int getSKILL1gouf() {
-        return skill1;
+        return skill1 = 87;
     }
-
     public static int getSKILL2gouf() {
-        return skill2;
+        return skill2 = 123;
     }
-
     public static String getTYPEgouf() {
         return type;
     }
-
     public static String getNAMEgouf() {
-        return codename;
+        return codename = "GOUF";
+    }
+    public static String getStronggouf() {
+        return StrongWith;
+    }
+    public static String getWeakgouf() {
+        return WeakWith;
     }
 }

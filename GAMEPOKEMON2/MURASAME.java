@@ -1,35 +1,34 @@
 package GAMEPOKEMON2;
 
 public class MURASAME extends FIRE {
-    private static String codename = "MURASAME";
-    private static int code0 = 0;
-    private static int HP = 350;
-    private static int SP = 250;
-    private static int DMG = 65;
-    private static int skill1 = 120;
-    private static int skill2 = 100;
-    private static String type = "Fire";
+   
 
     public static int getHPmurasame() {
-        return HP;
+        return HP = 1020;
     }
     public static int getSPmurasame() {
-        return SP;
+        return SP = 350;
     }
     public static int getDMGmurasame() {
-        return DMG;
+        return DAMAGE = 75;
     }
     public static int getSKILL1murasame() {
-        return skill1;
+        return skill1 = 123;
     }
     public static int getSKILL2murasame() {
-        return skill2;
+        return skill2 = 150;
     }
     public static String getTYPEmurasame() {
         return type;
     }
     public static String getNAMEmurasame() {
-        return codename;
+        return codename = "MURASAME";
+    }
+    public static String getStrongmurasame() {
+        return StrongWith;
+    }
+    public static String getWeakmurasame() {
+        return WeakWith;
     }
 }
 
