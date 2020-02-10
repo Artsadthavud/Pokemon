@@ -32,10 +32,11 @@ public class GAMEPOKEMON2 {
                     System.out.println("\n**\tYOU SHOULD GO TO CHOOSE PARTNER FIRST    **");
                     }
             }
-            else if (eventmain == 3 && checkCode >= 0 && checkCode < 6){
-                if(checkCode >= 0 && checkCode < 6){
+            else if (eventmain == 3){
+                if(eventmain == 3 && checkCode >= 0 && checkCode < 6){
                 MAINTOWER.MainState();
                 MAINTOWER.getCurStatusPartner();
+                MAINTOWER.getTheTOWER();
                 }
                 else{
                     System.out.println("\n**\tYOU SHOULD GO TO CHOOSE PARTNER FIRST    **");  
@@ -43,9 +44,5 @@ public class GAMEPOKEMON2 {
             }
             
         }while(eventmain != 4);
-     } 
-
-   
-
-    
+     }  
 }

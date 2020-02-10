@@ -2,8 +2,6 @@ package GAMEPOKEMON2;
 
 public class ASTREY extends FIRE{
     
-    
-
     public static int getHPastrey() {
         return HP = 955 ;
     }
@@ -23,7 +21,7 @@ public class ASTREY extends FIRE{
         return type ;
     }
     public static String getNAMEastrey() {
-        return codename = "ASTREY";
+        return codename = "ASTRAY";
     }
     public static String getStrongastrey() {
         return StrongWith;

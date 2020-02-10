@@ -62,7 +62,7 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
                     System.out.println("._____________________________________.");
                     System.out.println("\t   Choose Your Partner FIRE");
                     System.out.println("\t       1 : MURASAME ");
-                    System.out.println("\t       2 : ASTREY ");
+                    System.out.println("\t       2 : ASTRAY ");
                     System.out.println("\t       3 : ฺ Back ");
                     System.out.println("._____________________________________.");
                     System.out.println("\t  What do you want : ");
@@ -72,7 +72,7 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
                         checkcode = 0;
                         break;
                     } else if (part == 2) {
-                        System.out.println("\n\tYour Partner : ASTREY");
+                        System.out.println("\n\tYour Partner : ASTRAY");
                         checkcode = 1;
                         break;
                     } else if(part == 3){
@@ -84,14 +84,14 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
                 else if (event == 2 && part != 3) {
                     System.out.println("._____________________________________.");
                     System.out.println("\t   Choose Your Partner DIRT");
-                    System.out.println("\t       1 : WINDOM ");
+                    System.out.println("\t       1 : WINDAM ");
                     System.out.println("\t       2 : DAGGER ");
                     System.out.println("\t       3 : ฺ Back ");
                     System.out.println("._____________________________________.");
                     System.out.println("\t  What do you want : ");
                     part = eventtype.nextInt();
                     if (part == 1) {
-                        System.out.println("\n\tYour Partner : WINDOM");
+                        System.out.println("\n\tYour Partner : WINDAM");
                         checkcode = 3;
                         break;
                     } else if (part == 2) {
@@ -125,10 +125,10 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
                         break;
                     }
                 }
-           
+           part = 0;
             } while (part != 3);
             
-    } while (event != 4 );
+    } while (event != 4 && part == 3 || part == 0);
        // eventtype.close();
     }
 
@@ -236,6 +236,22 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
         return curcode ;
     }
 
+    public static void displayPartSatus(){
+        System.out.println("._____________________________________.");
+        System.out.println("|\t 3 : Status PARTs             |");
+        System.out.println("|\tYour Partner is "+ curname );
+        System.out.println("|\tYour HP Partner is "+ curHP );
+        System.out.println("|\tYour SP Partner is "+ curSP );
+        System.out.println("|\tYour DMG Partner is "+ curDMG  );
+        System.out.println("|\tYour SKILL1 Partner is "+ curSkill1 );
+        System.out.println("|\tYour SKILL2 Partner is "+ curSkill2 );
+        System.out.println("|\tYour TYPE Partner is "+ curType);
+        System.out.println("|\tYour Partner Strong with "+ curStrong);
+        System.out.println("|\tYour Partner Weak with "+ curWeak);
+        System.out.println("|_____________________________________|");
+    }
+
+    
     public static void mainAct(){
         int event = 0;
         Scanner EventPersonAct = new Scanner(System.in);
@@ -257,11 +273,11 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
                     FIRE.simulateFight(randx);
                 }
                 else if (randx == 1){
-                    System.out.println("|\tYour foes is ASTRE (Fire)     |");
+                    System.out.println("|\tYour foes is ASTRAY (Fire)    |");
                     FIRE.simulateFight(randx);
                 }
                 else if (randx == 2){
-                    System.out.println("|\tYour foes is WINDOM (Dirt)    |");
+                    System.out.println("|\tYour foes is WINDAM (Dirt)    |");
                     DIRT.simulateFight(randx);
 
                 }
@@ -279,18 +295,7 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
                 }
             }
             else if(event == 2){
-                System.out.println("._____________________________________.");
-                System.out.println("|\t 3 : Status PARTs             |");
-                System.out.println("|\tYour Partner is "+ curname );
-                System.out.println("|\tYour HP Partner is "+ curHP );
-                System.out.println("|\tYour SP Partner is "+ curSP );
-                System.out.println("|\tYour DMG Partner is "+ curDMG  );
-                System.out.println("|\tYour SKILL1 Partner is "+ curSkill1 );
-                System.out.println("|\tYour SKILL2 Partner is "+ curSkill2 );
-                System.out.println("|\tYour TYPE Partner is "+ curType);
-                System.out.println("|\tYour Partner Strong with "+ curStrong);
-                System.out.println("|\tYour Partner Weak with "+ curWeak);
-                System.out.println("|_____________________________________|");
+                displayPartSatus();
             }
            else if(event == 3){
                break;
@@ -298,6 +303,7 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
        }while(event != 3); //EventPersonAct.close();
     }
 
+    
 }
    
     

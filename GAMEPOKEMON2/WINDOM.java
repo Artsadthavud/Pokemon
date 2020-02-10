@@ -1,7 +1,6 @@
 package GAMEPOKEMON2;
 public class WINDOM extends DIRT {
-    private static String codename = "WINDOM";
-    
+   
     public static int getHPwindom() {
         return HP = 870;
     }
@@ -21,7 +20,7 @@ public class WINDOM extends DIRT {
         return type;
     }
     public static String getNAMEwindom() {
-        return codename = "WINDOM";
+        return codename = "WINDAM";
     }
     public static String getStrongwindom() {
         return StrongWith;
