@@ -14,18 +14,17 @@ public class GAMEPOKEMON2 {
          POKEMONWORLD.setnamePlayer(Nameper);
          System.out.print("\nYour Name : "+ (POKEMONWORLD.getnamePlayer() )+"\n");
          int eventmain = 0;
-         int checkCode = 99 ;
+         int checkCode = 99;
         do{
             POKEMONWORLD.MainMenu ();
             eventmain = EventPerson.nextInt();
-            
             if(eventmain == 1){
                 POKEMONWORLD.ChoosePartner();
                 POKEMONWORLD.setStatusPartner();
                 checkCode = POKEMONWORLD.returnCode();
             }
             else if (eventmain == 2){
-                if(eventmain == 2 && checkCode >= 0 && checkCode < 6){
+                if(eventmain == 2 && checkCode >= 0 && checkCode <= 6){
                 POKEMONWORLD.mainAct();
                 }
                 else {
@@ -33,7 +32,7 @@ public class GAMEPOKEMON2 {
                     }
             }
             else if (eventmain == 3){
-                if(eventmain == 3 && checkCode >= 0 && checkCode < 6){
+                if(eventmain == 3 && checkCode >= 0 && checkCode <= 6){
                 MAINTOWER.MainState();
                 MAINTOWER.getCurStatusPartner();
                 MAINTOWER.getTheTOWER();

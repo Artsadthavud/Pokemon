@@ -45,6 +45,24 @@ public class FIRE extends POKEMONWORLD {
             }
         }
     }
+ 
+    public static int hpWhileFight(int damage, int hp){
+        return hp - damage;
+    }
+
+    public static int manaWhileFight(int mana,int codemana) {
+        int xmana = 0;
+        if(codemana == 1){
+            xmana = mana - 60 ;
+        }
+        else if(codemana == 2){
+            xmana = mana - 100;
+        }
+        else if (codemana == 3){
+            xmana = mana + 120 ;
+        }
+        return xmana;
+    }
 }
 
 

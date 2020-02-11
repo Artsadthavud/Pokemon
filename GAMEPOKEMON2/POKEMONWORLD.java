@@ -304,6 +304,95 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
     }
 
     
+    public static int hpWhileFight(int damage, int hp){
+        return hp - damage;
+    }
+
+    public static int regenHpWhileFight(int hpx){
+        int hpc = hpx + 300;
+        return hpc ;
+    }
+
+    public static int manaWhileFight(int mana,int codemana) {
+        int xmana = 0;
+        if(codemana == 1){
+            xmana = mana - 60 ;
+        }
+        else if(codemana == 2){
+            xmana = mana - 100;
+        }
+        else if (codemana == 3){
+            xmana = mana + 200 ;
+        }
+        return xmana;
+    }
+
+
+    public static int chaneToHitSkill(int hp,int Ndmg,int S1,int S2){
+        int hpc = 0;
+        Random n = new Random();
+        int n1 = n.nextInt(14);
+            if(n1 > 8){
+                hpc = hpWhileFight(Ndmg, hp);
+                checkHowFoesHit(1);
+            }
+            else if (n1 > 1 && n1 <= 4){
+                hpc = hpWhileFight(S1, hp);
+                checkHowFoesHit(2);
+            }
+            else if (n1 > 5 && n1 <= 8){
+                hpc = hpWhileFight(S2, hp);
+                checkHowFoesHit(3);
+            }
+            else {
+                hpc = hp ;
+                checkHowFoesHit(0);
+            }
+        return hpc;
+    }
+    
+    private static int chancehit;
+
+    public static int checkHowFoesHit(int checkx) {
+        chancehit = checkx;
+        return chancehit;
+    }
+
+    public static int getcheckHowFoesHit(){
+        int chance = chancehit;
+        return chance ;
+    }
+
+    public static void reportHowFoesHit(int check){
+        if(check == 0){
+            System.out.println("\tYOU CAN DODGE THE HIT !!");
+        }
+        else if (check == 1){
+            System.out.println("\tYOU were HIT by normal HIT !!");
+        }
+        else if (check == 2){
+            System.out.println("\tYOU were HIT by SKILL 1 !!");
+        }
+        else if (check == 3){
+            System.out.println("\tYOU were HIT by SKILL 2 !!");
+        }
+    }
+
+    public static int chaneFoesDodg(int hpf ,int damage){
+        int hpx = 0 ;
+        Random n = new Random();
+        int n1 = n.nextInt(8);
+        if(n1 < 2){
+            hpx = hpf;
+        }
+        else {
+           hpx = hpWhileFight(damage, hpf);
+        }
+        return hpx ;
+    }
+
+    
+
 }
    
     
