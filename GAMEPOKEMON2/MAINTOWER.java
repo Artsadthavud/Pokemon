@@ -133,9 +133,11 @@ public class MAINTOWER extends POKEMONWORLD {
         int eventnd = 0;
         setFoesStatus();
         do {
+            System.out.println("._____________________________________.");
             System.out.println("\t1 :  START TO TRAIN    ");
             System.out.println("\t2 : Check Status");
             System.out.println("\t3 : BACK");
+            System.out.println("._____________________________________.");
             eventT = event.nextInt();
             if (eventT == 1) {
                 System.out.println("\tStart TRAIN Tower of Death\n");
@@ -146,12 +148,14 @@ public class MAINTOWER extends POKEMONWORLD {
                 int hpf = FHP ;
                 int spr = getStatusSpPartner();
                 do{
+                    System.out.println("._____________________________________.");
                     System.out.println("\t 1 : HIT TO THE FOES ");
                     System.out.println("\t 2 : SKILL1 TO THE FOES ");
                     System.out.println("\t 3 : SKILL2 TO THE FOES ");
                     System.out.println("\t 4 : REGEN HP ");
                     System.out.println("\t 5 : REGEN SP ");
                     System.out.println("\t 6 : back ");
+                    System.out.println("._____________________________________.");
                     eventnd = event.nextInt();
                         if(eventnd == 1){
                             System.out.println("\t HIT TO THE FOES ");
@@ -166,6 +170,7 @@ public class MAINTOWER extends POKEMONWORLD {
                                 System.out.println("\t FOES CURRENT HP : "+hpf);
                              }else if (hpr <= 0 && hpf > 0){
                                 System.out.println("\t YOUR PARTNER IS DEAD haha");
+                                System.out.println("\t YOU SHALL NOT PASS ");
                                 break;
                              }
                              else if (hpr > 0 && hpf <= 0){

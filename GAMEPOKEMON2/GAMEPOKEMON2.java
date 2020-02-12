@@ -40,8 +40,7 @@ public class GAMEPOKEMON2 {
                 else{
                     System.out.println("\n**\tYOU SHOULD GO TO CHOOSE PARTNER FIRST    **");  
                 }
-            }
-            
+            }  
         }while(eventmain != 4);
      }  
 }

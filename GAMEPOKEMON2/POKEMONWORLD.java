@@ -136,7 +136,6 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
         int code = checkcode;
         return code;
     }
-
     public static void setStatusPartner() {
         if(checkcode == 0){
             curHP = MURASAME.getHPmurasame();
@@ -390,8 +389,6 @@ public class POKEMONWORLD extends GAMEPOKEMON2{
         }
         return hpx ;
     }
-
-    
 
 }
    
