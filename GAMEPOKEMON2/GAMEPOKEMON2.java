@@ -1,17 +1,14 @@
 package GAMEPOKEMON2;
-
 import java.util.*;
-
 public class GAMEPOKEMON2 {
      public static void main(String[] args) {
-
          Scanner NamePerson = new Scanner(System.in);
          Scanner EventPerson = new Scanner(System.in);
-        
-// Set name player         
+// Set name player       
+         System.out.print("\nWELLCOME TO GUNGEMON");
          System.out.print("\nEnter Your Name : ");
-         String Nameper = NamePerson.next();
-         POKEMONWORLD.setnamePlayer(Nameper);
+         String NamePerSon = NamePerson.next();
+         POKEMONWORLD.setnamePlayer(NamePerSon);
          System.out.print("\nYour Name : "+ (POKEMONWORLD.getnamePlayer() )+"\n");
          int eventmain = 0;
          int checkCode = 99;
