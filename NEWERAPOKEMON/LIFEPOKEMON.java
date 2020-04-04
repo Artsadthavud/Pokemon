@@ -1,6 +1,6 @@
 package NEWERAPOKEMON;
 
-abstract class LIFEPOKEMON {
+public abstract class LIFEPOKEMON {
     protected int HP = 0;
     protected int SP = 0;
     protected int DMG = 0;
@@ -11,4 +11,18 @@ abstract class LIFEPOKEMON {
     protected abstract void hpPokemon(int HP);
     protected abstract void spPokemon(int SP);
     protected abstract void dmgPokemon(int DMG);
+
+	public String getName() {
+        return Name;
+    }
+    public int getHP(){
+        return HP;
+    }
+    public int getSP(){
+        return SP;
+    }
+    public int getDMG(){
+        return DMG;
+    }
+
 }

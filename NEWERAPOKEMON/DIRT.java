@@ -18,18 +18,6 @@ class DIRT extends LIFEPOKEMON{
     protected int attackFoes() {
         return 0;
     }
-    public String getName() {
-        return Name;
-    }
-    public int getHP(){
-        return HP;
-    }
-    public int getSP(){
-        return SP;
-    }
-    public int getDMG(){
-        return DMG;
-    }
-
+   
   
 }
