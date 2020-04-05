@@ -2,21 +2,23 @@ package NEWERAPOKEMON;
 
 class WATER extends LIFEPOKEMON{
   
-    protected void namePokemon(String Name) {
-        this.Name = Name;
-    }
-    protected void hpPokemon(int HP) {
-        this.HP = HP;
-    }
-    protected void spPokemon(int SP){
-        this.SP = SP;
-    }
-    protected void dmgPokemon(int DMG) {
-       this.DMG = DMG;
+    
+    protected int attackFoes(int DMG) {
+        return 0;
     }
 
-    protected int attackFoes() {
-        return 0;
+    @Override
+    protected void addStatusPokemon(String Name,String cLass, int HP, int SP, int DMG) {
+        this.Name = Name;
+        this.HP = HP;
+        this.SP = SP;
+        this.DMG = DMG;
+        this.cLass = cLass;
+    }
+
+    @Override
+    protected void addName(String Name) {
+       this.Name = Name;
     }
 }
   

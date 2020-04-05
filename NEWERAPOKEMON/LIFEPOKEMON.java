@@ -5,13 +5,10 @@ public abstract class LIFEPOKEMON {
     protected int SP = 0;
     protected int DMG = 0;
     protected String Name;
+    protected String cLass;
    
-    protected abstract void namePokemon(String Name);
-    protected abstract int attackFoes();
-    protected abstract void hpPokemon(int HP);
-    protected abstract void spPokemon(int SP);
-    protected abstract void dmgPokemon(int DMG);
-
+    protected abstract int attackFoes(int DMG);
+ 
 	public String getName() {
         return Name;
     }
@@ -24,5 +21,12 @@ public abstract class LIFEPOKEMON {
     public int getDMG(){
         return DMG;
     }
+    public String getcLass() {
+        return cLass;
+    }
+    
+    // add status of pokemon
+	protected abstract void addStatusPokemon(String Name,String cLass, int HP, int SP, int DMG);
+    protected abstract void addName(String Name);
 
 }
