@@ -6,6 +6,8 @@ public abstract class LIFEPOKEMON {
     protected int DMG = 0;
     protected String Name;
     protected String cLass;
+    protected int MaxHP = 0;
+    protected int MaxSP = 0;
    
     protected abstract int attackFoes(int DMG);
  
@@ -28,5 +30,6 @@ public abstract class LIFEPOKEMON {
     // add status of pokemon
 	protected abstract void addStatusPokemon(String Name,String cLass, int HP, int SP, int DMG);
     protected abstract void addName(String Name);
+    protected abstract void setMaxStatus(int MaxHP, int MaxSP);
 
 }

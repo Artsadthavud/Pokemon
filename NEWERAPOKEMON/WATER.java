@@ -20,5 +20,10 @@ class WATER extends LIFEPOKEMON{
     protected void addName(String Name) {
        this.Name = Name;
     }
+    @Override
+    protected void setMaxStatus(int MaxHP, int MaxSP) {
+        this.MaxHP = MaxHP;
+        this.MaxSP = MaxSP;
+    }
 }
   
