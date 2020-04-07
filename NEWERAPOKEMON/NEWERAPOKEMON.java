@@ -131,6 +131,7 @@ public class NEWERAPOKEMON {
             int numberofpokemon = 0 ;
             int countnumofpokemon = 0;
             int eventmeetpartner = 0;
+            int eventChooosetoFeed = 0;
                 // SHOW STATUS CURRENT POKEMON
                 while(MYPOKEMON.size() != numberofpokemon) {
                     countnumofpokemon += 1;
@@ -140,11 +141,12 @@ public class NEWERAPOKEMON {
                     // main action meet partner
                     while(numberofpokemon != 0){
                         if(countnumofpokemon == 1){
-                            // act meetPartner
+                            //pass act meetPartner
                             System.out.println("TEST ");
                         }
                         else if(countnumofpokemon > 1){
                             System.out.println("Choose partner : ");
+                            eventChooosetoFeed = EventPerson.nextInt();
                         }
 
                             while(eventmeetpartner != 4){
@@ -153,11 +155,23 @@ public class NEWERAPOKEMON {
                                     if (eventmeetpartner == 4){
                                         break;
                                     }
+                                    // eat to heal hp 
                                     else if(eventmeetpartner == 1){
-
+                                        int Feed = 200;
+                                        LIFEPOKEMON.eat(MYPOKEMON.get(eventChooosetoFeed),Feed);
+                                    }
+                                    // commu to heal sp
+                                    else if(eventmeetpartner == 2){
+                                        ACTIONONWORLD.CommunicateHealSP();
+                                        ACTIONONWORLD.TouchheadAct(MYPOKEMON.get(eventChooosetoFeed));
+                                    }
+                                    else if(eventmeetpartner == 3){
+                                        String Name = ACTIONONWORLD.inputName();
+                                        ACTIONONWORLD.setName(Name, MYPOKEMON.get(eventChooosetoFeed));
+                                        System.out.println(" SHOW NAME " + MYPOKEMON.get(eventChooosetoFeed).Name);
                                     }
                             }
-                        
+                        break;
                     }
             }
             else if(eventmain == 2){
