@@ -1,5 +1,6 @@
 package NEWERAPOKEMON;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ACTIONONWORLD extends NEWERAPOKEMON {
@@ -20,7 +21,7 @@ public class ACTIONONWORLD extends NEWERAPOKEMON {
     public static void mainMenu() {
         System.out.println("MAIN MENU ");
         System.out.println(" 1 : Meet your partner");
-        System.out.println(" 2 : TOWER");
+        System.out.println(" 2 : GYM");
         System.out.println(" 3 : Quit");
     }
 
@@ -57,11 +58,13 @@ public class ACTIONONWORLD extends NEWERAPOKEMON {
     }
 
     public static void showStatus(LIFEPOKEMON lifepokemon) {
-        System.out.println(lifepokemon.getName());
-        System.out.println(lifepokemon.getHP());
-        System.out.println(lifepokemon.getSP());
-        System.out.println(lifepokemon.getDMG());
-        System.out.println(lifepokemon.getcLass());
+        System.out.println("NAME :" + lifepokemon.getName());
+        System.out.println("HP :" + lifepokemon.getHP());
+        System.out.println("SP :" + lifepokemon.getSP());
+        System.out.println("DAMAGE :" + lifepokemon.getDMG());
+        System.out.println("CLASS" + lifepokemon.getcLass());
+        System.out.println("LEVEL :" + lifepokemon.LEVEL);
+        System.out.println("XP :" + lifepokemon.XP);
     }
 
     // first meet at game to enter name && choose partner
@@ -101,9 +104,14 @@ public static void setName(String Name, LIFEPOKEMON lifepokemon) {
       
         return count;
     }
-    public void checkMax(LIFEPOKEMON lifepokemon){
-
-    
+    public static int checkBag(ArrayList<LIFEPOKEMON> mYPOKEMON){
+        int numberofpokemon = 0 ;
+        int countnumofpokemon = 0;
+        while(mYPOKEMON.size() != numberofpokemon) {
+            countnumofpokemon += 1;
+            numberofpokemon += 1;
+        }
+        return countnumofpokemon;
     }
 
     public static void CommunicateHealSP(){
@@ -118,29 +126,49 @@ public static void setName(String Name, LIFEPOKEMON lifepokemon) {
     }
     public static void TouchheadAct(LIFEPOKEMON lifepokemon){
         Scanner eventtouch = new Scanner(System.in);
+
+        // show choise to do with partner
+        CommunicateHealSP();
+
+        // execute after choose act
+        int evenComm = eventtouch.nextInt();
+        if(evenComm == 1){
         System.out.println(NamePlayer + " : What do you feel?");
             if(lifepokemon.cLass == "FIRE"){
                 System.out.println(lifepokemon.Name + " : Put your hand out of my head if not i will burn your hand !!");
+                LIFEPOKEMON.updateTrusting(lifepokemon, -5);
                 touchHeadComm();
                 int eventtouchhead = eventtouch.nextInt();
                     if(eventtouchhead == 1){
                         System.out.println(lifepokemon.Name + " : Good !!");
-                        LIFEPOKEMON.discommmuSP(lifepokemon, 5);                    
+                        LIFEPOKEMON.discommmuSP(lifepokemon, 5);
+                        LIFEPOKEMON.updateTrusting(lifepokemon, -5);
+                        showStatus(lifepokemon);                    
                     }
                     else if(eventtouchhead == 2){
                         System.out.println(lifepokemon.Name + " : Put your hand out of my head NOWWWW !!");
                         LIFEPOKEMON.discommmuSP(lifepokemon, 200);
+                        LIFEPOKEMON.updateTrusting(lifepokemon, -20);
+                        showStatus(lifepokemon);
                     }
             }
             
             else if(lifepokemon.cLass == "WATER"){
                 System.out.println(lifepokemon.Name + " : Pretty good !!");
                 LIFEPOKEMON.commuPartner(lifepokemon, 200);
+                LIFEPOKEMON.updateTrusting(lifepokemon, 20);
+                showStatus(lifepokemon);
             }
             else if(lifepokemon.cLass == "DIRT"){
                 System.out.println(lifepokemon.Name + " : Why human like to touch head other species I dont like but not hate");
                 LIFEPOKEMON.commuPartner(lifepokemon, 50);
+                LIFEPOKEMON.updateTrusting(lifepokemon, 10);
+                showStatus(lifepokemon);
             }
+        }
+        else if(evenComm == 2){
+            
+        }
             
     }
 

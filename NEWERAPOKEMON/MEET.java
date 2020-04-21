@@ -24,6 +24,7 @@ public static void firstMeetPartner(LIFEPOKEMON lifepokemon) {
         int eventChangeName = eventChangeNamePartner.nextInt();
             if(eventChangeName == 1){
                 System.out.println(NamePlayer + " : YES  I will call you " + lifepokemon.getName());
+                LIFEPOKEMON.updateTrusting(lifepokemon, 10);
                 checkmain = false;
             }
             else if(eventChangeName == 2){
@@ -31,6 +32,7 @@ public static void firstMeetPartner(LIFEPOKEMON lifepokemon) {
                 String NamePartner = eventChangeNamePartner.next();
                 lifepokemon.addName(NamePartner);
                 System.out.println(NamePlayer + "I will call you " + lifepokemon.getName());
+                LIFEPOKEMON.updateTrusting(lifepokemon, 5);
                 checkmain = false;
             }
     }
@@ -43,6 +45,7 @@ public static void firstMeetPartner(LIFEPOKEMON lifepokemon) {
         int eventChangeName = eventChangeNamePartner.nextInt();
             if(eventChangeName == 1){
                 System.out.println(lifepokemon.getName() + " : OK then I will call you " + NamePlayer);
+                LIFEPOKEMON.updateTrusting(lifepokemon, 10);
                 checkNameCall = false;
             }
             else if(eventChangeName == 2){
@@ -53,6 +56,7 @@ public static void firstMeetPartner(LIFEPOKEMON lifepokemon) {
                         int eventchecknamecall = eventChangeNamePartner.nextInt();
                             if(eventchecknamecall == 1){
                                 System.out.print(lifepokemon.getName() + " : OK partner I will call you " + NamePlayer + "I Love this name");
+                                LIFEPOKEMON.updateTrusting(lifepokemon, 20);
                                 checkChangeName  = false;
                             }
                             else if(eventchecknamecall == 2){
@@ -60,6 +64,7 @@ public static void firstMeetPartner(LIFEPOKEMON lifepokemon) {
                                 String NamePartner = eventChangeNamePartner.next();
                                 ACTIONONWORLD.setNamePlayer(NamePartner);
                                 System.out.print(lifepokemon.getName() + " : OK partner I will call you " + NamePlayer);
+                                LIFEPOKEMON.updateTrusting(lifepokemon, 10);
                                 checkChangeName  = false;
                             }
                 }
@@ -71,4 +76,4 @@ public static void firstMeetPartner(LIFEPOKEMON lifepokemon) {
 
 }
 
-}
+}  

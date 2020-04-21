@@ -110,7 +110,7 @@ public class NEWERAPOKEMON {
             }
         }while(true);
 
-
+        ACTIONONWORLD.showStatus(MYPOKEMON.get(0));
         //first meet partner
         MEET.firstMeetPartner(MYPOKEMON.get(0));
         // back to main menu when complete to choose partner && set name
@@ -128,15 +128,15 @@ public class NEWERAPOKEMON {
             // show status partner
             else if (eventmain == 1){
             // for check pokrmon in bag
-            int numberofpokemon = 0 ;
+            int numberofpokemon = 10 ;
             int countnumofpokemon = 0;
             int eventmeetpartner = 0;
             int eventChooosetoFeed = 0;
                 // SHOW STATUS CURRENT POKEMON
-                while(MYPOKEMON.size() != numberofpokemon) {
-                    countnumofpokemon += 1;
-                    numberofpokemon += 1;
-                }
+             
+                //check pokemon in bag
+               countnumofpokemon =  ACTIONONWORLD.checkBag(MYPOKEMON);
+
                     System.out.println(" You have POKEMON : " + countnumofpokemon);
                     // main action meet partner
                     while(numberofpokemon != 0){
@@ -147,6 +147,9 @@ public class NEWERAPOKEMON {
                         else if(countnumofpokemon > 1){
                             System.out.println("Choose partner : ");
                             eventChooosetoFeed = EventPerson.nextInt();
+                        }
+                        else if(countnumofpokemon == 0){
+                            System.out.println("YOU HAVE NO POKEMON");
                         }
 
                             while(eventmeetpartner != 4){
@@ -162,13 +165,14 @@ public class NEWERAPOKEMON {
                                     }
                                     // commu to heal sp
                                     else if(eventmeetpartner == 2){
-                                        ACTIONONWORLD.CommunicateHealSP();
+                            
                                         ACTIONONWORLD.TouchheadAct(MYPOKEMON.get(eventChooosetoFeed));
                                     }
                                     else if(eventmeetpartner == 3){
                                         String Name = ACTIONONWORLD.inputName();
                                         ACTIONONWORLD.setName(Name, MYPOKEMON.get(eventChooosetoFeed));
                                         System.out.println(" SHOW NAME " + MYPOKEMON.get(eventChooosetoFeed).Name);
+                                        LIFEPOKEMON.updateTrusting(MYPOKEMON.get(eventChooosetoFeed), -5);
                                     }
                             }
                         break;
@@ -176,8 +180,9 @@ public class NEWERAPOKEMON {
             }
             else if(eventmain == 2){
                 do{
-                ACTIONONWORLD.meetPartner();
-                subevent = EventPerson.nextInt();
+                    GYM.PTOLEMAIOS();
+                    GYM.nameGym();
+                    subevent = EventPerson.nextInt();
             }while(subevent != 4);
             }
         } 
