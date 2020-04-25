@@ -1,6 +1,7 @@
 package NEWERAPOKEMON;
 import java.util.*;
 
+
 public class NEWERAPOKEMON {
     public static void main(String[] args) {
     
@@ -47,10 +48,15 @@ public class NEWERAPOKEMON {
         Scanner EventPerson = new Scanner(System.in);
        
 // sign name player    
-        ACTIONONWORLD.firstMeetSetName();
-
+        int checj = 0 ;
+        if(checj == 0){
+            new MAINGAME();
+            checj = 1 ;
+        }
+      
+      
 // CHOOSE PARTNER
-          do{ 
+          while(true){ 
             // choose class partner
             ACTIONONWORLD.choosePartner();
             Scanner ChoosePartner = new Scanner(System.in);
@@ -108,7 +114,7 @@ public class NEWERAPOKEMON {
             else if(EventChoosePartner == 4){
                 break;
             }
-        }while(true);
+        }
 
         ACTIONONWORLD.showStatus(MYPOKEMON.get(0));
         //first meet partner

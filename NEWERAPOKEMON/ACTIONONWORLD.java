@@ -14,7 +14,7 @@ public class ACTIONONWORLD extends NEWERAPOKEMON {
         System.out.println("1 : FIRE ");
         System.out.println("2 : WATER");
         System.out.println("3 : DIRT");
-        System.out.println("4 : back");
+        System.out.println("4 : Back");
     }
 
     // main state
@@ -95,7 +95,7 @@ public static void setName(String Name, LIFEPOKEMON lifepokemon) {
 }
 
 //get name to use
-    public String getNamePlayer() {
+    public static String getNamePlayer() {
         return NamePlayer;
     }
 
