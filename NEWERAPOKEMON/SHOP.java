@@ -72,12 +72,6 @@ JLabel imgFood = new JLabel(imageFood);
 imgFood.setBounds(100, 390, 100, 100);
 
 
-
-getContentPane().add(goal).setVisible(true);;
-getContentPane().add(potion);
-getContentPane().add(mana);
-getContentPane().add(food);
-
 // Create Event for Button
 btnOpen.addActionListener(new ActionListener() {
 public void actionPerformed(ActionEvent evt) {
@@ -86,9 +80,8 @@ public void actionPerformed(ActionEvent evt) {
     if(MONEY.getMoney() > 0 && MONEY.getMoney() - 100 >= 0){
         MONEY.updateMoney(-100);
         INVENTORYSYSYEM.addItemInventory("Potion");
-        SHOP nShop = new SHOP();
-        nShop.setVisible(true);
-        setVisible(false);
+        goal.setText("You have GOLD "+ MONEY.getMoney() +"Stung");
+        potion.setText(" You have POTION " + INVENTORYSYSYEM.checkThing("Potion"));
     }
     else{
         final ImageIcon icon = new ImageIcon(getClass().getResource("/logo_potion.png"));
@@ -100,14 +93,15 @@ public void actionPerformed(ActionEvent evt) {
     getContentPane().add(goal);
 }
 });    
+
 btnOpen1.addActionListener(new ActionListener() {
     public void actionPerformed(ActionEvent evt) {
         if(MONEY.getMoney() > 0 && MONEY.getMoney() - 100 >= 0){
             MONEY.updateMoney(-100);
             INVENTORYSYSYEM.addItemInventory("Mana");
-            SHOP nShop = new SHOP();
-            nShop.setVisible(true);
-            setVisible(false);
+            goal.setText("You have GOLD "+ MONEY.getMoney() +"Stung");
+            mana.setText(" You have MANA " + INVENTORYSYSYEM.checkThing("Mana"));
+          
         }
         else{
             final ImageIcon icon = new ImageIcon(getClass().getResource("/logo_mana.png"));
@@ -115,14 +109,15 @@ btnOpen1.addActionListener(new ActionListener() {
         }
     }
     });   
+
     btnOpen2.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent evt) {
             if(MONEY.getMoney() > 0 && MONEY.getMoney() - 100 >= 0){
                 MONEY.updateMoney(-200);
                 INVENTORYSYSYEM.addItemInventory("Food");
-                SHOP nShop = new SHOP();
-                nShop.setVisible(true);
-                setVisible(false);
+                goal.setText("You have GOLD "+ MONEY.getMoney() +"Stung");
+                food.setText(" You have FOOD " + INVENTORYSYSYEM.checkThing("Food"));
+              
             }
             else{
                 final ImageIcon icon = new ImageIcon(getClass().getResource("/logo_food.png"));
@@ -141,9 +136,11 @@ btnOpen1.addActionListener(new ActionListener() {
               
             }
             });  
-    
 
-
+getContentPane().add(goal);
+getContentPane().add(potion);
+getContentPane().add(mana);
+getContentPane().add(food);
 getContentPane().add(imgGold);
 getContentPane().add(imgPotion);
 getContentPane().add(imgMana);

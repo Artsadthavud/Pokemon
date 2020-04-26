@@ -62,7 +62,7 @@ public class FIREPARTNER extends JFrame {
                 PROFILEPARTNER.setS2Pic("" + "/image/Sred3.png" + "");
                 PROFILEPARTNER.setDetailAtk("MELEE ATTACK");
                 PROFILEPARTNER.setDetailS1("BREAK SHIELD");
-                PROFILEPARTNER.setDetailS2("1000 SWORDS OF GOD");
+                PROFILEPARTNER.setDetailS2("BURN BABY BURN");
 
                 // New Form
                 MAINGAMES form2 = new MAINGAMES();
@@ -84,7 +84,7 @@ public class FIREPARTNER extends JFrame {
                 PROFILEPARTNER.setS2Pic("" + "/image/Sred5.png" + "");
                 PROFILEPARTNER.setDetailAtk("RANGE ATTACK");
                 PROFILEPARTNER.setDetailS1("SUPER ARROW");
-                PROFILEPARTNER.setDetailS2("SUPER VOCANO");
+                PROFILEPARTNER.setDetailS2("SET FIRE TO THE RAIN");
                 
                 // New Form
                 MAINGAMES form2 = new MAINGAMES();

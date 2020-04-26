@@ -36,7 +36,7 @@ getContentPane().setLayout(null);
 JLabel labelHead = new JLabel("Wellcome " + ACTIONONWORLD.getNamePlayer());
 labelHead.setBounds(380, 23, 300,50);
 
-JLabel goal = new JLabel(" You have GOLD 1000 Stung");
+JLabel goal = new JLabel(" You have GOLD 2000 Stung");
 goal.setBounds(250, 103, 200, 30);
 
 JLabel potion = new JLabel(" You have POTION 10");

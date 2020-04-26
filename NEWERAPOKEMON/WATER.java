@@ -24,8 +24,21 @@ class WATER extends LIFEPOKEMON{
     }
     @Override
     protected void setMaxStatus(int MaxHP, int MaxSP) {
-        this.MaxHP = MaxHP;
-        this.MaxSP = MaxSP;
+        this.MaxHP = MaxHP + 200;
+        this.MaxSP = MaxSP + 200;
+    }
+
+    @Override
+    protected void addFoesStatus(String fname, String fcLass, int fHP, int fDMG, int fs1dmg, int fs2dmg) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void updatefHP(int fHP) {
+        // TODO Auto-generated method stub
+        this.fHP = fHP;
+
     }
 }
   

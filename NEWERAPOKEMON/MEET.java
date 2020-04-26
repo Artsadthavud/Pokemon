@@ -38,7 +38,7 @@ public class MEET extends JFrame {
 
        
 
-        JLabel statusHP = new JLabel(" HP :  " + LIFEPOKEMON.getHP() + " /  " + LIFEPOKEMON.getMaxHP());
+        JLabel statusHP = new JLabel(" HP :  " + LIFEPOKEMON.getHP() + " / " + LIFEPOKEMON.getMaxHP());
         statusHP.setBounds(80, 400, 200, 50);
 
         JLabel statusSP = new JLabel(" SP :  " + LIFEPOKEMON.getSP() + " / " + LIFEPOKEMON.getMaxSP());
@@ -86,7 +86,11 @@ public class MEET extends JFrame {
 
                 if(INVENTORYSYSYEM.checkThing("Food") > 0){
                     INVENTORYSYSYEM.useIteminventory("Food");
+                    LIFEPOKEMON.healHP(50);
+                    LIFEPOKEMON.healSP(50);
                     JOptionPane.showMessageDialog(null," Success to Feed  Your Food -1 ","FEED FOOD",JOptionPane.INFORMATION_MESSAGE,icon);
+                    statusHP.setText(" HP :  " + LIFEPOKEMON.getHP() + " / " + LIFEPOKEMON.getMaxHP());
+                    statusSP.setText(" SP :  " + LIFEPOKEMON.getSP() + " / " + LIFEPOKEMON.getMaxSP());
                 }
                 else{
                     JOptionPane.showMessageDialog(null," Fail to Feed  You have no Food ","FEED FOOD",JOptionPane.INFORMATION_MESSAGE,icon);
@@ -99,7 +103,9 @@ public class MEET extends JFrame {
     
                     if(INVENTORYSYSYEM.checkThing("Potion") > 0){
                         INVENTORYSYSYEM.useIteminventory("Potion");
+                        LIFEPOKEMON.healHP(100);
                         JOptionPane.showMessageDialog(null," Success to Use  Your Potion -1 ","USE POTION",JOptionPane.INFORMATION_MESSAGE,icon);
+                        statusHP.setText(" HP :  " + LIFEPOKEMON.getHP() + " / " + LIFEPOKEMON.getMaxHP());
                     }
                     else{
                         JOptionPane.showMessageDialog(null," Fail to Use  You have no Potion ","USE POTION",JOptionPane.INFORMATION_MESSAGE,icon);
@@ -112,7 +118,9 @@ public class MEET extends JFrame {
         
                         if(INVENTORYSYSYEM.checkThing("Mana") > 0){
                             INVENTORYSYSYEM.useIteminventory("Mana");
+                            LIFEPOKEMON.healSP(100);
                             JOptionPane.showMessageDialog(null," Success to Use  Your Mana -1 ","USE MANA",JOptionPane.INFORMATION_MESSAGE,icon);
+                            statusSP.setText(" SP :  " + LIFEPOKEMON.getSP() + " / " + LIFEPOKEMON.getMaxSP());
                         }
                         else{
                             JOptionPane.showMessageDialog(null," Fail to Use  You have no Mana ","USE MANA",JOptionPane.INFORMATION_MESSAGE,icon);
@@ -136,10 +144,10 @@ public class MEET extends JFrame {
                     }});
                     
         JButton fire3 = new JButton("3 : BACK");
-        fire3.setBounds(400, 500, 200, 23);
+            fire3.setBounds(400, 500, 200, 23);
 
-        fire3.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
+             fire3.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
                 // New Form
                 MAINGAMES form1 = new MAINGAMES();
                     form1.setVisible(true);

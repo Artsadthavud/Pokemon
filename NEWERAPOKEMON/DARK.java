@@ -1,14 +1,15 @@
 package NEWERAPOKEMON;
 
-class DIRT extends LIFEPOKEMON{
-  
+public class DARK extends LIFEPOKEMON {
 
+    @Override
     protected int attackFoes(int DMG) {
+        // TODO Auto-generated method stub
         return 0;
     }
 
     @Override
-    protected void addStatusPokemon(String Name,String cLass, int HP, int SP, int DMG,int s1DMG,int s2DMG) {
+    protected void addStatusPokemon(String Name, String cLass, int HP, int SP, int DMG, int s1dmg, int s2dmg) {
         this.Name = Name;
         this.HP = HP;
         this.SP = SP;
@@ -16,24 +17,23 @@ class DIRT extends LIFEPOKEMON{
         this.s1DMG = s1DMG;
         this.s2DMG = s2DMG;
         this.cLass = cLass;
-      }
-    @Override
-    protected void addName(String Name) {
-       this.Name = Name;
+
     }
 
     @Override
     protected void setMaxStatus(int MaxHP, int MaxSP) {
-        this.MaxHP = MaxHP + 200 ;
-        this.MaxSP = MaxSP + 200 ;
+        // TODO Auto-generated method stub
+
     }
 
     @Override
     protected void addFoesStatus(String fname, String fcLass, int fHP, int fDMG, int fs1dmg, int fs2dmg) {
-        
-
+        this.fHP = fHP;
+        this.fDMG = fDMG;
+        this.fname = fname;
+        this.fs1DMG = fs1dmg;
+        this.fs2DMG = fs2dmg;
     }
-  
 
     @Override
     public void updatefHP(int fHP) {
@@ -41,5 +41,4 @@ class DIRT extends LIFEPOKEMON{
         this.fHP = fHP;
 
     }
-  
 }

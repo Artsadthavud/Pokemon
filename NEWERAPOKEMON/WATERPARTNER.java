@@ -64,7 +64,7 @@ public class WATERPARTNER extends JFrame {
                PROFILEPARTNER.setS2Pic("" + "/image/Sblue3.png" + "");
                PROFILEPARTNER.setDetailAtk("MELEE ATTACK");
                PROFILEPARTNER.setDetailS1("HOLY SHIELD");
-               PROFILEPARTNER.setDetailS2("ICE HEARTH");
+               PROFILEPARTNER.setDetailS2("HEARTEATER");
                 // New Form
                 MAINGAMES form2 = new MAINGAMES();
                 form2.setVisible(true);

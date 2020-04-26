@@ -33,6 +33,8 @@ JButton btnInventory = new JButton("INVENTORY");
 btnInventory.setBounds(300, 125, 200, 23);
 JButton btnMeet = new JButton("MEET PARTNER");
 btnMeet.setBounds(300, 175, 200, 23);
+JButton btnGym = new JButton(" GYM ");
+btnGym.setBounds(300, 225, 200, 23);
 
 // Create Event for Button
 btnInventory.addActionListener(new ActionListener() {
@@ -53,9 +55,19 @@ btnMeet.addActionListener(new ActionListener() {
         setVisible(false);
     }
     }); 
+    btnGym.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+           // New Form
+            GYM form1 = new GYM();
+            form1.setVisible(true);
+            // Hide Current Form
+            setVisible(false);
+        }
+        }); 
 getContentPane().add(labelHead);
 getContentPane().add(label);
 getContentPane().add(btnInventory);
 getContentPane().add(btnMeet);
+getContentPane().add(btnGym);
 }   
 }

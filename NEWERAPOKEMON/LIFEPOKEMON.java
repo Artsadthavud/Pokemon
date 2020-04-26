@@ -10,13 +10,17 @@ public abstract class LIFEPOKEMON {
     protected String cLass;
     protected static int MaxHP = 0;
     protected static int MaxSP = 0;
-    protected int XP = 0;
-    protected int LEVEL = 0;
-    protected int Trusting = 0;
+    protected int fHP = 0;
+    protected int fDMG = 0;
+    protected int fs1DMG = 0;
+    protected int fs2DMG = 0;
+    protected String fname ;
 
     public static void setName(String Name) {
         LIFEPOKEMON.Name = Name;
     }
+
+
     public static String getName() {
         return Name;
     }
@@ -24,6 +28,27 @@ public abstract class LIFEPOKEMON {
     public static int getHP() {
         return HP;
     }
+
+    public String getfName() {
+        return fname;
+    }
+
+    public int getfHP() {
+        return fHP;
+    }
+    
+    public int getfDMG() {
+        return fDMG;
+    }
+
+    public int getfs1DMG() {
+        return fs1DMG;
+    }
+
+    public int getfs2DMG() {
+        return fs2DMG;
+    }
+
 
     public static int getSP() {
         return SP;
@@ -49,39 +74,49 @@ public abstract class LIFEPOKEMON {
         return cLass;
     }
 
+    public static void updateHP(int HP){
+        LIFEPOKEMON.HP = HP;
+    }
+    public abstract void updatefHP(int fHP);
+
     // action pokrmon
     //heal HP
-    public static void eat(LIFEPOKEMON lifepokemon, int Feed){
-        if(lifepokemon.HP == lifepokemon.MaxHP){
-            System.out.println("I be full now Stopppp feed me !!");
+    public static void healHP( int Feed){
+        if(LIFEPOKEMON.HP == LIFEPOKEMON.MaxHP) {
+            LIFEPOKEMON.HP = LIFEPOKEMON.MaxHP;
          
         }
-        else if(lifepokemon.HP + Feed > lifepokemon.MaxHP){
-            lifepokemon.HP = lifepokemon.MaxHP;
-            System.out.println("I be full now thank my partner !!");
+        else if(LIFEPOKEMON.HP + Feed >= LIFEPOKEMON.MaxHP) {
+            LIFEPOKEMON.HP = LIFEPOKEMON.MaxHP;
+           
         }
-        else if(lifepokemon.HP + Feed < lifepokemon.MaxHP){
-            lifepokemon.HP = lifepokemon.HP + Feed;
-            System.out.println("I need more can you give me my partner !!");
+        else if(LIFEPOKEMON.HP + Feed < LIFEPOKEMON.MaxHP) {
+            LIFEPOKEMON.HP = LIFEPOKEMON.HP + Feed;
+           
         }
     }
     //heal SP
-    public static void commuPartner(LIFEPOKEMON lifepokemon, int Commu){
-        if(lifepokemon.SP == lifepokemon.MaxSP){
+    public static void healSP(int Commu){
+        if(LIFEPOKEMON.SP == LIFEPOKEMON.MaxSP) {
             // pass to new action
-            System.out.println("TEST COMMU");
+            LIFEPOKEMON.SP = LIFEPOKEMON.MaxSP;
         }
-        else if(lifepokemon.SP + Commu > lifepokemon.MaxSP){
-            lifepokemon.SP = lifepokemon.MaxSP;
-            System.out.println("I feeling fresh now thank my partner!!");
+        else if(LIFEPOKEMON.SP + Commu >= LIFEPOKEMON.MaxSP) {
+            LIFEPOKEMON.SP = LIFEPOKEMON.MaxSP;
+          
         }
-        else if(lifepokemon.SP + Commu < lifepokemon.MaxSP){
-            lifepokemon.SP = lifepokemon.SP + Commu;
+        else if(LIFEPOKEMON.SP + Commu < LIFEPOKEMON.MaxSP) {
+            LIFEPOKEMON.SP = LIFEPOKEMON.SP + Commu;
         }
     }
     // reduce sp
-    public static void discommmuSP(LIFEPOKEMON lifepokemon, int rSP){
-        lifepokemon.SP = lifepokemon.SP - rSP ;
+    public static void useSP(int rSP){
+        if( SP - rSP > 0 || SP - rSP ==0){
+            SP = SP - rSP ;
+        }
+        else if(SP - rSP < 0){
+        }
+        
     }
 
     // increse Trusting
@@ -110,7 +145,7 @@ public abstract class LIFEPOKEMON {
 
         return level;
     }
-
+    protected abstract void addFoesStatus(String fname, String fcLass, int fHP, int fDMG,int fs1DMG,int fs2DMG);
     protected abstract int attackFoes(int DMG);
     // add status of pokemon
 	protected abstract void addStatusPokemon(String Name,String cLass, int HP, int SP, int DMG, int s1DMG, int s2DMG);
