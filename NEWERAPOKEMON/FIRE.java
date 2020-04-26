@@ -8,11 +8,13 @@ class FIRE extends LIFEPOKEMON{
     }
 
     @Override
-    protected void addStatusPokemon(String Name,String cLass, int HP, int SP, int DMG) {
+    protected void addStatusPokemon(String Name,String cLass, int HP, int SP, int DMG,int s1DMG,int s2DMG) {
       this.Name = Name;
       this.HP = HP;
       this.SP = SP;
       this.DMG = DMG;
+      this.s1DMG = s1DMG;
+      this.s2DMG = s2DMG;
       this.cLass = cLass;
     }
     @Override

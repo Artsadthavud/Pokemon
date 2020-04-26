@@ -48,11 +48,7 @@ public class NEWERAPOKEMON {
         Scanner EventPerson = new Scanner(System.in);
        
 // sign name player    
-        int checj = 0 ;
-        if(checj == 0){
-            new MAINGAME();
-            checj = 1 ;
-        }
+    
       
       
 // CHOOSE PARTNER

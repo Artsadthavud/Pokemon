@@ -51,8 +51,22 @@ public class WATERPARTNER extends JFrame {
 
         water1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
+                 // add to bag
+                LIFEPOKEMON KUNKA = new WATER();
+                KUNKA.addStatusPokemon("KUNKA","WATER", 850, 450, 120,130,200);
+                KUNKA.setMaxStatus(850, 450);
+                BAG.partner(KUNKA);
+                
+               // set profile partner
+               PROFILEPARTNER.setProfilePic("" + "/kunla.jpg" + "");
+               PROFILEPARTNER.setAtkPic("" + "/image/Sblue1.png" + "");
+               PROFILEPARTNER.setS1Pic("" + "/image/Sblue2.png" + "");
+               PROFILEPARTNER.setS2Pic("" + "/image/Sblue3.png" + "");
+               PROFILEPARTNER.setDetailAtk("MELEE ATTACK");
+               PROFILEPARTNER.setDetailS1("HOLY SHIELD");
+               PROFILEPARTNER.setDetailS2("ICE HEARTH");
                 // New Form
-                WATERPARTNER form2 = new WATERPARTNER();
+                MAINGAMES form2 = new MAINGAMES();
                 form2.setVisible(true);
                 // Hide Current Form
                 setVisible(false);
@@ -60,8 +74,22 @@ public class WATERPARTNER extends JFrame {
         });
         water2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
+                 // add to bag
+                 LIFEPOKEMON SLARK = new WATER();
+                 SLARK.addStatusPokemon("SLARK","WATER", 895, 460, 115,125,200);
+                 SLARK.setMaxStatus(895, 460);
+                 BAG.partner(SLARK);
+                
+               // set profile partner
+               PROFILEPARTNER.setProfilePic("" + "/Slark.jpg" + "");
+               PROFILEPARTNER.setAtkPic("" + "/image/Sblue1.png" + "");
+               PROFILEPARTNER.setS1Pic("" + "/image/Sblue4.png" + "");
+               PROFILEPARTNER.setS2Pic("" + "/image/Sblue5.png" + "");
+               PROFILEPARTNER.setDetailAtk("MELEE ATTACK");
+               PROFILEPARTNER.setDetailS1("FEATHER SWORD");
+               PROFILEPARTNER.setDetailS2("DEMON FORM");
                 // New Form
-                WATERPARTNER form2 = new WATERPARTNER();
+                MAINGAMES form2 = new MAINGAMES();
             form2.setVisible(true);
             // Hide Current Form
             setVisible(false);

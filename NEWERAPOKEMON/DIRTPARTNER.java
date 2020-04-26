@@ -13,9 +13,7 @@ public class DIRTPARTNER extends JFrame {
                 DIRTPARTNER form = new DIRTPARTNER();
                 form.setVisible(true);
             }
-
         });
-
     }
 
     public DIRTPARTNER() {
@@ -51,8 +49,22 @@ public class DIRTPARTNER extends JFrame {
 
         dirt1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
+                 // add to bag
+                LIFEPOKEMON EARTHSHAKER = new DIRT();
+                EARTHSHAKER.addStatusPokemon("EARTHSHAKER","DIRT", 920, 420, 110,125,200);
+                EARTHSHAKER.setMaxStatus(920, 420);
+                 BAG.partner(EARTHSHAKER);
+              
+                 // set profile partner
+                 PROFILEPARTNER.setProfilePic("" + "/Earthshaker.jpg" + "");
+                 PROFILEPARTNER.setAtkPic("" + "/image/Sdirt1.png" + "");
+                 PROFILEPARTNER.setS1Pic("" + "/image/Sdirt2.png" + "");
+                 PROFILEPARTNER.setS2Pic("" + "/image/Sdirt3.png" + "");
+                 PROFILEPARTNER.setDetailAtk("MELEE ATTACK");
+                PROFILEPARTNER.setDetailS1("SAND STORM");
+                PROFILEPARTNER.setDetailS2("METEO");
                 // New Form
-                DIRTPARTNER form2 = new DIRTPARTNER();
+                MAINGAMES form2 = new MAINGAMES();
                 form2.setVisible(true);
                 // Hide Current Form
                 setVisible(false);
@@ -60,8 +72,22 @@ public class DIRTPARTNER extends JFrame {
         });
         dirt2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
+                 // add to bag
+                LIFEPOKEMON SANDKING = new DIRT();
+                SANDKING.addStatusPokemon("SANDKING","DIRT", 900, 400, 111,125,200);
+                SANDKING.setMaxStatus(900, 400);
+                BAG.partner(SANDKING);
+                
+                 // set profile partner
+                 PROFILEPARTNER.setProfilePic("" + "/Sandking.jpg" + "");
+                 PROFILEPARTNER.setAtkPic("" + "/image/Sdirt1.png" + "");
+                 PROFILEPARTNER.setS1Pic("" + "/image/Sdirt4.png" + "");
+                 PROFILEPARTNER.setS2Pic("" + "/image/Sdirt5.png" + "");
+                 PROFILEPARTNER.setDetailAtk("MELEE ATTACK");
+                PROFILEPARTNER.setDetailS1("DIRT HAND");
+                PROFILEPARTNER.setDetailS2("ANCIENT ORDER");
                 // New Form
-                DIRTPARTNER form2 = new DIRTPARTNER();
+                MAINGAMES form2 = new MAINGAMES();
             form2.setVisible(true);
             // Hide Current Form
             setVisible(false);
