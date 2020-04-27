@@ -6,18 +6,8 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class INVENTORY extends JFrame {
-    public static void main(String[] args) {
 
-        EventQueue.invokeLater(new Runnable() {
-
-            public void run() {
-                INVENTORY form = new INVENTORY();
-                form.setVisible(true);
-            }
-        });
-    }
-
-    public INVENTORY() {
+    public INVENTORY(LIFEPOKEMON lifepokemon) {
         // Create Form Frame
         super("GUNGEMON");
 
@@ -68,7 +58,7 @@ public class INVENTORY extends JFrame {
     fire3.addActionListener(new ActionListener() {
     public void actionPerformed(ActionEvent evt) {
         // New Form
-        MAINGAMES form1 = new MAINGAMES();
+        MAINGAMES form1 = new MAINGAMES(lifepokemon);
         form1.setVisible(true);
             // Hide Current Form
             setVisible(false);
@@ -78,7 +68,7 @@ public class INVENTORY extends JFrame {
 shop.addActionListener(new ActionListener() {
     public void actionPerformed(ActionEvent evt) {
         // New Form
-        SHOP form1 = new SHOP();
+        SHOP form1 = new SHOP(lifepokemon);
         form1.setVisible(true);
             // Hide Current Form
             setVisible(false);

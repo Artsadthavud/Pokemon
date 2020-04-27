@@ -64,7 +64,7 @@ public class DIRTPARTNER extends JFrame {
                 PROFILEPARTNER.setDetailS1("SAND STORM");
                 PROFILEPARTNER.setDetailS2("METEO");
                 // New Form
-                MAINGAMES form2 = new MAINGAMES();
+                MAINGAMES form2 = new MAINGAMES(EARTHSHAKER);
                 form2.setVisible(true);
                 // Hide Current Form
                 setVisible(false);
@@ -87,7 +87,7 @@ public class DIRTPARTNER extends JFrame {
                 PROFILEPARTNER.setDetailS1("DIRT HAND");
                 PROFILEPARTNER.setDetailS2("ANCIENT ORDER");
                 // New Form
-                MAINGAMES form2 = new MAINGAMES();
+                MAINGAMES form2 = new MAINGAMES(SANDKING);
             form2.setVisible(true);
             // Hide Current Form
             setVisible(false);

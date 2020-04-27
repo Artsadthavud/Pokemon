@@ -2,25 +2,16 @@ package NEWERAPOKEMON;
 
 import javax.swing.*;
 
-import java.awt.*;
 import java.awt.event.*;
 
 
 public class MEET extends JFrame {
-    public static void main(String[] args) {
 
-        EventQueue.invokeLater(new Runnable() {
-
-            public void run() {
-                MEET form = new MEET();
-                form.setVisible(true);
-            }
-        });
-    }
-
-    public MEET() {
+    public MEET(LIFEPOKEMON lifepokemon) {
         // Create Form Frame
         super("GUNGEMON");
+       
+    
 
         setSize(800, 600);
         setLocation(400, 200);
@@ -38,13 +29,13 @@ public class MEET extends JFrame {
 
        
 
-        JLabel statusHP = new JLabel(" HP :  " + LIFEPOKEMON.getHP() + " / " + LIFEPOKEMON.getMaxHP());
+        JLabel statusHP = new JLabel(" HP :  " + lifepokemon.getHP() + " / " + lifepokemon.getMaxHP());
         statusHP.setBounds(80, 400, 200, 50);
 
-        JLabel statusSP = new JLabel(" SP :  " + LIFEPOKEMON.getSP() + " / " + LIFEPOKEMON.getMaxSP());
+        JLabel statusSP = new JLabel(" SP :  " + lifepokemon.getSP() + " / " + lifepokemon.getMaxSP());
         statusSP.setBounds(80, 430, 200, 50);
 
-        JLabel namePart = new JLabel(LIFEPOKEMON.getName());
+        JLabel namePart = new JLabel(lifepokemon.getName());
         namePart.setBounds(100, 55, 100, 40);
 
         JButton namePartmer = new JButton("Set New Partner Name");
@@ -86,11 +77,11 @@ public class MEET extends JFrame {
 
                 if(INVENTORYSYSYEM.checkThing("Food") > 0){
                     INVENTORYSYSYEM.useIteminventory("Food");
-                    LIFEPOKEMON.healHP(50);
-                    LIFEPOKEMON.healSP(50);
+                    lifepokemon.healHP(50);
+                    lifepokemon.healSP(50);
                     JOptionPane.showMessageDialog(null," Success to Feed  Your Food -1 ","FEED FOOD",JOptionPane.INFORMATION_MESSAGE,icon);
-                    statusHP.setText(" HP :  " + LIFEPOKEMON.getHP() + " / " + LIFEPOKEMON.getMaxHP());
-                    statusSP.setText(" SP :  " + LIFEPOKEMON.getSP() + " / " + LIFEPOKEMON.getMaxSP());
+                    statusHP.setText(" HP :  " + lifepokemon.getHP() + " / " + lifepokemon.getMaxHP());
+                    statusSP.setText(" SP :  " + lifepokemon.getSP() + " / " + lifepokemon.getMaxSP());
                 }
                 else{
                     JOptionPane.showMessageDialog(null," Fail to Feed  You have no Food ","FEED FOOD",JOptionPane.INFORMATION_MESSAGE,icon);
@@ -103,9 +94,9 @@ public class MEET extends JFrame {
     
                     if(INVENTORYSYSYEM.checkThing("Potion") > 0){
                         INVENTORYSYSYEM.useIteminventory("Potion");
-                        LIFEPOKEMON.healHP(100);
+                        lifepokemon.healHP(100);
                         JOptionPane.showMessageDialog(null," Success to Use  Your Potion -1 ","USE POTION",JOptionPane.INFORMATION_MESSAGE,icon);
-                        statusHP.setText(" HP :  " + LIFEPOKEMON.getHP() + " / " + LIFEPOKEMON.getMaxHP());
+                        statusHP.setText(" HP :  " + lifepokemon.getHP() + " / " + lifepokemon.getMaxHP());
                     }
                     else{
                         JOptionPane.showMessageDialog(null," Fail to Use  You have no Potion ","USE POTION",JOptionPane.INFORMATION_MESSAGE,icon);
@@ -118,9 +109,9 @@ public class MEET extends JFrame {
         
                         if(INVENTORYSYSYEM.checkThing("Mana") > 0){
                             INVENTORYSYSYEM.useIteminventory("Mana");
-                            LIFEPOKEMON.healSP(100);
+                            lifepokemon.healSP(100);
                             JOptionPane.showMessageDialog(null," Success to Use  Your Mana -1 ","USE MANA",JOptionPane.INFORMATION_MESSAGE,icon);
-                            statusSP.setText(" SP :  " + LIFEPOKEMON.getSP() + " / " + LIFEPOKEMON.getMaxSP());
+                            statusSP.setText(" SP :  " + lifepokemon.getSP() + " / " + lifepokemon.getMaxSP());
                         }
                         else{
                             JOptionPane.showMessageDialog(null," Fail to Use  You have no Mana ","USE MANA",JOptionPane.INFORMATION_MESSAGE,icon);
@@ -130,17 +121,17 @@ public class MEET extends JFrame {
         btnAtk.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
         final ImageIcon icon = new ImageIcon(getClass().getResource(PROFILEPARTNER.getAtkPic()));
-        JOptionPane.showMessageDialog(null,PROFILEPARTNER.detailAtk + " : DAMAGE : " + LIFEPOKEMON.getDMG(),"NORMAL ATTACK",JOptionPane.INFORMATION_MESSAGE,icon);
+        JOptionPane.showMessageDialog(null,PROFILEPARTNER.detailAtk + " : DAMAGE : " + lifepokemon.getDMG(),"NORMAL ATTACK",JOptionPane.INFORMATION_MESSAGE,icon);
             }});
             btnS1.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
             final ImageIcon icon = new ImageIcon(getClass().getResource(PROFILEPARTNER.getS1Pic()));
-            JOptionPane.showMessageDialog(null,PROFILEPARTNER.details1 + " : DAMAGE : " + LIFEPOKEMON.gets1DMG(),"SKILL 1",JOptionPane.INFORMATION_MESSAGE,icon);
+            JOptionPane.showMessageDialog(null,PROFILEPARTNER.details1 + " : DAMAGE : " + lifepokemon.gets1DMG(),"SKILL 1",JOptionPane.INFORMATION_MESSAGE,icon);
                 }});
                 btnS2.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
                 final ImageIcon icon = new ImageIcon(getClass().getResource(PROFILEPARTNER.getS2Pic()));
-                JOptionPane.showMessageDialog(null,PROFILEPARTNER.details2 + " : DAMAGE : " + LIFEPOKEMON.gets2DMG(),"SKILL 2",JOptionPane.INFORMATION_MESSAGE,icon);
+                JOptionPane.showMessageDialog(null,PROFILEPARTNER.details2 + " : DAMAGE : " + lifepokemon.gets2DMG(),"SKILL 2",JOptionPane.INFORMATION_MESSAGE,icon);
                     }});
                     
         JButton fire3 = new JButton("3 : BACK");
@@ -149,7 +140,7 @@ public class MEET extends JFrame {
              fire3.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                 // New Form
-                MAINGAMES form1 = new MAINGAMES();
+                MAINGAMES form1 = new MAINGAMES(lifepokemon);
                     form1.setVisible(true);
                      // Hide Current Form
                      setVisible(false);

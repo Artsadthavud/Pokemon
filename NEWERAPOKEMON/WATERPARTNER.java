@@ -66,7 +66,7 @@ public class WATERPARTNER extends JFrame {
                PROFILEPARTNER.setDetailS1("HOLY SHIELD");
                PROFILEPARTNER.setDetailS2("HEARTEATER");
                 // New Form
-                MAINGAMES form2 = new MAINGAMES();
+                MAINGAMES form2 = new MAINGAMES(KUNKA);
                 form2.setVisible(true);
                 // Hide Current Form
                 setVisible(false);
@@ -89,7 +89,7 @@ public class WATERPARTNER extends JFrame {
                PROFILEPARTNER.setDetailS1("FEATHER SWORD");
                PROFILEPARTNER.setDetailS2("DEMON FORM");
                 // New Form
-                MAINGAMES form2 = new MAINGAMES();
+                MAINGAMES form2 = new MAINGAMES(SLARK);
             form2.setVisible(true);
             // Hide Current Form
             setVisible(false);

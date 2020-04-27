@@ -1,21 +1,10 @@
 package NEWERAPOKEMON;
 import javax.swing.*;
-
-import java.awt.*;
 import java.awt.event.*;
 
 public class DUEL extends JFrame {
-    public static void main(String[] args) {
 
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                DUEL form = new DUEL();
-                form.setVisible(true);
-            }
-        });
-    }
-
-    public DUEL() {
+    public DUEL(LIFEPOKEMON lifepokemon) {
 // Create Form Frame
 super("GUNGEMON");
 
@@ -36,7 +25,7 @@ label.setBounds(290, 83, 300, 14);
 
 JLabel fNamex = new JLabel(foes.getfName());
 fNamex.setBounds(450, 190, 400, 50);
-JLabel Namex = new JLabel(LIFEPOKEMON.getName());
+JLabel Namex = new JLabel(lifepokemon.getName());
 Namex.setBounds(450, 280, 400, 50);
 
 JLabel statefNamex = new JLabel();
@@ -51,12 +40,12 @@ JLabel fName = new JLabel(foes.getfName());
 fName.setBounds(360, 10, 200, 50);
 
 
-JLabel Name = new JLabel(LIFEPOKEMON.getName());
+JLabel Name = new JLabel(lifepokemon.getName());
 Name.setBounds(35, 160, 200, 50);
-JLabel statusHP = new JLabel(" HP :  " + LIFEPOKEMON.getHP() + " / " + LIFEPOKEMON.getMaxHP());
+JLabel statusHP = new JLabel(" HP :  " + lifepokemon.getHP() + " / " + lifepokemon.getMaxHP());
 statusHP.setBounds(20, 180, 200, 50);
 
-JLabel statusSP = new JLabel(" SP :  " + LIFEPOKEMON.getSP() + " / " + LIFEPOKEMON.getMaxSP());
+JLabel statusSP = new JLabel(" SP :  " + lifepokemon.getSP() + " / " + lifepokemon.getMaxSP());
 statusSP.setBounds(20, 200, 200, 50);
 
 JLabel playerPic = new JLabel(new ImageIcon(getClass().getResource(PROFILEPARTNER.getProfilePic())));
@@ -71,17 +60,17 @@ foesPic.setLocation(550, 20);
 
 JButton btnAtk = new JButton(new ImageIcon(getClass().getResource(PROFILEPARTNER.getAtkPic())));
 btnAtk.setBounds(320, 250, 50, 50);
-JLabel AtkDMG = new JLabel("Damage : " + LIFEPOKEMON.getDMG());
+JLabel AtkDMG = new JLabel("Damage : " + lifepokemon.getDMG());
 AtkDMG.setBounds(300, 280, 200, 50);
 
 JButton btnS1 = new JButton(new ImageIcon(getClass().getResource(PROFILEPARTNER.getS1Pic())));
 btnS1.setBounds(320, 350, 50, 50);
-JLabel s1DMG = new JLabel("Damage : " + LIFEPOKEMON.gets1DMG() + " sp : 150");
+JLabel s1DMG = new JLabel("Damage : " + lifepokemon.gets1DMG() + " sp : 150");
 s1DMG.setBounds(300, 380, 200, 50);
 
 JButton btnS2 = new JButton(new ImageIcon(getClass().getResource(PROFILEPARTNER.getS2Pic())));
 btnS2.setBounds(320, 460, 50, 50);
-JLabel s2DMG = new JLabel("Damage : " + LIFEPOKEMON.gets2DMG()+" sp : 300");
+JLabel s2DMG = new JLabel("Damage : " + lifepokemon.gets2DMG()+" sp : 300");
 s2DMG.setBounds(300, 490, 200, 50);
 
 
@@ -113,9 +102,9 @@ JLabel mana = new JLabel(" X " + INVENTORYSYSYEM.checkThing("Mana"));
 
             if(INVENTORYSYSYEM.checkThing("Potion") > 0){
                 INVENTORYSYSYEM.useIteminventory("Potion");
-                LIFEPOKEMON.healHP(100);
+                lifepokemon.healHP(100);
                 potion.setText(" X " +  INVENTORYSYSYEM.checkThing("Potion")); 
-                statusHP.setText(" HP :  " + LIFEPOKEMON.getHP() + " / " + LIFEPOKEMON.getMaxHP());
+                statusHP.setText(" HP :  " + lifepokemon.getHP() + " / " + lifepokemon.getMaxHP());
             }
             else{
                 JOptionPane.showMessageDialog(null," Fail to Use  You have no Potion ","USE POTION",JOptionPane.INFORMATION_MESSAGE,icon);
@@ -128,9 +117,9 @@ JLabel mana = new JLabel(" X " + INVENTORYSYSYEM.checkThing("Mana"));
 
                 if(INVENTORYSYSYEM.checkThing("Mana") > 0){
                     INVENTORYSYSYEM.useIteminventory("Mana");
-                    LIFEPOKEMON.healSP(100);           
+                    lifepokemon.healSP(100);           
                     mana.setText(" X " +  INVENTORYSYSYEM.checkThing("Mana"));      
-                    statusSP.setText(" SP :  " + LIFEPOKEMON.getSP() + " / " + LIFEPOKEMON.getMaxSP());
+                    statusSP.setText(" SP :  " + lifepokemon.getSP() + " / " + lifepokemon.getMaxSP());
                 }
                 else{
                     JOptionPane.showMessageDialog(null," Fail to Use  You have no Mana ","USE MANA",JOptionPane.INFORMATION_MESSAGE,icon);
@@ -166,33 +155,33 @@ btnfS2.addActionListener(new ActionListener() {
 btnAtk.addActionListener(new ActionListener() {
     public void actionPerformed(ActionEvent evt) {
 
-        foes.updatefHP(COMBATSYSTEM.calculateSystem(foes.fHP, LIFEPOKEMON.getDMG()));
-        LIFEPOKEMON.updateHP(COMBATSYSTEM.calculateSystem(LIFEPOKEMON.getHP(),foes.getfDMG()));
+        foes.updatefHP(COMBATSYSTEM.calculateSystem(foes.fHP, lifepokemon.getDMG()));
+        lifepokemon.updateHP(COMBATSYSTEM.calculateSystem(lifepokemon.getHP(),foes.getfDMG()));
 
 
-        Namex.setText(LIFEPOKEMON.getName() + " : HIT FOES BY NOMAL ATTACK ");
-        fNamex.setText(foes.getfName() + " : HIT " + LIFEPOKEMON.getName());
+        Namex.setText(lifepokemon.getName() + " : HIT FOES BY NOMAL ATTACK ");
+        fNamex.setText(foes.getfName() + " : HIT " + lifepokemon.getName());
 
-        stateNamex.setText(LIFEPOKEMON.getName() + " : Recieve damage " + foes.getfDMG());
-        statefNamex.setText(foes.getfName() + " : Recieve damage " + LIFEPOKEMON.getDMG());
+        stateNamex.setText(lifepokemon.getName() + " : Recieve damage " + foes.getfDMG());
+        statefNamex.setText(foes.getfName() + " : Recieve damage " + lifepokemon.getDMG());
 
-        statusHP.setText(" HP :  " + LIFEPOKEMON.getHP() + " / " + LIFEPOKEMON.getMaxHP());
+        statusHP.setText(" HP :  " + lifepokemon.getHP() + " / " + lifepokemon.getMaxHP());
         statusfHP.setText(" HP :  " + foes.getfHP() + " / 2000");
             if(foes.getfHP() == 0 ){
                 final ImageIcon icon = new ImageIcon(getClass().getResource("/win.png"));
                 JOptionPane.showMessageDialog(null," YOU WIN !! \n Your reward Gold 5000 Stung" ,"RESULT OF BATTLE",JOptionPane.INFORMATION_MESSAGE,icon);
                 MONEY.updateMoney(5000);
 
-                    GYM back = new GYM();
+                    GYM back = new GYM(lifepokemon);
                         back.setVisible(true);
                         setVisible(false);
             }
-            else if(LIFEPOKEMON.getHP() == 0){
+            else if(lifepokemon.getHP() == 0){
                 final ImageIcon icon = new ImageIcon(getClass().getResource("/lose.png"));
                 JOptionPane.showMessageDialog(null," YOU LOSE !! \n Your reward Gold 1000 Stung" ,"RESULT OF BATTLE",JOptionPane.INFORMATION_MESSAGE,icon);
                 MONEY.updateMoney(1000);
 
-                    GYM back = new GYM();
+                    GYM back = new GYM(lifepokemon);
                         back.setVisible(true);
                         setVisible(false);
             }
@@ -201,41 +190,41 @@ btnAtk.addActionListener(new ActionListener() {
 
 btnS1.addActionListener(new ActionListener() {
 public void actionPerformed(ActionEvent evt) {
-    if( LIFEPOKEMON.SP - 150 >= 0){
-        foes.updatefHP(COMBATSYSTEM.calculateSystem(foes.fHP, LIFEPOKEMON.gets1DMG()));
-        LIFEPOKEMON.updateHP(COMBATSYSTEM.calculateSystem(LIFEPOKEMON.getHP(),foes.getfs1DMG()));
-        LIFEPOKEMON.useSP(150);
+    if( lifepokemon.SP - 150 >= 0){
+        foes.updatefHP(COMBATSYSTEM.calculateSystem(foes.fHP, lifepokemon.gets1DMG()));
+        lifepokemon.updateHP(COMBATSYSTEM.calculateSystem(lifepokemon.getHP(),foes.getfs1DMG()));
+        lifepokemon.useSP(150);
 
-        Namex.setText(LIFEPOKEMON.getName() + " : HIT FOES BY SKILL 1 ");
-        fNamex.setText(foes.getfName() + " : HIT " + LIFEPOKEMON.getName());
+        Namex.setText(lifepokemon.getName() + " : HIT FOES BY SKILL 1 ");
+        fNamex.setText(foes.getfName() + " : HIT " + lifepokemon.getName());
 
-        stateNamex.setText(LIFEPOKEMON.getName() + " : Recieve damage " + foes.getfs1DMG());
-        statefNamex.setText(foes.getfName() + " : Recieve damage " + LIFEPOKEMON.gets1DMG());
+        stateNamex.setText(lifepokemon.getName() + " : Recieve damage " + foes.getfs1DMG());
+        statefNamex.setText(foes.getfName() + " : Recieve damage " + lifepokemon.gets1DMG());
 
-        statusHP.setText(" HP :  " + LIFEPOKEMON.getHP() + " / " + LIFEPOKEMON.getMaxHP());
+        statusHP.setText(" HP :  " + lifepokemon.getHP() + " / " + lifepokemon.getMaxHP());
         statusfHP.setText(" HP :  " + foes.getfHP() + " / 2000");
-        statusSP.setText(" SP :  " + LIFEPOKEMON.getSP() + " / " + LIFEPOKEMON.getMaxSP());
+        statusSP.setText(" SP :  " + lifepokemon.getSP() + " / " + lifepokemon.getMaxSP());
 
             if(foes.getfHP() == 0 ){
                 final ImageIcon icon = new ImageIcon(getClass().getResource("/win.png"));
                 JOptionPane.showMessageDialog(null," YOU WIN !! \n Your reward Gold 5000 Stung" ,"RESULT OF BATTLE",JOptionPane.INFORMATION_MESSAGE,icon);
                 MONEY.updateMoney(5000);
 
-                    GYM back = new GYM();
+                    GYM back = new GYM(lifepokemon);
                         back.setVisible(true);
                         setVisible(false);
             }
-            else if(LIFEPOKEMON.getHP() == 0){
+            else if(lifepokemon.getHP() == 0){
                 final ImageIcon icon = new ImageIcon(getClass().getResource("/lose.png"));
                 JOptionPane.showMessageDialog(null," YOU LOSE !! \n Your reward Gold 1000 Stung" ,"RESULT OF BATTLE",JOptionPane.INFORMATION_MESSAGE,icon);
                 MONEY.updateMoney(1000);
 
-                    GYM back = new GYM();
+                    GYM back = new GYM(lifepokemon);
                         back.setVisible(true);
                         setVisible(false);
             }
         }
-        else if(LIFEPOKEMON.SP - 150 < 0){
+        else if(lifepokemon.getSP() - 150 < 0){
             final ImageIcon icon = new ImageIcon(getClass().getResource("/logo_mana.png"));
             JOptionPane.showMessageDialog(null," YOU HAVE NO MANA TO USE SKILL" ," BATTLE ",JOptionPane.INFORMATION_MESSAGE,icon);
         }
@@ -244,41 +233,41 @@ public void actionPerformed(ActionEvent evt) {
 });    
 btnS2.addActionListener(new ActionListener() {
     public void actionPerformed(ActionEvent evt) {
-        if( LIFEPOKEMON.SP - 300 >= 0){
-        foes.updatefHP(COMBATSYSTEM.calculateSystem(foes.fHP, LIFEPOKEMON.gets2DMG()));
-        LIFEPOKEMON.updateHP(COMBATSYSTEM.calculateSystem(LIFEPOKEMON.getHP(),foes.getfs2DMG()));
-        LIFEPOKEMON.useSP(300);
+        if( lifepokemon.getSP() - 300 >= 0){
+        foes.updatefHP(COMBATSYSTEM.calculateSystem(foes.fHP, lifepokemon.gets2DMG()));
+        lifepokemon.updateHP(COMBATSYSTEM.calculateSystem(lifepokemon.getHP(),foes.getfs2DMG()));
+        lifepokemon.useSP(300);
 
-        Namex.setText(LIFEPOKEMON.getName() + " : HIT FOES BY SKILL 2 ");
-        fNamex.setText(foes.getfName() + " : HIT " + LIFEPOKEMON.getName());
+        Namex.setText(lifepokemon.getName() + " : HIT FOES BY SKILL 2 ");
+        fNamex.setText(foes.getfName() + " : HIT " + lifepokemon.getName());
 
-        stateNamex.setText(LIFEPOKEMON.getName() + " : Recieve damage " + foes.getfs2DMG());
-        statefNamex.setText(foes.getfName() + " : Recieve damage " + LIFEPOKEMON.gets2DMG());
+        stateNamex.setText(lifepokemon.getName() + " : Recieve damage " + foes.getfs2DMG());
+        statefNamex.setText(foes.getfName() + " : Recieve damage " + lifepokemon.gets2DMG());
 
-        statusHP.setText(" HP :  " + LIFEPOKEMON.getHP() + " / " + LIFEPOKEMON.getMaxHP());
+        statusHP.setText(" HP :  " + lifepokemon.getHP() + " / " + lifepokemon.getMaxHP());
         statusfHP.setText(" HP :  " + foes.getfHP() + " / 2000");
-        statusSP.setText(" SP :  " + LIFEPOKEMON.getSP() + " / " + LIFEPOKEMON.getMaxSP());
+        statusSP.setText(" SP :  " + lifepokemon.getSP() + " / " + lifepokemon.getMaxSP());
 
             if(foes.getfHP() == 0 ){
                 final ImageIcon icon = new ImageIcon(getClass().getResource("/win.png"));
                 JOptionPane.showMessageDialog(null," YOU WIN !! \n Your reward Gold 5000 Stung" ,"RESULT OF BATTLE",JOptionPane.INFORMATION_MESSAGE,icon);
                 MONEY.updateMoney(5000);
 
-                    GYM back = new GYM();
+                    GYM back = new GYM(lifepokemon);
                         back.setVisible(true);
                         setVisible(false);
             }
-            else if(LIFEPOKEMON.getHP() == 0){
+            else if(lifepokemon.getHP() == 0){
                 final ImageIcon icon = new ImageIcon(getClass().getResource("/lose.png"));
                 JOptionPane.showMessageDialog(null," YOU LOSE !! \n Your reward Gold 1000 Stung" ,"RESULT OF BATTLE",JOptionPane.INFORMATION_MESSAGE,icon);
                 MONEY.updateMoney(1000);
 
-                    GYM back = new GYM();
+                    GYM back = new GYM(lifepokemon);
                         back.setVisible(true);
                         setVisible(false);
             }
         }
-        else if(LIFEPOKEMON.SP - 300 < 0){
+        else if(lifepokemon.getSP() - 300 < 0){
             final ImageIcon icon = new ImageIcon(getClass().getResource("/logo_mana.png"));
             JOptionPane.showMessageDialog(null," YOU HAVE NO MANA TO USE SKILL" ," BATTLE ",JOptionPane.INFORMATION_MESSAGE,icon);
         }

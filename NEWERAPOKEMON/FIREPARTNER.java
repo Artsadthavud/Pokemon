@@ -60,7 +60,7 @@ public class FIREPARTNER extends JFrame {
                 PROFILEPARTNER.setDetailS2("BURN BABY BURN");
 
                 // New Form
-                MAINGAMES form2 = new MAINGAMES();
+                MAINGAMES form2 = new MAINGAMES(YURNERO);
                 form2.setVisible(true);
                 // Hide Current Form
                 setVisible(false);
@@ -83,7 +83,7 @@ public class FIREPARTNER extends JFrame {
                 PROFILEPARTNER.setDetailS2("SET FIRE TO THE RAIN");
                 
                 // New Form
-                MAINGAMES form2 = new MAINGAMES();
+                MAINGAMES form2 = new MAINGAMES(LINA);
             form2.setVisible(true);
             // Hide Current Form
             setVisible(false);

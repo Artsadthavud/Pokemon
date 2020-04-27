@@ -5,17 +5,8 @@ import java.awt.event.*;
 
 
 public class SHOP extends JFrame {
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                SHOP form = new SHOP();
-        
-                form.setVisible(true);
-            }
-        });
-    }
-
-    public SHOP() {
+   
+    public SHOP(LIFEPOKEMON lifepokemon) {
 // Create Form Frame
 super("GUNGEMON");
 setSize(800, 600);
@@ -241,7 +232,7 @@ btnOpen1.addActionListener(new ActionListener() {
         btnBack.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 
-                    INVENTORY nShop = new INVENTORY();
+                    INVENTORY nShop = new INVENTORY(lifepokemon);
                     nShop.setVisible(true);
                     setVisible(false);
                 

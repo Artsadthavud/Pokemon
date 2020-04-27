@@ -4,17 +4,8 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class GYM extends JFrame {
-    public static void main(String[] args) {
 
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                GYM form = new GYM();
-                form.setVisible(true);
-            }
-        });
-    }
-
-    public GYM() {
+    public GYM(LIFEPOKEMON lifepokemon) {
 // Create Form Frame
 super("GUNGEMON");
 
@@ -41,7 +32,7 @@ btnMeet.addActionListener(new ActionListener() {
     public void actionPerformed(ActionEvent evt) {
        // New Form
 
-        DUEL form1 = new DUEL();
+        DUEL form1 = new DUEL(lifepokemon);
         form1.setVisible(true);
         // Hide Current Form
         setVisible(false);
@@ -51,7 +42,7 @@ btnMeet.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent evt) {
            // New Form
     
-            MAINGAMES form1 = new MAINGAMES();
+            MAINGAMES form1 = new MAINGAMES(lifepokemon);
             form1.setVisible(true);
             // Hide Current Form
             setVisible(false);
