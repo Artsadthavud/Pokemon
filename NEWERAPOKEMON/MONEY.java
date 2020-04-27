@@ -11,6 +11,4 @@ public class MONEY extends NEWERAPOKEMON{
     public static int getMoney() {
         return Money;
     }
-
-
 }

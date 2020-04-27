@@ -1,7 +1,6 @@
 package NEWERAPOKEMON;
 
 import javax.swing.*;
-
 import java.awt.*;
 import java.awt.event.*;
 
@@ -21,15 +20,10 @@ public class FIREPARTNER extends JFrame {
         super("GUNGEMON");
 
         setSize(800, 600);
-
         setLocation(400, 200);
-
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         getContentPane().setLayout(null);
         // Create Label
-
-        
         JLabel harute1 = new JLabel(new ImageIcon(getClass().getResource("/jugs.jpg")));
         harute1.setSize(250, 300);
         harute1.setLocation(50, 100);
