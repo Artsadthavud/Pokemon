@@ -30,7 +30,15 @@ public MAINGAMES() {
 
     JLabel bagPic = new JLabel(new ImageIcon(getClass().getResource("/bagg.png")));
     bagPic.setSize(150, 150);
-    bagPic.setLocation(600, 50);
+    bagPic.setLocation(180, 60);
+
+    JLabel psPic = new JLabel(new ImageIcon(getClass().getResource(PROFILEPARTNER.getsProfilePic())));
+    psPic.setSize(150, 150);
+    psPic.setLocation(480, 110);
+
+    JLabel roPic = new JLabel(new ImageIcon(getClass().getResource("/roc.png")));
+    roPic.setSize(150, 150);
+    roPic.setLocation(180, 150);
     // Create Button
     JButton btnInventory = new JButton("INVENTORY");
     btnInventory.setBounds(300, 125, 200, 23);
@@ -70,6 +78,8 @@ public MAINGAMES() {
 getContentPane().add(labelHead);
 getContentPane().add(label);
 getContentPane().add(bagPic);
+getContentPane().add(psPic);
+getContentPane().add(roPic);
 getContentPane().add(btnInventory);
 getContentPane().add(btnMeet);
 getContentPane().add(btnGym);

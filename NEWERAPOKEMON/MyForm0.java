@@ -2,6 +2,7 @@ package NEWERAPOKEMON;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.InputMismatchException;
 
 public class MyForm0 extends JFrame {
     public static void main(String[] args) {
@@ -44,15 +45,22 @@ public class MyForm0 extends JFrame {
                     // Create Event for Button
                     btnOpen.addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent evt) {
-    
+                            String Name;
                             // set name form input
-                            String Name = NamePlayer.getText();
+                            try {
+                                 Name = NamePlayer.getText();
                                 ACTIONONWORLD.setNamePlayer(Name);
+                            } catch ( InputMismatchException e ) {
+                                final ImageIcon icon = new ImageIcon(getClass().getResource("/logo_fail.png"));
+                                JOptionPane.showMessageDialog(null," Success to Use  Your Mana -1 ","USE MANA",JOptionPane.INFORMATION_MESSAGE,icon);
+                            }
+                            
+                                
                             // New Page
                             MyForm1 form1 = new MyForm1();
                                 form1.setVisible(true);
-                            // Hide Current Form
-                            setVisible(false);
+                                // Hide Current Form
+                                setVisible(false);
                         }
                     });  
                     

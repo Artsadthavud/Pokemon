@@ -2,6 +2,7 @@ package NEWERAPOKEMON;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.InputMismatchException;
 
 public class SHOP extends JFrame {
     public static void main(String[] args) {
@@ -49,14 +50,40 @@ JLabel label = new JLabel("Choose Item you need");
 label.setBounds(480, 115, 200, 14);
 
 // Create Button
-JButton btnOpen = new JButton("1 : POTION");
-btnOpen.setBounds(500, 165, 100, 23);
-JButton btnOpen1 = new JButton("2 : MANA");
-btnOpen1.setBounds(500, 215, 100, 23);
-JButton btnOpen2 = new JButton("3 : FOOD");
-btnOpen2.setBounds(500, 265, 100, 23);
+JButton btnOpen = new JButton("1 : POTION x1");  
+btnOpen.setBounds(480, 165, 120, 30);
+JButton btnOpen1 = new JButton("2 : MANA x1");
+btnOpen1.setBounds(480, 215, 120, 30);
+JButton btnOpen2 = new JButton("3 : FOOD x1");
+btnOpen2.setBounds(480, 265, 120, 30);
 JButton btnBack = new JButton("4 : BACK");
-btnBack.setBounds(500, 365, 100, 23);
+btnBack.setBounds(560, 365, 100, 23);
+
+JButton btnBuyPotion = new JButton("BUY");   // buy potion
+btnBuyPotion.setBounds(670, 170, 60, 18);
+getContentPane().add(btnBuyPotion);
+
+JButton btnBuyMana = new JButton("BUY");    // buy mana
+btnBuyMana.setBounds(670, 220, 60, 18);
+getContentPane().add(btnBuyMana);
+
+JButton btnBuyFood = new JButton("BUY");   // buy food
+btnBuyFood.setBounds(670, 270, 60, 18);
+getContentPane().add(btnBuyFood);
+
+JTextField numbuyPotion;
+    numbuyPotion = new JTextField(25);
+numbuyPotion.setBounds(620, 170, 40, 20);
+getContentPane().add(numbuyPotion);
+JTextField numbuyMana;
+    numbuyMana = new JTextField(25);
+numbuyMana.setBounds(620, 220, 40, 20);
+getContentPane().add(numbuyMana);
+JTextField numbuyFood;
+    numbuyFood = new JTextField(25);
+numbuyFood.setBounds(620, 270, 40, 20);
+getContentPane().add(numbuyFood);
+
 
 // img gold
 JLabel imgGold = new JLabel(imageGOLD);
@@ -73,26 +100,50 @@ imgFood.setBounds(100, 390, 100, 100);
 
 
 // Create Event for Button
-btnOpen.addActionListener(new ActionListener() {
+btnBuyPotion.addActionListener(new ActionListener() {
 public void actionPerformed(ActionEvent evt) {
+    int amount = 0;
+    try {
 
+        amount = btnBuyPotion.getInputContext();
 
-    if(MONEY.getMoney() > 0 && MONEY.getMoney() - 100 >= 0){
-        MONEY.updateMoney(-100);
-        INVENTORYSYSYEM.addItemInventory("Potion");
-        goal.setText("You have GOLD "+ MONEY.getMoney() +"Stung");
-        potion.setText(" You have POTION " + INVENTORYSYSYEM.checkThing("Potion"));
-    }
-    else{
+        if(MONEY.getMoney() > 0 && MONEY.getMoney() - 100 >= 0){
+            MONEY.updateMoney(-100 * amount);
+            INVENTORYSYSYEM.addManyItemInventory("Potion",amount);
+            goal.setText("You have GOLD "+ MONEY.getMoney() +"Stung");
+            potion.setText(" You have POTION " + INVENTORYSYSYEM.checkThing("Potion"));
+        }
+        else{
+            final ImageIcon icon = new ImageIcon(getClass().getResource("/logo_potion.png"));
+            JOptionPane.showMessageDialog(null," FAIL to BUY  Potion ","BUY POTION",JOptionPane.ERROR_MESSAGE,icon);
+        }
+        
+    } catch (InputMismatchException e) {
         final ImageIcon icon = new ImageIcon(getClass().getResource("/logo_potion.png"));
-        JOptionPane.showMessageDialog(null," FAIL to BUY  Potion ","BUY POTION",JOptionPane.ERROR_MESSAGE,icon);
+        JOptionPane.showMessageDialog(null," FAIL to BUY  Potion \n Please fill amount with Integer ","BUY POTION",JOptionPane.ERROR_MESSAGE,icon);
     }
-   
 
+    
+}
+}); 
+
+    btnOpen.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+            if(MONEY.getMoney() > 0 && MONEY.getMoney() - 100 >= 0){
+                MONEY.updateMoney(-100);
+                INVENTORYSYSYEM.addItemInventory("Potion");
+                goal.setText("You have GOLD "+ MONEY.getMoney() +"Stung");
+                potion.setText(" You have POTION " + INVENTORYSYSYEM.checkThing("Potion"));
+            }
+            else{
+                final ImageIcon icon = new ImageIcon(getClass().getResource("/logo_potion.png"));
+                JOptionPane.showMessageDialog(null," FAIL to BUY  Potion ","BUY POTION",JOptionPane.ERROR_MESSAGE,icon);
+            }
+        }
+    }); 
    
     getContentPane().add(goal);
-}
-});    
+   
 
 btnOpen1.addActionListener(new ActionListener() {
     public void actionPerformed(ActionEvent evt) {

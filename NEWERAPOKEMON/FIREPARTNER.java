@@ -54,6 +54,7 @@ public class FIREPARTNER extends JFrame {
                 PROFILEPARTNER.setAtkPic("" + "/image/Sred1.png" + "");
                 PROFILEPARTNER.setS1Pic("" + "/image/Sred2.png" + "");
                 PROFILEPARTNER.setS2Pic("" + "/image/Sred3.png" + "");
+                PROFILEPARTNER.setsProfilePic("" + "/jugc.png" + "");
                 PROFILEPARTNER.setDetailAtk("MELEE ATTACK");
                 PROFILEPARTNER.setDetailS1("BREAK SHIELD");
                 PROFILEPARTNER.setDetailS2("BURN BABY BURN");
@@ -76,6 +77,7 @@ public class FIREPARTNER extends JFrame {
                 PROFILEPARTNER.setAtkPic("" + "/image/Sred4.png" + "");
                 PROFILEPARTNER.setS1Pic("" + "/image/Sred6.png" + "");
                 PROFILEPARTNER.setS2Pic("" + "/image/Sred5.png" + "");
+                PROFILEPARTNER.setsProfilePic("" + "/linac.png" + "");
                 PROFILEPARTNER.setDetailAtk("RANGE ATTACK");
                 PROFILEPARTNER.setDetailS1("SUPER ARROW");
                 PROFILEPARTNER.setDetailS2("SET FIRE TO THE RAIN");

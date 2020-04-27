@@ -10,6 +10,13 @@ public class INVENTORYSYSYEM extends NEWERAPOKEMON {
         INVENT.add(name);
     }
 
+    public static void addManyItemInventory(String name , int amount) {
+        for (int i = 0 ; i != amount ; i++){
+            INVENT.add(name);
+        } 
+       
+    }
+
     public static void useIteminventory(String name){
         int check = 0 ;
         while(INVENT.size() != check ){

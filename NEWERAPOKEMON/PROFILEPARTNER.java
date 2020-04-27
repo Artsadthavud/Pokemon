@@ -4,6 +4,7 @@ package NEWERAPOKEMON;
 public class PROFILEPARTNER extends NEWERAPOKEMON {
 
         protected static String url;
+        protected static String surl;
         protected static String s1;
         protected static String s2;
         protected static String Atk;
@@ -14,6 +15,9 @@ public class PROFILEPARTNER extends NEWERAPOKEMON {
 
         public static void setProfilePic(String url) {
             PROFILEPARTNER.url = url;
+        }
+        public static void setsProfilePic(String surl) {
+            PROFILEPARTNER.surl = surl;
         }
         public static void setS1Pic(String s1) {
             PROFILEPARTNER.s1 = s1;
@@ -40,6 +44,10 @@ public class PROFILEPARTNER extends NEWERAPOKEMON {
 
         public static String getProfilePic() {
             return url;
+        }
+
+        public static String getsProfilePic() {
+            return surl;
         }
 
         public static String getS1Pic(){
