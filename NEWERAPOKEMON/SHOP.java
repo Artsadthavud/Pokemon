@@ -2,7 +2,7 @@ package NEWERAPOKEMON;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.InputMismatchException;
+
 
 public class SHOP extends JFrame {
     public static void main(String[] args) {
@@ -61,28 +61,28 @@ btnBack.setBounds(560, 365, 100, 23);
 
 JButton btnBuyPotion = new JButton("BUY");   // buy potion
 btnBuyPotion.setBounds(670, 170, 60, 18);
-getContentPane().add(btnBuyPotion);
+
 
 JButton btnBuyMana = new JButton("BUY");    // buy mana
 btnBuyMana.setBounds(670, 220, 60, 18);
-getContentPane().add(btnBuyMana);
+
 
 JButton btnBuyFood = new JButton("BUY");   // buy food
 btnBuyFood.setBounds(670, 270, 60, 18);
-getContentPane().add(btnBuyFood);
+
 
 JTextField numbuyPotion;
     numbuyPotion = new JTextField(25);
 numbuyPotion.setBounds(620, 170, 40, 20);
-getContentPane().add(numbuyPotion);
+
 JTextField numbuyMana;
     numbuyMana = new JTextField(25);
 numbuyMana.setBounds(620, 220, 40, 20);
-getContentPane().add(numbuyMana);
+
 JTextField numbuyFood;
     numbuyFood = new JTextField(25);
 numbuyFood.setBounds(620, 270, 40, 20);
-getContentPane().add(numbuyFood);
+
 
 
 // img gold
@@ -102,30 +102,92 @@ imgFood.setBounds(100, 390, 100, 100);
 // Create Event for Button
 btnBuyPotion.addActionListener(new ActionListener() {
 public void actionPerformed(ActionEvent evt) {
-    int amount = 0;
+    int amountp = 0;
+    String p ;
+    p = numbuyPotion.getText();
+  
     try {
+        amountp = Integer.parseInt(p);
 
-        amount = btnBuyPotion.getInputContext();
+        if(MONEY.getMoney() > 0 && MONEY.getMoney() - 100*amountp >= 0){
 
-        if(MONEY.getMoney() > 0 && MONEY.getMoney() - 100 >= 0){
-            MONEY.updateMoney(-100 * amount);
-            INVENTORYSYSYEM.addManyItemInventory("Potion",amount);
+            MONEY.updateMoney( -100 * amountp);
+            INVENTORYSYSYEM.addManyItemInventory("Potion",amountp);
+
             goal.setText("You have GOLD "+ MONEY.getMoney() +"Stung");
             potion.setText(" You have POTION " + INVENTORYSYSYEM.checkThing("Potion"));
         }
         else{
             final ImageIcon icon = new ImageIcon(getClass().getResource("/logo_potion.png"));
             JOptionPane.showMessageDialog(null," FAIL to BUY  Potion ","BUY POTION",JOptionPane.ERROR_MESSAGE,icon);
+          
         }
         
-    } catch (InputMismatchException e) {
+    } catch (NumberFormatException e) {
         final ImageIcon icon = new ImageIcon(getClass().getResource("/logo_potion.png"));
         JOptionPane.showMessageDialog(null," FAIL to BUY  Potion \n Please fill amount with Integer ","BUY POTION",JOptionPane.ERROR_MESSAGE,icon);
     }
-
-    
 }
 }); 
+
+btnBuyMana.addActionListener(new ActionListener() {
+    public void actionPerformed(ActionEvent evt) {
+        int amountm = 0;
+        String m ;
+        m = numbuyMana.getText();
+        
+        try {
+           
+            amountm = Integer.parseInt(m);
+    
+            if(MONEY.getMoney() > 0 && MONEY.getMoney() - 100*amountm >= 0){
+                MONEY.updateMoney(-100 * amountm);
+                INVENTORYSYSYEM.addManyItemInventory("Mana",amountm);
+                goal.setText("You have GOLD "+ MONEY.getMoney() +"Stung");
+                mana.setText(" You have MANA " + INVENTORYSYSYEM.checkThing("Mana"));
+            }
+            else{
+                final ImageIcon icon = new ImageIcon(getClass().getResource("/logo_mana.png"));
+                JOptionPane.showMessageDialog(null," FAIL to BUY Mana ","BUY MANA",JOptionPane.ERROR_MESSAGE,icon);
+              
+            }
+            
+        } catch (NumberFormatException e) {
+            final ImageIcon icon = new ImageIcon(getClass().getResource("/logo_mana.png"));
+            JOptionPane.showMessageDialog(null," FAIL to BUY  Mana \n Please fill amount with Integer ","BUY POTION",JOptionPane.ERROR_MESSAGE,icon);
+        }
+    }
+    }); 
+
+    btnBuyFood.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+            int amountf = 0;
+            String f ;
+            f = numbuyFood.getText();
+               
+            try {  
+               
+                amountf = Integer.parseInt(f);
+        
+                if(MONEY.getMoney() > 0 && MONEY.getMoney() - 100*amountf >= 0){
+                    MONEY.updateMoney(-100 * amountf);
+                    INVENTORYSYSYEM.addManyItemInventory("Food",amountf);
+                    goal.setText("You have GOLD "+ MONEY.getMoney() +"Stung");
+                    food.setText(" You have FOOD " + INVENTORYSYSYEM.checkThing("Food"));
+                }
+                else{
+                    final ImageIcon icon = new ImageIcon(getClass().getResource("/logo_food.png"));
+                    JOptionPane.showMessageDialog(null," FAIL to BUY Food ","BUY FOOD",JOptionPane.ERROR_MESSAGE,icon);
+                  
+                }
+                
+            } catch (NumberFormatException e) {
+                final ImageIcon icon = new ImageIcon(getClass().getResource("/logo_food.png"));
+                JOptionPane.showMessageDialog(null," FAIL to BUY  Food \n Please fill amount with Integer ","BUY POTION",JOptionPane.ERROR_MESSAGE,icon);
+            }
+        }
+        }); 
+    
 
     btnOpen.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent evt) {
@@ -141,8 +203,7 @@ public void actionPerformed(ActionEvent evt) {
             }
         }
     }); 
-   
-    getContentPane().add(goal);
+
    
 
 btnOpen1.addActionListener(new ActionListener() {
@@ -188,6 +249,8 @@ btnOpen1.addActionListener(new ActionListener() {
             }
             });  
 
+      
+
 getContentPane().add(goal);
 getContentPane().add(potion);
 getContentPane().add(mana);
@@ -202,5 +265,11 @@ getContentPane().add(btnOpen);
 getContentPane().add(btnOpen1);  
 getContentPane().add(btnOpen2);
 getContentPane().add(btnBack);
+getContentPane().add(btnBuyPotion);
+getContentPane().add(btnBuyMana);
+getContentPane().add(numbuyPotion);
+getContentPane().add(numbuyMana);
+getContentPane().add(numbuyFood);
+getContentPane().add(btnBuyFood);
 }   
 }
