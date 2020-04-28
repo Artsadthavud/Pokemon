@@ -3,7 +3,7 @@ package NEWERAPOKEMON;
 class FIRE extends LIFEPOKEMON{
   
 
-    protected int attackFoes(int DMG) {
+    protected int attackFoes() {
         return 0;
     }
 

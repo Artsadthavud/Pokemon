@@ -51,25 +51,28 @@ public class WATERPARTNER extends JFrame {
 
         water1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                 // add to bag
-                LIFEPOKEMON KUNKA = new WATER();
-                KUNKA.addStatusPokemon("KUNKA","WATER", 850, 450, 120,130,200);
-                KUNKA.setMaxStatus(850, 450);
+           
+
+                LIFEPOKEMON KUNKA = new FIRE();
+                KUNKA.addStatusPokemon("LINA","FIRE", 825, 455, 112,152,212);
+                KUNKA.setMaxStatus(825, 455);
                 BAG.partner(KUNKA);
-                
-               // set profile partner
-               PROFILEPARTNER.setProfilePic("" + "/kunla.jpg" + "");
+
+
+                PROFILEPARTNER.setProfilePic("" + "/kunla.jpg" + "");
                PROFILEPARTNER.setAtkPic("" + "/image/Sblue1.png" + "");
                PROFILEPARTNER.setS1Pic("" + "/image/Sblue2.png" + "");
                PROFILEPARTNER.setS2Pic("" + "/image/Sblue3.png" + "");
+               PROFILEPARTNER.setsProfilePic("" + "/kkc.png" + "");
                PROFILEPARTNER.setDetailAtk("MELEE ATTACK");
                PROFILEPARTNER.setDetailS1("HOLY SHIELD");
                PROFILEPARTNER.setDetailS2("HEARTEATER");
+                
                 // New Form
                 MAINGAMES form2 = new MAINGAMES(KUNKA);
-                form2.setVisible(true);
-                // Hide Current Form
-                setVisible(false);
+            form2.setVisible(true);
+            // Hide Current Form
+            setVisible(false);
             }
         });
         water2.addActionListener(new ActionListener() {
@@ -85,6 +88,7 @@ public class WATERPARTNER extends JFrame {
                PROFILEPARTNER.setAtkPic("" + "/image/Sblue1.png" + "");
                PROFILEPARTNER.setS1Pic("" + "/image/Sblue4.png" + "");
                PROFILEPARTNER.setS2Pic("" + "/image/Sblue5.png" + "");
+               PROFILEPARTNER.setsProfilePic("" + "/Slarkc.png" + "");
                PROFILEPARTNER.setDetailAtk("MELEE ATTACK");
                PROFILEPARTNER.setDetailS1("FEATHER SWORD");
                PROFILEPARTNER.setDetailS2("DEMON FORM");

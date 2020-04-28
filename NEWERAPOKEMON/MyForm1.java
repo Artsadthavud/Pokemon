@@ -109,5 +109,6 @@ public class MyForm1 extends JFrame {
                 getContentPane().add(btnOpen);
                 getContentPane().add(btnOpen1);  
                 getContentPane().add(btnOpen2);
+              
     }   
 }

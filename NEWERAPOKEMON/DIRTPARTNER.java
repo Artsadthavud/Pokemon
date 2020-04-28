@@ -5,16 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class DIRTPARTNER extends JFrame {
-    public static void main(String[] args) {
-
-        EventQueue.invokeLater(new Runnable() {
-
-            public void run() {
-                DIRTPARTNER form = new DIRTPARTNER();
-                form.setVisible(true);
-            }
-        });
-    }
+   
 
     public DIRTPARTNER() {
         // Create Form Frame
@@ -29,13 +20,13 @@ public class DIRTPARTNER extends JFrame {
         getContentPane().setLayout(null);
         // Create Label
 
-        JLabel harute1 = new JLabel(new ImageIcon(getClass().getResource("/Earthshaker.jpg")));
-        harute1.setSize(250, 300);
-        harute1.setLocation(50, 100);
+        JLabel es = new JLabel(new ImageIcon(getClass().getResource("/Earthshaker.jpg")));
+        es.setSize(250, 300);
+        es.setLocation(50, 100);
 
-        JLabel lina = new JLabel(new ImageIcon(getClass().getResource("/Sandking.jpg")));
-        lina.setSize(250, 300);
-        lina.setLocation(475, 100);
+        JLabel sk = new JLabel(new ImageIcon(getClass().getResource("/Sandking.jpg")));
+        sk.setSize(250, 300);
+        sk.setLocation(475, 100);
 
         JLabel label = new JLabel("Choose your Partner");
         label.setBounds(330, 65, 200, 23);
@@ -60,6 +51,7 @@ public class DIRTPARTNER extends JFrame {
                  PROFILEPARTNER.setAtkPic("" + "/image/Sdirt1.png" + "");
                  PROFILEPARTNER.setS1Pic("" + "/image/Sdirt2.png" + "");
                  PROFILEPARTNER.setS2Pic("" + "/image/Sdirt3.png" + "");
+                 PROFILEPARTNER.setsProfilePic("" + "/esc.png" + "");
                  PROFILEPARTNER.setDetailAtk("MELEE ATTACK");
                 PROFILEPARTNER.setDetailS1("SAND STORM");
                 PROFILEPARTNER.setDetailS2("METEO");
@@ -83,6 +75,7 @@ public class DIRTPARTNER extends JFrame {
                  PROFILEPARTNER.setAtkPic("" + "/image/Sdirt1.png" + "");
                  PROFILEPARTNER.setS1Pic("" + "/image/Sdirt4.png" + "");
                  PROFILEPARTNER.setS2Pic("" + "/image/Sdirt5.png" + "");
+                 PROFILEPARTNER.setsProfilePic("" + "/skc.png" + "");
                  PROFILEPARTNER.setDetailAtk("MELEE ATTACK");
                 PROFILEPARTNER.setDetailS1("DIRT HAND");
                 PROFILEPARTNER.setDetailS2("ANCIENT ORDER");
@@ -103,8 +96,8 @@ public class DIRTPARTNER extends JFrame {
     }
 });          
 
-getContentPane().add(harute1);
-getContentPane().add(lina);
+getContentPane().add(sk);
+getContentPane().add(es);
 getContentPane().add(label);
 getContentPane().add(dirt1);  
 getContentPane().add(dirt2);  

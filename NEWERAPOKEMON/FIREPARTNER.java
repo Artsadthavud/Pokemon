@@ -5,16 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class FIREPARTNER extends JFrame {
-    public static void main(String[] args) {
-
-        EventQueue.invokeLater(new Runnable() {
-
-            public void run() {
-                FIREPARTNER form = new FIREPARTNER();
-                form.setVisible(true);
-            }
-        });
-    }
+    
     public FIREPARTNER() {
         // Create Form Frame
         super("GUNGEMON");

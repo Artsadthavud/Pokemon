@@ -63,7 +63,7 @@ public class MEET extends JFrame {
 
             namePartmer.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
-                  CHANGNAME changname = new CHANGNAME();
+                  CHANGNAME changname = new CHANGNAME(lifepokemon);
                   changname.setVisible(true);
                   setVisible(false);
                 }

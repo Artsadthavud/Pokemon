@@ -1,6 +1,5 @@
 package NEWERAPOKEMON;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
 
 public class MAINGAMES extends JFrame {

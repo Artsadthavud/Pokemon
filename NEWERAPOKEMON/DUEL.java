@@ -14,14 +14,12 @@ setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 getContentPane().setLayout(null);
 
 DARK foes = new DARK();
-foes.addFoesStatus("ROSHAN", "DARK", 2000, 150,200,450);
+foes.addFoesStatus("ROSHAN", "DARK", 2000, 180,270,450);
 // Create Label
 JLabel labelHead = new JLabel(" Wellcome to GUNGEMON GYM");
 labelHead.setBounds(320, 43, 300,14);
 JLabel label = new JLabel(" GUNGEMON the WORLD of GEMON ");
 label.setBounds(290, 83, 300, 14);
-
-
 
 JLabel fNamex = new JLabel(foes.getfName());
 fNamex.setBounds(450, 190, 400, 50);
@@ -51,6 +49,10 @@ statusSP.setBounds(20, 200, 200, 50);
 JLabel playerPic = new JLabel(new ImageIcon(getClass().getResource(PROFILEPARTNER.getProfilePic())));
 playerPic.setSize(250, 300);
 playerPic.setLocation(20, 250);
+
+
+JButton btnBack = new JButton(" escape ");
+btnBack.setBounds(500, 540, 200, 23);
 
 JButton foesPic = new JButton(new ImageIcon(getClass().getResource("/roz.png")));
 foesPic.setSize(200, 100);
@@ -133,19 +135,20 @@ JLabel mana = new JLabel(" X " + INVENTORYSYSYEM.checkThing("Mana"));
                 JOptionPane.showMessageDialog(null," THE KING OF THE DEMON \n Reward  GOLD 5000 Stung ","ROSHAN",JOptionPane.INFORMATION_MESSAGE,icon);
                 }});
 
-btnfAtk.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent evt) {
-final ImageIcon icon = new ImageIcon(getClass().getResource("/image/Sro1.png"));
-JOptionPane.showMessageDialog(null," MELEE ATTACK " + " : DAMAGE : " + foes.getfDMG(),"NORMAL ATTACK",JOptionPane.INFORMATION_MESSAGE,icon);
+
+        btnfAtk.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+            final ImageIcon icon = new ImageIcon(getClass().getResource("/image/Sro1.png"));
+            JOptionPane.showMessageDialog(null," MELEE ATTACK " + " : DAMAGE : " + foes.getfDMG(),"NORMAL ATTACK",JOptionPane.INFORMATION_MESSAGE,icon);
     }});
     
-btnfS1.addActionListener(new ActionListener() {
+        btnfS1.addActionListener(new ActionListener() {
     public void actionPerformed(ActionEvent evt) {
         final ImageIcon icon = new ImageIcon(getClass().getResource("/image/Sro2.png"));
         JOptionPane.showMessageDialog(null," ELDER DRAGON " + " : DAMAGE : " +  foes.getfs1DMG(),"SKILL 1",JOptionPane.INFORMATION_MESSAGE,icon);
     }});
     
-btnfS2.addActionListener(new ActionListener() {
+        btnfS2.addActionListener(new ActionListener() {
     public void actionPerformed(ActionEvent evt) {
         final ImageIcon icon = new ImageIcon(getClass().getResource("/image/Sro3.png"));
         JOptionPane.showMessageDialog(null," LORD OF DEATH " + " : DAMAGE : " + foes.getfs2DMG(),"SKILL 2",JOptionPane.INFORMATION_MESSAGE,icon);
@@ -156,13 +159,13 @@ btnAtk.addActionListener(new ActionListener() {
     public void actionPerformed(ActionEvent evt) {
 
         foes.updatefHP(COMBATSYSTEM.calculateSystem(foes.fHP, lifepokemon.getDMG()));
-        lifepokemon.updateHP(COMBATSYSTEM.calculateSystem(lifepokemon.getHP(),foes.getfDMG()));
+        lifepokemon.updateHP(COMBATSYSTEM.calculateSystem(lifepokemon.getHP(),foes.attackFoes()));
 
 
         Namex.setText(lifepokemon.getName() + " : HIT FOES BY NOMAL ATTACK ");
         fNamex.setText(foes.getfName() + " : HIT " + lifepokemon.getName());
 
-        stateNamex.setText(lifepokemon.getName() + " : Recieve damage " + foes.getfDMG());
+        stateNamex.setText(lifepokemon.getName() + " : Recieve damage " + foes.attackFoes());
         statefNamex.setText(foes.getfName() + " : Recieve damage " + lifepokemon.getDMG());
 
         statusHP.setText(" HP :  " + lifepokemon.getHP() + " / " + lifepokemon.getMaxHP());
@@ -192,13 +195,13 @@ btnS1.addActionListener(new ActionListener() {
 public void actionPerformed(ActionEvent evt) {
     if( lifepokemon.SP - 150 >= 0){
         foes.updatefHP(COMBATSYSTEM.calculateSystem(foes.fHP, lifepokemon.gets1DMG()));
-        lifepokemon.updateHP(COMBATSYSTEM.calculateSystem(lifepokemon.getHP(),foes.getfs1DMG()));
+        lifepokemon.updateHP(COMBATSYSTEM.calculateSystem(lifepokemon.getHP(),foes.attackFoes()));
         lifepokemon.useSP(150);
 
         Namex.setText(lifepokemon.getName() + " : HIT FOES BY SKILL 1 ");
         fNamex.setText(foes.getfName() + " : HIT " + lifepokemon.getName());
 
-        stateNamex.setText(lifepokemon.getName() + " : Recieve damage " + foes.getfs1DMG());
+        stateNamex.setText(lifepokemon.getName() + " : Recieve damage " + foes.attackFoes());
         statefNamex.setText(foes.getfName() + " : Recieve damage " + lifepokemon.gets1DMG());
 
         statusHP.setText(" HP :  " + lifepokemon.getHP() + " / " + lifepokemon.getMaxHP());
@@ -235,13 +238,13 @@ btnS2.addActionListener(new ActionListener() {
     public void actionPerformed(ActionEvent evt) {
         if( lifepokemon.getSP() - 300 >= 0){
         foes.updatefHP(COMBATSYSTEM.calculateSystem(foes.fHP, lifepokemon.gets2DMG()));
-        lifepokemon.updateHP(COMBATSYSTEM.calculateSystem(lifepokemon.getHP(),foes.getfs2DMG()));
+        lifepokemon.updateHP(COMBATSYSTEM.calculateSystem(lifepokemon.getHP(),foes.attackFoes()));
         lifepokemon.useSP(300);
 
         Namex.setText(lifepokemon.getName() + " : HIT FOES BY SKILL 2 ");
         fNamex.setText(foes.getfName() + " : HIT " + lifepokemon.getName());
 
-        stateNamex.setText(lifepokemon.getName() + " : Recieve damage " + foes.getfs2DMG());
+        stateNamex.setText(lifepokemon.getName() + " : Recieve damage " + foes.attackFoes());
         statefNamex.setText(foes.getfName() + " : Recieve damage " + lifepokemon.gets2DMG());
 
         statusHP.setText(" HP :  " + lifepokemon.getHP() + " / " + lifepokemon.getMaxHP());
@@ -274,6 +277,20 @@ btnS2.addActionListener(new ActionListener() {
        
     }
     }); 
+
+
+     btnBack.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+
+            final ImageIcon icon = new ImageIcon(getClass().getResource("/escape.png"));
+            JOptionPane.showMessageDialog(null,"  KRAJOKKK  " ,"  ESCAPE  ",JOptionPane.INFORMATION_MESSAGE,icon);
+        // New Form
+        GYM form1 = new GYM(lifepokemon);
+            form1.setVisible(true);
+             // Hide Current Form
+             setVisible(false);
+    }
+});          
 //getContentPane().add(labelHead);
 //getContentPane().add(label);
 getContentPane().add(foesPic);
@@ -300,5 +317,6 @@ getContentPane().add(fNamex);
 getContentPane().add(Namex);
 getContentPane().add(statefNamex);
 getContentPane().add(stateNamex);
+getContentPane().add(btnBack);
 }   
 }

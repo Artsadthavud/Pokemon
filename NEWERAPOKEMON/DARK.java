@@ -1,11 +1,28 @@
 package NEWERAPOKEMON;
+import java.util.Random;
 
 public class DARK extends LIFEPOKEMON {
 
     @Override
-    protected int attackFoes(int DMG) {
-        // TODO Auto-generated method stub
-        return 0;
+    protected int attackFoes() {
+        Random rand = new Random ();
+        int event = rand.nextInt(12);
+        int DMGf = 0;
+
+            if(event > 10){
+                DMGf = getfDMG();
+                this.nameSkill = "NORMAL ATTACK" ;
+            }
+            else if(event > 6){
+                DMGf = getfs1DMG();
+                this.nameSkill = "SKILL 1";
+            }
+            else if(event <= 6){
+                DMGf = getfs2DMG();
+                this.nameSkill = "SKILL 2";
+            }
+
+        return DMGf;
     }
 
     @Override
@@ -37,7 +54,6 @@ public class DARK extends LIFEPOKEMON {
 
     @Override
     public void updatefHP(int fHP) {
-        // TODO Auto-generated method stub
         this.fHP = fHP;
 
     }

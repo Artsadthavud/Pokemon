@@ -4,17 +4,8 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class CHANGNAME extends JFrame {
-    public static void main(String[] args) {
-
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                CHANGNAME form = new CHANGNAME();
-                form.setVisible(true);
-            }
-        });
-    }
-
-    public CHANGNAME() {
+  
+    public CHANGNAME(LIFEPOKEMON lifepokemon) {
 // Create Form Frame
 super("GUNGEMON");
 
@@ -46,9 +37,9 @@ public void actionPerformed(ActionEvent evt) {
     
     // set name form input
     String Name = NamePlayer.getText();
-    LIFEPOKEMON.addName(Name);
+    lifepokemon.addName(Name);
    // New Form
-    MEET form1 = new MEET();
+    MEET form1 = new MEET(lifepokemon);
     form1.setVisible(true);
     // Hide Current Form
     setVisible(false);

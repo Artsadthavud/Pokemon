@@ -3,7 +3,7 @@ package NEWERAPOKEMON;
 class DIRT extends LIFEPOKEMON{
   
 
-    protected int attackFoes(int DMG) {
+    protected int attackFoes() {
         return 0;
     }
 
@@ -37,7 +37,6 @@ class DIRT extends LIFEPOKEMON{
 
     @Override
     public void updatefHP(int fHP) {
-        // TODO Auto-generated method stub
         this.fHP = fHP;
 
     }

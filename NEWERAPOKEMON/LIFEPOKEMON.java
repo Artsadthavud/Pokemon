@@ -15,6 +15,7 @@ public abstract class LIFEPOKEMON {
     protected int fs1DMG = 0;
     protected int fs2DMG = 0;
     protected String fname ;
+    protected String nameSkill; 
 
     public void setName(String Name) {
         this.Name = Name;
@@ -121,7 +122,7 @@ public abstract class LIFEPOKEMON {
 
 
     protected abstract void addFoesStatus(String fname, String fcLass, int fHP, int fDMG,int fs1DMG,int fs2DMG);
-    protected abstract int attackFoes(int DMG);
+    protected abstract int attackFoes();
     // add status of pokemon
 	protected abstract void addStatusPokemon(String Name,String cLass, int HP, int SP, int DMG, int s1DMG, int s2DMG);
     protected void addName(String Name) {
