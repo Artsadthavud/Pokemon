@@ -31,7 +31,6 @@ public class MyForm0 extends JFrame {
                 // Create Label
                 JLabel labelHead = new JLabel("Wellcome to GUNGEMON ");
                 JLabel label = new JLabel("Please Enter your name ");
-                
                 // Create Button
                 JButton btnOpen = new JButton(" OK ");
                

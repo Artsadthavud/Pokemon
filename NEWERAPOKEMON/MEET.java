@@ -11,8 +11,8 @@ public class MEET extends JFrame {
      *
      */
     private static final long serialVersionUID = 1L;
-
-    public MEET(LIFEPOKEMON lifepokemon) {
+    PROFILEPARTNER profilepartner;
+    public MEET(LIFEPOKEMON lifepokemon,PROFILEPARTNER profilepartner) {
         // Create Form Frame
         super("GUNGEMON");
        
@@ -25,7 +25,7 @@ public class MEET extends JFrame {
         
 
         // Create Label
-        JLabel profilePic = new JLabel(new ImageIcon(getClass().getResource(PROFILEPARTNER.getProfilePic())));
+        JLabel profilePic = new JLabel(new ImageIcon(getClass().getResource(profilepartner.getProfilePic())));
         profilePic.setSize(250, 300);
         profilePic.setLocation(50, 100);
 
@@ -55,25 +55,29 @@ public class MEET extends JFrame {
         JButton btnUseMana = new JButton(" USE MANA ");
         btnUseMana.setBounds(470, 200, 200, 23);
 
-        JButton btnAtk = new JButton(new ImageIcon(getClass().getResource(PROFILEPARTNER.getAtkPic())));
+        JButton btnAtk = new JButton(new ImageIcon(getClass().getResource(profilepartner.getAtkPic())));
         btnAtk.setBounds(360, 140, 50, 50);
 
-        JButton btnS1 = new JButton(new ImageIcon(getClass().getResource(PROFILEPARTNER.getS1Pic())));
+        JButton btnS1 = new JButton(new ImageIcon(getClass().getResource(profilepartner.getS1Pic())));
         btnS1.setBounds(360, 220, 50, 50);
 
-        JButton btnS2 = new JButton(new ImageIcon(getClass().getResource(PROFILEPARTNER.getS2Pic())));
+        JButton btnS2 = new JButton(new ImageIcon(getClass().getResource(profilepartner.getS2Pic())));
         btnS2.setBounds(360, 300, 50, 50);
+
+        JButton fire3 = new JButton("3 : BACK");
+        fire3.setBounds(400, 500, 200, 23);
+
 
       
 
-            namePartmer.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent evt) {
-                  CHANGNAME changname = new CHANGNAME(lifepokemon);
-                  changname.setVisible(true);
-                  setVisible(false);
-                }
+        namePartmer.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                CHANGNAME changname = new CHANGNAME(lifepokemon);
+                changname.setVisible(true);
+                setVisible(false);
+            }
 
-            });
+        });
 
         btnFeedFood.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -92,6 +96,7 @@ public class MEET extends JFrame {
                     JOptionPane.showMessageDialog(null," Fail to Feed  You have no Food ","FEED FOOD",JOptionPane.INFORMATION_MESSAGE,icon);
                 }
             }});
+
             btnUsePotion.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                    
@@ -107,6 +112,7 @@ public class MEET extends JFrame {
                         JOptionPane.showMessageDialog(null," Fail to Use  You have no Potion ","USE POTION",JOptionPane.INFORMATION_MESSAGE,icon);
                     }
                 }});
+
                 btnUseMana.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
                        
@@ -125,46 +131,47 @@ public class MEET extends JFrame {
 
         btnAtk.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-        final ImageIcon icon = new ImageIcon(getClass().getResource(PROFILEPARTNER.getAtkPic()));
-        JOptionPane.showMessageDialog(null,PROFILEPARTNER.detailAtk + " : DAMAGE : " + lifepokemon.getDMG(),"NORMAL ATTACK",JOptionPane.INFORMATION_MESSAGE,icon);
+                final ImageIcon icon = new ImageIcon(getClass().getResource(profilepartner.getAtkPic()));
+                JOptionPane.showMessageDialog(null,profilepartner.detailAtk + " : DAMAGE : " + lifepokemon.getDMG(),"NORMAL ATTACK",JOptionPane.INFORMATION_MESSAGE,icon);
             }});
+
             btnS1.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
-            final ImageIcon icon = new ImageIcon(getClass().getResource(PROFILEPARTNER.getS1Pic()));
-            JOptionPane.showMessageDialog(null,PROFILEPARTNER.details1 + " : DAMAGE : " + lifepokemon.gets1DMG(),"SKILL 1",JOptionPane.INFORMATION_MESSAGE,icon);
-                }});
+                    final ImageIcon icon = new ImageIcon(getClass().getResource(profilepartner.getS1Pic()));
+                    JOptionPane.showMessageDialog(null,profilepartner.details1 + " : DAMAGE : " + lifepokemon.gets1DMG(),"SKILL 1",JOptionPane.INFORMATION_MESSAGE,icon);
+            }});
+
                 btnS2.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
-                final ImageIcon icon = new ImageIcon(getClass().getResource(PROFILEPARTNER.getS2Pic()));
-                JOptionPane.showMessageDialog(null,PROFILEPARTNER.details2 + " : DAMAGE : " + lifepokemon.gets2DMG(),"SKILL 2",JOptionPane.INFORMATION_MESSAGE,icon);
-                    }});
+                    final ImageIcon icon = new ImageIcon(getClass().getResource(profilepartner.getS2Pic()));
+                    JOptionPane.showMessageDialog(null,profilepartner.details2 + " : DAMAGE : " + lifepokemon.gets2DMG(),"SKILL 2",JOptionPane.INFORMATION_MESSAGE,icon);
+                }});
                     
-        JButton fire3 = new JButton("3 : BACK");
-            fire3.setBounds(400, 500, 200, 23);
-
-             fire3.addActionListener(new ActionListener() {
+     
+            fire3.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                 // New Form
-                MAINGAMES form1 = new MAINGAMES(lifepokemon);
+                MAINGAMES form1 = new MAINGAMES(lifepokemon,profilepartner);
                     form1.setVisible(true);
                      // Hide Current Form
                      setVisible(false);
             }
         });          
 
-getContentPane().add(profilePic);
-getContentPane().add(label);
+    getContentPane().add(profilePic);
+    getContentPane().add(label);
+    getContentPane().add(namePart);
+    getContentPane().add(namePartmer);
+    getContentPane().add(statusHP);
+    getContentPane().add(statusSP);
+    getContentPane().add(btnFeedFood); 
+    getContentPane().add(btnUsePotion);
+    getContentPane().add(btnUseMana);  
+    getContentPane().add(btnS1); 
+    getContentPane().add(btnS2);
+    getContentPane().add(btnAtk);
+    getContentPane().add(fire3); 
+    
+    }
 
-getContentPane().add(namePart);
-getContentPane().add(namePartmer);
-getContentPane().add(statusHP);
-getContentPane().add(statusSP);
-getContentPane().add(btnFeedFood); 
-getContentPane().add(btnUsePotion);
-getContentPane().add(btnUseMana);  
-getContentPane().add(btnS1); 
-getContentPane().add(btnS2);
-getContentPane().add(btnAtk);
-getContentPane().add(fire3); 
-}  
 }

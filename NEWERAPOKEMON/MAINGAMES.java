@@ -8,8 +8,8 @@ public class MAINGAMES extends JFrame {
     	 *
     	 */
     private static final long serialVersionUID = 1L;
-
-    public MAINGAMES(LIFEPOKEMON lifepokemon) {
+    
+    public MAINGAMES(LIFEPOKEMON lifepokemon, PROFILEPARTNER profilepartner) {
     // Create Form Frame
     super("GUNGEMON");
 
@@ -27,7 +27,7 @@ public class MAINGAMES extends JFrame {
     bagPic.setSize(150, 150);
     bagPic.setLocation(180, 60);
 
-    JLabel psPic = new JLabel(new ImageIcon(getClass().getResource(PROFILEPARTNER.getsProfilePic())));
+    JLabel psPic = new JLabel(new ImageIcon(getClass().getResource(profilepartner.getsProfilePic())));
     psPic.setSize(150, 150);
     psPic.setLocation(480, 110);
 
@@ -46,7 +46,7 @@ public class MAINGAMES extends JFrame {
     btnInventory.addActionListener(new ActionListener() {
     public void actionPerformed(ActionEvent evt) {
         // New Form
-        INVENTORY form1 = new INVENTORY(lifepokemon);
+        INVENTORY form1 = new INVENTORY(lifepokemon,profilepartner);
         form1.setVisible(true);
         // Hide Current Form
         setVisible(false);
@@ -55,7 +55,7 @@ public class MAINGAMES extends JFrame {
     btnMeet.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent evt) {
             // New Form
-            MEET form1 = new MEET(lifepokemon);
+            MEET form1 = new MEET(lifepokemon,profilepartner);
             form1.setVisible(true);
             // Hide Current Form
             setVisible(false);
@@ -64,19 +64,19 @@ public class MAINGAMES extends JFrame {
     btnGym.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent evt) {
            // New Form
-            GYM form1 = new GYM(lifepokemon);
+            GYM form1 = new GYM(lifepokemon,profilepartner);
             form1.setVisible(true);
             // Hide Current Form
             setVisible(false);
         }
         }); 
-getContentPane().add(labelHead);
-getContentPane().add(label);
-getContentPane().add(bagPic);
-getContentPane().add(psPic);
-getContentPane().add(roPic);
-getContentPane().add(btnInventory);
-getContentPane().add(btnMeet);
-getContentPane().add(btnGym);
-}   
+    getContentPane().add(labelHead);
+    getContentPane().add(label);
+    getContentPane().add(bagPic);
+    getContentPane().add(psPic);
+    getContentPane().add(roPic);
+    getContentPane().add(btnInventory);
+    getContentPane().add(btnMeet);
+    getContentPane().add(btnGym);
+    }  
 }

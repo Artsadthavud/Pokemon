@@ -30,7 +30,11 @@ class DIRT extends LIFEPOKEMON{
 
     @Override
     protected void addFoesStatus(String fname, String fcLass, int fHP, int fDMG, int fs1dmg, int fs2dmg) {
-        
+        this.fHP = fHP;
+        this.fDMG = fDMG;
+        this.fname = fname;
+        this.fs1DMG = fs1dmg;
+        this.fs2DMG = fs2dmg;
 
     }
   

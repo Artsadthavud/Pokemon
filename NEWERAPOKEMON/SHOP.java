@@ -10,7 +10,7 @@ public class SHOP extends JFrame {
      */
     private static final long serialVersionUID = 1L;
 
-    public SHOP(LIFEPOKEMON lifepokemon) {
+    public SHOP(LIFEPOKEMON lifepokemon,PROFILEPARTNER profilepartner) {
 // Create Form Frame
 super("GUNGEMON");
 setSize(800, 600);
@@ -236,7 +236,7 @@ btnOpen1.addActionListener(new ActionListener() {
         btnBack.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 
-                    INVENTORY nShop = new INVENTORY(lifepokemon);
+                    INVENTORY nShop = new INVENTORY(lifepokemon,profilepartner);
                     nShop.setVisible(true);
                     setVisible(false);
                 

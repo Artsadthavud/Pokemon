@@ -22,11 +22,10 @@ public class WATERPARTNER extends JFrame {
         });
 
     }
-
     public WATERPARTNER() {
         // Create Form Frame
         super("GUNGEMON");
-
+        PROFILEPARTNER profilepartner = new PROFILEPARTNER();
         setSize(800, 600);
 
         setLocation(400, 200);
@@ -64,17 +63,17 @@ public class WATERPARTNER extends JFrame {
                 BAG.partner(KUNKA);
 
 
-                PROFILEPARTNER.setProfilePic("" + "/kunla.jpg" + "");
-               PROFILEPARTNER.setAtkPic("" + "/image/Sblue1.png" + "");
-               PROFILEPARTNER.setS1Pic("" + "/image/Sblue2.png" + "");
-               PROFILEPARTNER.setS2Pic("" + "/image/Sblue3.png" + "");
-               PROFILEPARTNER.setsProfilePic("" + "/kkc.png" + "");
-               PROFILEPARTNER.setDetailAtk("MELEE ATTACK");
-               PROFILEPARTNER.setDetailS1("HOLY SHIELD");
-               PROFILEPARTNER.setDetailS2("HEARTEATER");
+                profilepartner.setProfilePic("" + "/kunla.jpg" + "");
+                profilepartner.setAtkPic("" + "/image/Sblue1.png" + "");
+                profilepartner.setS1Pic("" + "/image/Sblue2.png" + "");
+                profilepartner.setS2Pic("" + "/image/Sblue3.png" + "");
+                profilepartner.setsProfilePic("" + "/kkc.png" + "");
+                profilepartner.setDetailAtk("MELEE ATTACK");
+                profilepartner.setDetailS1("HOLY SHIELD");
+                profilepartner.setDetailS2("HEARTEATER");
                 
                 // New Form
-                MAINGAMES form2 = new MAINGAMES(KUNKA);
+                MAINGAMES form2 = new MAINGAMES(KUNKA,profilepartner);
             form2.setVisible(true);
             // Hide Current Form
             setVisible(false);
@@ -89,16 +88,16 @@ public class WATERPARTNER extends JFrame {
                  BAG.partner(SLARK);
                 
                // set profile partner
-               PROFILEPARTNER.setProfilePic("" + "/Slark.jpg" + "");
-               PROFILEPARTNER.setAtkPic("" + "/image/Sblue1.png" + "");
-               PROFILEPARTNER.setS1Pic("" + "/image/Sblue4.png" + "");
-               PROFILEPARTNER.setS2Pic("" + "/image/Sblue5.png" + "");
-               PROFILEPARTNER.setsProfilePic("" + "/Slarkc.png" + "");
-               PROFILEPARTNER.setDetailAtk("MELEE ATTACK");
-               PROFILEPARTNER.setDetailS1("FEATHER SWORD");
-               PROFILEPARTNER.setDetailS2("DEMON FORM");
+               profilepartner.setProfilePic("" + "/Slark.jpg" + "");
+               profilepartner.setAtkPic("" + "/image/Sblue1.png" + "");
+               profilepartner.setS1Pic("" + "/image/Sblue4.png" + "");
+               profilepartner.setS2Pic("" + "/image/Sblue5.png" + "");
+               profilepartner.setsProfilePic("" + "/Slarkc.png" + "");
+               profilepartner.setDetailAtk("MELEE ATTACK");
+               profilepartner.setDetailS1("FEATHER SWORD");
+               profilepartner.setDetailS2("DEMON FORM");
                 // New Form
-                MAINGAMES form2 = new MAINGAMES(SLARK);
+                MAINGAMES form2 = new MAINGAMES(SLARK,profilepartner);
             form2.setVisible(true);
             // Hide Current Form
             setVisible(false);

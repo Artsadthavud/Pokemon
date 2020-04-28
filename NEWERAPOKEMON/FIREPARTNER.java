@@ -9,11 +9,11 @@ public class FIREPARTNER extends JFrame {
      *
      */
     private static final long serialVersionUID = 1L;
-
+    
     public FIREPARTNER() {
         // Create Form Frame
         super("GUNGEMON");
-
+        PROFILEPARTNER profilepartner = new PROFILEPARTNER();
         setSize(800, 600);
         setLocation(400, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,17 +45,17 @@ public class FIREPARTNER extends JFrame {
                 YURNERO.setMaxStatus(850, 450);
                 BAG.partner(YURNERO);
                 // set profile partner
-                PROFILEPARTNER.setProfilePic("" + "/jugs.jpg" + "");
-                PROFILEPARTNER.setAtkPic("" + "/image/Sred1.png" + "");
-                PROFILEPARTNER.setS1Pic("" + "/image/Sred2.png" + "");
-                PROFILEPARTNER.setS2Pic("" + "/image/Sred3.png" + "");
-                PROFILEPARTNER.setsProfilePic("" + "/jugc.png" + "");
-                PROFILEPARTNER.setDetailAtk("MELEE ATTACK");
-                PROFILEPARTNER.setDetailS1("BREAK SHIELD");
-                PROFILEPARTNER.setDetailS2("BURN BABY BURN");
+                profilepartner.setProfilePic("" + "/jugs.jpg" + "");
+                profilepartner.setAtkPic("" + "/image/Sred1.png" + "");
+                profilepartner.setS1Pic("" + "/image/Sred2.png" + "");
+                profilepartner.setS2Pic("" + "/image/Sred3.png" + "");
+                profilepartner.setsProfilePic("" + "/jugc.png" + "");
+                profilepartner.setDetailAtk("MELEE ATTACK");
+                profilepartner.setDetailS1("BREAK SHIELD");
+                profilepartner.setDetailS2("BURN BABY BURN");
 
                 // New Form
-                MAINGAMES form2 = new MAINGAMES(YURNERO);
+                MAINGAMES form2 = new MAINGAMES(YURNERO,profilepartner);
                 form2.setVisible(true);
                 // Hide Current Form
                 setVisible(false);
@@ -68,17 +68,17 @@ public class FIREPARTNER extends JFrame {
                 LINA.addStatusPokemon("LINA","FIRE", 825, 455, 112,152,212);
                 LINA.setMaxStatus(825, 455);
                 BAG.partner(LINA);
-                PROFILEPARTNER.setProfilePic("" + "/linaz.jpg" + "");
-                PROFILEPARTNER.setAtkPic("" + "/image/Sred4.png" + "");
-                PROFILEPARTNER.setS1Pic("" + "/image/Sred6.png" + "");
-                PROFILEPARTNER.setS2Pic("" + "/image/Sred5.png" + "");
-                PROFILEPARTNER.setsProfilePic("" + "/linac.png" + "");
-                PROFILEPARTNER.setDetailAtk("RANGE ATTACK");
-                PROFILEPARTNER.setDetailS1("SUPER ARROW");
-                PROFILEPARTNER.setDetailS2("SET FIRE TO THE RAIN");
+                profilepartner.setProfilePic("" + "/linaz.jpg" + "");
+                profilepartner.setAtkPic("" + "/image/Sred4.png" + "");
+                profilepartner.setS1Pic("" + "/image/Sred6.png" + "");
+                profilepartner.setS2Pic("" + "/image/Sred5.png" + "");
+                profilepartner.setsProfilePic("" + "/linac.png" + "");
+                profilepartner.setDetailAtk("RANGE ATTACK");
+                profilepartner.setDetailS1("SUPER ARROW");
+                profilepartner.setDetailS2("SET FIRE TO THE RAIN");
                 
                 // New Form
-                MAINGAMES form2 = new MAINGAMES(LINA);
+                MAINGAMES form2 = new MAINGAMES(LINA,profilepartner);
             form2.setVisible(true);
             // Hide Current Form
             setVisible(false);

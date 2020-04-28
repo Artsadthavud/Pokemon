@@ -4,17 +4,14 @@ import javax.swing.*;
 import java.awt.event.*;
 
     public class DIRTPARTNER extends JFrame {
-   
-
          /**
          *
          */
          private static final long serialVersionUID = 1L;
-
          public DIRTPARTNER() {
         // Create Form Frame
         super("GUNGEMON");
-
+        PROFILEPARTNER profilepartner = new PROFILEPARTNER();
         setSize(800, 600);
 
         setLocation(400, 200);
@@ -51,16 +48,16 @@ import java.awt.event.*;
                  BAG.partner(EARTHSHAKER);
               
                  // set profile partner
-                 PROFILEPARTNER.setProfilePic("" + "/Earthshaker.jpg" + "");
-                 PROFILEPARTNER.setAtkPic("" + "/image/Sdirt1.png" + "");
-                 PROFILEPARTNER.setS1Pic("" + "/image/Sdirt2.png" + "");
-                 PROFILEPARTNER.setS2Pic("" + "/image/Sdirt3.png" + "");
-                 PROFILEPARTNER.setsProfilePic("" + "/esc.png" + "");
-                 PROFILEPARTNER.setDetailAtk("MELEE ATTACK");
-                PROFILEPARTNER.setDetailS1("SAND STORM");
-                PROFILEPARTNER.setDetailS2("METEO");
+                 profilepartner.setProfilePic("" + "/Earthshaker.jpg" + "");
+                 profilepartner.setAtkPic("" + "/image/Sdirt1.png" + "");
+                 profilepartner.setS1Pic("" + "/image/Sdirt2.png" + "");
+                 profilepartner.setS2Pic("" + "/image/Sdirt3.png" + "");
+                 profilepartner.setsProfilePic("" + "/esc.png" + "");
+                 profilepartner.setDetailAtk("MELEE ATTACK");
+                 profilepartner.setDetailS1("SAND STORM");
+                 profilepartner.setDetailS2("METEO");
                 // New Form
-                MAINGAMES form2 = new MAINGAMES(EARTHSHAKER);
+                MAINGAMES form2 = new MAINGAMES(EARTHSHAKER,profilepartner);
                 form2.setVisible(true);
                 // Hide Current Form
                 setVisible(false);
@@ -75,36 +72,36 @@ import java.awt.event.*;
                 BAG.partner(SANDKING);
                 
                  // set profile partner
-                 PROFILEPARTNER.setProfilePic("" + "/Sandking.jpg" + "");
-                 PROFILEPARTNER.setAtkPic("" + "/image/Sdirt1.png" + "");
-                 PROFILEPARTNER.setS1Pic("" + "/image/Sdirt4.png" + "");
-                 PROFILEPARTNER.setS2Pic("" + "/image/Sdirt5.png" + "");
-                 PROFILEPARTNER.setsProfilePic("" + "/skc.png" + "");
-                 PROFILEPARTNER.setDetailAtk("MELEE ATTACK");
-                PROFILEPARTNER.setDetailS1("DIRT HAND");
-                PROFILEPARTNER.setDetailS2("ANCIENT ORDER");
+                 profilepartner.setProfilePic("" + "/Sandking.jpg" + "");
+                 profilepartner.setAtkPic("" + "/image/Sdirt1.png" + "");
+                 profilepartner.setS1Pic("" + "/image/Sdirt4.png" + "");
+                 profilepartner.setS2Pic("" + "/image/Sdirt5.png" + "");
+                 profilepartner.setsProfilePic("" + "/skc.png" + "");
+                 profilepartner.setDetailAtk("MELEE ATTACK");
+                 profilepartner.setDetailS1("DIRT HAND");
+                 profilepartner.setDetailS2("ANCIENT ORDER");
                 // New Form
-                MAINGAMES form2 = new MAINGAMES(SANDKING);
-            form2.setVisible(true);
-            // Hide Current Form
-            setVisible(false);
-        }
+                MAINGAMES form2 = new MAINGAMES(SANDKING,profilepartner);
+                form2.setVisible(true);
+                // Hide Current Form
+                setVisible(false);
+            }
         }); 
         dirt3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 // New Form
-                 MyForm1 form1 = new MyForm1();
-            form1.setVisible(true);
+                MyForm1 form1 = new MyForm1();
+                form1.setVisible(true);
                 // Hide Current Form
                 setVisible(false);
-    }
-});          
+            }
+        });          
 
-getContentPane().add(sk);
-getContentPane().add(es);
-getContentPane().add(label);
-getContentPane().add(dirt1);  
-getContentPane().add(dirt2);  
-getContentPane().add(dirt3); 
-}  
+    getContentPane().add(sk);
+    getContentPane().add(es);
+    getContentPane().add(label);
+    getContentPane().add(dirt1);  
+    getContentPane().add(dirt2);  
+    getContentPane().add(dirt3); 
+    }  
 }

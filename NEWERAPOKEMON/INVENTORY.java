@@ -9,8 +9,8 @@ public class INVENTORY extends JFrame {
      *
      */
     private static final long serialVersionUID = 1L;
-
-    public INVENTORY(LIFEPOKEMON lifepokemon) {
+    
+    public INVENTORY(LIFEPOKEMON lifepokemon ,PROFILEPARTNER profilepartner) {
         // Create Form Frame
         super("GUNGEMON");
 
@@ -58,36 +58,36 @@ public class INVENTORY extends JFrame {
         JButton shop = new JButton(" --- GO TO SHOP ---");
         shop.setBounds(300, 400, 200, 23);
 
-    fire3.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent evt) {
-        // New Form
-        MAINGAMES form1 = new MAINGAMES(lifepokemon);
-        form1.setVisible(true);
+        fire3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+            // New Form
+            MAINGAMES form1 = new MAINGAMES(lifepokemon,profilepartner);
+            form1.setVisible(true);
             // Hide Current Form
             setVisible(false);
-    }
-});  
+            }
+        });  
 
-shop.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent evt) {
-        // New Form
-        SHOP form1 = new SHOP(lifepokemon);
-        form1.setVisible(true);
+        shop.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+            // New Form
+            SHOP form1 = new SHOP(lifepokemon,profilepartner);
+            form1.setVisible(true);
             // Hide Current Form
             setVisible(false);
-    }
-});     
+            }
+        });     
 
-getContentPane().add(Money);
-getContentPane().add(Potion);
-getContentPane().add(Mana);
-getContentPane().add(Food);
-getContentPane().add(label);
-getContentPane().add(statusPotion);  
-getContentPane().add(statusMoney); 
-getContentPane().add(statusMana); 
-getContentPane().add(statusFood);  
-getContentPane().add(fire3); 
-getContentPane().add(shop); 
-}  
+    getContentPane().add(Money);
+    getContentPane().add(Potion);
+    getContentPane().add(Mana);
+    getContentPane().add(Food);
+    getContentPane().add(label);
+    getContentPane().add(statusPotion);  
+    getContentPane().add(statusMoney); 
+    getContentPane().add(statusMana); 
+    getContentPane().add(statusFood);  
+    getContentPane().add(fire3); 
+    getContentPane().add(shop); 
+    }  
 }
