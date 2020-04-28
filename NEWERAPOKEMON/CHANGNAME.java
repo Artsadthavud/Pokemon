@@ -5,6 +5,11 @@ import java.awt.event.*;
 
 public class CHANGNAME extends JFrame {
   
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
     public CHANGNAME(LIFEPOKEMON lifepokemon) {
 // Create Form Frame
 super("GUNGEMON");

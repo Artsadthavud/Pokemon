@@ -31,15 +31,16 @@ public class DARK extends LIFEPOKEMON {
         this.HP = HP;
         this.SP = SP;
         this.DMG = DMG;
-        this.s1DMG = s1DMG;
-        this.s2DMG = s2DMG;
+        this.s1DMG = s1dmg;
+        this.s2DMG = s2dmg;
         this.cLass = cLass;
 
     }
 
     @Override
     protected void setMaxStatus(int MaxHP, int MaxSP) {
-        // TODO Auto-generated method stub
+        this.MaxHP = MaxHP;
+        this.MaxSP = MaxSP;
 
     }
 

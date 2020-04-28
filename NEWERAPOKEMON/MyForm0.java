@@ -5,6 +5,11 @@ import java.awt.event.*;
 import java.util.InputMismatchException;
 
 public class MyForm0 extends JFrame {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
     public static void main(String[] args) {
 
         EventQueue.invokeLater(new Runnable() {

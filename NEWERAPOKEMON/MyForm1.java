@@ -4,6 +4,11 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class MyForm1 extends JFrame {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -13,7 +18,6 @@ public class MyForm1 extends JFrame {
         });
     }
     public MyForm1() {
-
         // Create Form Frame
         super("GUNGEMON");
         setSize(800, 600);

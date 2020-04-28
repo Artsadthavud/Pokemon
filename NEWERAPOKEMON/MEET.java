@@ -7,6 +7,11 @@ import java.awt.event.*;
 
 public class MEET extends JFrame {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
     public MEET(LIFEPOKEMON lifepokemon) {
         // Create Form Frame
         super("GUNGEMON");

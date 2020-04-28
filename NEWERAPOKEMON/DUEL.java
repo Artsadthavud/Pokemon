@@ -4,6 +4,11 @@ import java.awt.event.*;
 
 public class DUEL extends JFrame {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
     public DUEL(LIFEPOKEMON lifepokemon) {
 // Create Form Frame
 super("GUNGEMON");

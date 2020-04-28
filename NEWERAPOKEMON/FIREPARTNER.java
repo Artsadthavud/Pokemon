@@ -1,11 +1,15 @@
 package NEWERAPOKEMON;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
 
 public class FIREPARTNER extends JFrame {
     
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
     public FIREPARTNER() {
         // Create Form Frame
         super("GUNGEMON");

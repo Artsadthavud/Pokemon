@@ -4,7 +4,12 @@ import java.awt.event.*;
 
 public class MAINGAMES extends JFrame {
 
-public MAINGAMES(LIFEPOKEMON lifepokemon) {
+    /**
+    	 *
+    	 */
+    private static final long serialVersionUID = 1L;
+
+    public MAINGAMES(LIFEPOKEMON lifepokemon) {
     // Create Form Frame
     super("GUNGEMON");
 

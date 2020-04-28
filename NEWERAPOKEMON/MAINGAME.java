@@ -4,6 +4,10 @@ import java.awt.*;
 import java.awt.event.*;
 
     public class MAINGAME extends JFrame {
+        /**
+         *
+         */
+        private static final long serialVersionUID = 1L;
         private JTextField jtf;
         int checkCloseName = 1;
         public MAINGAME() {

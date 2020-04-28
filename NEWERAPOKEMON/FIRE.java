@@ -29,14 +29,17 @@ class FIRE extends LIFEPOKEMON{
 
     @Override
     protected void addFoesStatus(String fname, String fcLass, int fHP, int fDMG, int fs1dmg, int fs2dmg) {
-        // TODO Auto-generated method stub
+        this.fHP = fHP;
+        this.fDMG = fDMG;
+        this.fname = fname;
+        this.fs1DMG = fs1dmg;
+        this.fs2DMG = fs2dmg;
 
     }
 
 
     @Override
     public void updatefHP(int fHP) {
-        // TODO Auto-generated method stub
         this.fHP = fHP;
 
     }

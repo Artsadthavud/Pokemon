@@ -1,9 +1,13 @@
 package NEWERAPOKEMON;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
 
 public class GYM extends JFrame {
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
     public GYM(LIFEPOKEMON lifepokemon) {
 // Create Form Frame

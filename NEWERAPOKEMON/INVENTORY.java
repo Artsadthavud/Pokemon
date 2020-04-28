@@ -1,11 +1,14 @@
 package NEWERAPOKEMON;
 
 import javax.swing.*;
-
-import java.awt.*;
 import java.awt.event.*;
 
 public class INVENTORY extends JFrame {
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
     public INVENTORY(LIFEPOKEMON lifepokemon) {
         // Create Form Frame

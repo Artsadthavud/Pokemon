@@ -1,13 +1,17 @@
 package NEWERAPOKEMON;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
 
-public class DIRTPARTNER extends JFrame {
+    public class DIRTPARTNER extends JFrame {
    
 
-    public DIRTPARTNER() {
+         /**
+         *
+         */
+         private static final long serialVersionUID = 1L;
+
+         public DIRTPARTNER() {
         // Create Form Frame
         super("GUNGEMON");
 
