@@ -167,11 +167,11 @@ public class DUEL extends JFrame {
                 int reward = 0 ;
                 if(foes.getfName() == "ROSHAN"){
                     reward = 5000;
-                    profilepartner.setgetAEGIS(true); 
+                    
                 }
                 else if(foes.getfName() == "TERRORBLADE"){
                     reward  = 8000;
-                    profilepartner.setgetTB(true);
+                   
                 }
                 else if(foes.getfName() == "ZEUS"){
                     reward = 12000 ;
