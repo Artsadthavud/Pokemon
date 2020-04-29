@@ -1,5 +1,6 @@
 package NEWERAPOKEMON;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 
@@ -12,7 +13,7 @@ public class SHOP extends JFrame {
 
     public SHOP(LIFEPOKEMON lifepokemon,PROFILEPARTNER profilepartner) {
 // Create Form Frame
-super("GUNGEMON");
+super("NEWERAPOGEMON");
 setSize(800, 600);
 setLocation(400, 200);
 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,22 +28,27 @@ getContentPane().setLayout(null);
 // Create Label
 JLabel labelHead = new JLabel("Wellcome to Shop " + ACTIONONWORLD.getNamePlayer());
 labelHead.setBounds(380, 23, 300,50);
+labelHead.setForeground(Color.WHITE);
 
 JLabel goal = new JLabel(" You have GOLD "+ MONEY.getMoney() +" Stung");
 goal.setBounds(250, 103, 200, 30);
-
+goal.setForeground(Color.WHITE);
 
 JLabel potion = new JLabel(" You have POTION " + INVENTORYSYSYEM.checkThing("Potion"));
 potion.setBounds(250, 200, 200, 30);
+potion.setForeground(Color.WHITE);
 
 JLabel mana = new JLabel(" You have MANA " + INVENTORYSYSYEM.checkThing("Mana"));
 mana.setBounds(250, 310, 200, 30);
+mana.setForeground(Color.WHITE);
 
 JLabel food = new JLabel(" You have FOOD " + INVENTORYSYSYEM.checkThing("Food"));
 food.setBounds(250, 420, 200, 30);
+food.setForeground(Color.WHITE);
 
 JLabel label = new JLabel("Choose Item you need");
 label.setBounds(480, 115, 200, 14);
+label.setForeground(Color.WHITE);
 
 // Create Button
 JButton btnOpen = new JButton("1 : POTION x1");  
@@ -266,5 +272,10 @@ getContentPane().add(numbuyPotion);
 getContentPane().add(numbuyMana);
 getContentPane().add(numbuyFood);
 getContentPane().add(btnBuyFood);
+
+Icon imageBG = new ImageIcon(getClass().getResource("/image/gif/dpcc.png"));          // FOOD
+JLabel imgBg = new JLabel(imageBG);
+imgBg.setBounds(0, 0, 800, 600);
+getContentPane().add(imgBg);
 }   
 }

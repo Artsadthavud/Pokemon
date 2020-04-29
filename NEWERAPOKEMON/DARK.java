@@ -7,20 +7,46 @@ public class DARK extends LIFEPOKEMON {
     protected int attackFoes() {
         Random rand = new Random ();
         int event = rand.nextInt(12);
+        int eventCri = rand.nextInt(5);
         int DMGf = 0;
+        int cri = 0 ;
 
-            if(event > 10){
+        if(eventCri < 2){
+            cri = 50 ;
+        }
+
+
+            if(event <= 6){
+                if(eventCri < 2){
+                    DMGf = getfDMG() + cri ;
+                    this.nameSkill = " by NORMAL ATTACK + Critical" ;
+                }
+                else{
                 DMGf = getfDMG();
-                this.nameSkill = "NORMAL ATTACK" ;
+                this.nameSkill = " by NORMAL ATTACK" ;
+                }
             }
             else if(event > 6){
-                DMGf = getfs1DMG();
-                this.nameSkill = "SKILL 1";
+                if(eventCri < 2 ){
+                    DMGf = getfDMG() + cri ;
+                    this.nameSkill = " by SKILL 1 + Critical" ;
+                }
+                else{
+                    DMGf = getfs1DMG();
+                    this.nameSkill = " by SKILL 1";
+                }
+                
             }
-            else if(event <= 6){
+            else if(event > 10){
+                if(eventCri < 2){
+                    DMGf = getfDMG() + cri ;
+                    this.nameSkill = " by SKILL 2 + Critical" ;
+                }
+                else{
                 DMGf = getfs2DMG();
-                this.nameSkill = "SKILL 2";
+                this.nameSkill = " by SKILL 2";
             }
+        }
 
         return DMGf;
     }

@@ -12,6 +12,11 @@ public class PROFILEFOES extends NEWERAPOKEMON {
     protected String details2f;
     protected String detailAtkf;
     protected String call ;
+    protected String bgf ;
+
+    public void setBgF(String bgf){
+        this.bgf = bgf;
+    }
 
     public void setProfilePic(String urlf) {
         this.urlf = urlf;
@@ -71,6 +76,10 @@ public class PROFILEFOES extends NEWERAPOKEMON {
 
         public String getCall(){
             return call;
+        }
+
+        public String getbgF(){
+            return bgf;
         }
 
        

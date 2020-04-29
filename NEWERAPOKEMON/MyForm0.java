@@ -21,19 +21,29 @@ public class MyForm0 extends JFrame {
     }
     public MyForm0() {
 // Create Form Frame
-        super("GUNGEMON");
+        super("NEWERAPOGEMON");
             // Set defalt of window
-            setSize(500, 200);
+            setSize(800, 600);
             setLocation(400, 200);
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
             getContentPane().setLayout(new FlowLayout() );
+
+
+             // add base item
+             ADDBASEITEM.addBaseItem();
+
+
 
                 // Create Label
                 JLabel labelHead = new JLabel("Wellcome to GUNGEMON ");
                 JLabel label = new JLabel("Please Enter your name ");
                 // Create Button
                 JButton btnOpen = new JButton(" OK ");
-               
+                Icon imageBG = new ImageIcon(getClass().getResource("/bgd.png"));          // FOOD
+                JLabel imgBg = new JLabel(imageBG);
+                imgBg.setBounds(0, 0, 800, 600);
+                 getContentPane().add(imgBg);
                 // Set x,y,w,h
 
                     // Label
@@ -73,5 +83,9 @@ public class MyForm0 extends JFrame {
             getContentPane().add(label);
             getContentPane().add(NamePlayer);
             getContentPane().add(btnOpen);
+
+            getContentPane().add(imgBg);
+              
+        
     }   
 }

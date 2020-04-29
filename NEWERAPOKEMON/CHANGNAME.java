@@ -9,10 +9,10 @@ public class CHANGNAME extends JFrame {
      *
      */
     private static final long serialVersionUID = 1L;
-    PROFILEPARTNER profilepartner;
-    public CHANGNAME(LIFEPOKEMON lifepokemon) {
+
+    public CHANGNAME(LIFEPOKEMON lifepokemon,PROFILEPARTNER profilepartner) {
         // Create Form Frame
-        super("GUNGEMON");
+        super("NEWERAPOGEMON");
 
         setSize(500, 400);
         setLocation(400, 200);

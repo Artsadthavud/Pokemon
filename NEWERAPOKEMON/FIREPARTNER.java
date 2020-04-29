@@ -2,6 +2,7 @@ package NEWERAPOKEMON;
 
 import javax.swing.*;
 import java.awt.event.*;
+import java.awt.Color;
 
 public class FIREPARTNER extends JFrame {
     
@@ -12,7 +13,7 @@ public class FIREPARTNER extends JFrame {
     
     public FIREPARTNER() {
         // Create Form Frame
-        super("GUNGEMON");
+        super("NEWERAPOGEMON");
         PROFILEPARTNER profilepartner = new PROFILEPARTNER();
         setSize(800, 600);
         setLocation(400, 200);
@@ -29,6 +30,7 @@ public class FIREPARTNER extends JFrame {
 
         JLabel label = new JLabel("Choose your Partner");
         label.setBounds(330, 65, 200, 23);
+        label.setForeground(Color.WHITE);
 
         JButton fire1 = new JButton("1 : YURNERO");
         fire1.setBounds(75, 400, 200, 23);
@@ -79,9 +81,9 @@ public class FIREPARTNER extends JFrame {
                 
                 // New Form
                 MAINGAMES form2 = new MAINGAMES(LINA,profilepartner);
-            form2.setVisible(true);
-            // Hide Current Form
-            setVisible(false);
+                form2.setVisible(true);
+                // Hide Current Form
+                setVisible(false);
         }
         }); 
 fire3.addActionListener(new ActionListener() {
@@ -100,5 +102,12 @@ getContentPane().add(label);
 getContentPane().add(fire1);  
 getContentPane().add(fire2);  
 getContentPane().add(fire3); 
+Icon imageBG = new ImageIcon(getClass().getResource("/image/gif/dpcc.png"));          // FOOD
+JLabel imgBg = new JLabel(imageBG);
+imgBg.setBounds(0, 0, 800, 600);
+getContentPane().add(imgBg);
+
+
+
 }  
 }

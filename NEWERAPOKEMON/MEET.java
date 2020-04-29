@@ -1,7 +1,7 @@
 package NEWERAPOKEMON;
 
 import javax.swing.*;
-
+import java.awt.*;
 import java.awt.event.*;
 
 
@@ -11,10 +11,10 @@ public class MEET extends JFrame {
      *
      */
     private static final long serialVersionUID = 1L;
-    PROFILEPARTNER profilepartner;
+    
     public MEET(LIFEPOKEMON lifepokemon,PROFILEPARTNER profilepartner) {
         // Create Form Frame
-        super("GUNGEMON");
+        super("NEWERAPOGEMON");
        
     
 
@@ -31,17 +31,21 @@ public class MEET extends JFrame {
 
         JLabel label = new JLabel("MEET YOUR PARTNER ");
         label.setBounds(330, 45, 200, 50);
+        label.setForeground(Color.WHITE);
 
        
 
-        JLabel statusHP = new JLabel(" HP :  " + lifepokemon.getHP() + " / " + lifepokemon.getMaxHP());
-        statusHP.setBounds(80, 400, 200, 50);
+        JButton statusHP = new JButton(" HP :  " + lifepokemon.getHP() + " / " + lifepokemon.getMaxHP());
+        statusHP.setBounds(80, 400, 200, 20);
+        statusHP.setForeground(Color.black);
 
-        JLabel statusSP = new JLabel(" SP :  " + lifepokemon.getSP() + " / " + lifepokemon.getMaxSP());
-        statusSP.setBounds(80, 430, 200, 50);
+        JButton statusSP = new JButton(" SP :  " + lifepokemon.getSP() + " / " + lifepokemon.getMaxSP());
+        statusSP.setBounds(80, 430, 200, 20);
+        statusSP.setForeground(Color.black);
 
         JLabel namePart = new JLabel(lifepokemon.getName());
         namePart.setBounds(100, 55, 100, 40);
+        namePart.setForeground(Color.white);
 
         JButton namePartmer = new JButton("Set New Partner Name");
         namePartmer.setBounds(470, 320, 200, 20);
@@ -65,14 +69,11 @@ public class MEET extends JFrame {
         btnS2.setBounds(360, 300, 50, 50);
 
         JButton fire3 = new JButton("3 : BACK");
-        fire3.setBounds(400, 500, 200, 23);
-
-
-      
+        fire3.setBounds(400, 500, 200, 23);      
 
         namePartmer.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                CHANGNAME changname = new CHANGNAME(lifepokemon);
+                CHANGNAME changname = new CHANGNAME(lifepokemon,profilepartner);
                 changname.setVisible(true);
                 setVisible(false);
             }
@@ -171,6 +172,11 @@ public class MEET extends JFrame {
     getContentPane().add(btnS2);
     getContentPane().add(btnAtk);
     getContentPane().add(fire3); 
+
+    Icon imageBG = new ImageIcon(getClass().getResource("/image/gif/dpcc.png"));          // FOOD
+JLabel imgBg = new JLabel(imageBG);
+imgBg.setBounds(0, 0, 800, 600);
+getContentPane().add(imgBg);
     
     }
 

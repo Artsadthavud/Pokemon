@@ -28,7 +28,7 @@ public class SELECTFOES extends JFrame {
 
     public SELECTFOES(LIFEPOKEMON lifepokemon ,PROFILEPARTNER profilepartner) {
         // Create Form Frame
-        super("GUNGEMON");
+        super("NEWERAPOGEMON");
         PROFILEFOES profilefoes = new PROFILEFOES();
         setSize(800, 600);
         setLocation(400, 200);
@@ -38,14 +38,9 @@ public class SELECTFOES extends JFrame {
         // Create Label
         JLabel label = new JLabel(" WELCOME TO BATTLE CHOOSE YOUR FOES ");
         label.setBounds(270, 23, 300, 14);
+        label.setForeground(Color.red);
 
         // Create Button
-      
-
-
-
-
-
         if(profilepartner.getAEGIS == false){
             this.foesName1 = "SECRET";
             foesPics1 = "" + "/bg.png" + "";
@@ -64,7 +59,6 @@ public class SELECTFOES extends JFrame {
         else if(profilepartner.getTB == true){
             foesName2 = "ZEUS";
             foesPics2 = "" + "/image/boss/zeus.png" + "";
-
         }
 
         JButton btnFoes0 = new JButton(" FIGHT WITH ROSHAN");
@@ -106,6 +100,7 @@ public class SELECTFOES extends JFrame {
                 profilefoes.setDetailS1("ELDER DRAGON");
                 profilefoes.setDetailS2("LORD OF DEATH");
                 profilefoes.setCall(" THE KING OF THE DEMON");
+                profilefoes.setBgF("" + "/bgro.png" + "");
 
             // New Form
             DUEL form1 = new DUEL(lifepokemon,foes,profilepartner,profilefoes);
@@ -131,6 +126,7 @@ public class SELECTFOES extends JFrame {
                 profilefoes.setDetailS1("REFLECTION");
                 profilefoes.setDetailS2("METAMLRPHOSIS");
                 profilefoes.setCall(" THE KING OF THE DEMON SLAYER");
+                profilefoes.setBgF("" + "/bgtb.png" + "");
                 
                 // New Form
                 DUEL form1 = new DUEL(lifepokemon,foes,profilepartner,profilefoes);
@@ -161,6 +157,7 @@ public class SELECTFOES extends JFrame {
                 profilefoes.setDetailS1("STATIC FIELD");
                 profilefoes.setDetailS2("THUNDERGOD WRATH");
                 profilefoes.setCall(" THE GOD OF THE WORLD");
+                profilefoes.setBgF("" + "/bgzee.png" + "");
 
                 // New Form
                 DUEL form1 = new DUEL(lifepokemon,foes,profilepartner,profilefoes);
@@ -193,5 +190,10 @@ public class SELECTFOES extends JFrame {
     getContentPane().add(btnPicFoes1);
     getContentPane().add(btnPicFoes2);
     getContentPane().add(btnBack);
+
+    Icon imageBG = new ImageIcon(getClass().getResource("/bgd.png"));          // FOOD
+    JLabel imgBg = new JLabel(imageBG);
+    imgBg.setBounds(0, 0, 800, 600);
+    getContentPane().add(imgBg);
     }   
 }

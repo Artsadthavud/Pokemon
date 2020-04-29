@@ -1,6 +1,7 @@
 package NEWERAPOKEMON;
 
 import javax.swing.*;
+import java.awt.Color;
 import java.awt.event.*;
 
     public class DIRTPARTNER extends JFrame {
@@ -10,7 +11,7 @@ import java.awt.event.*;
          private static final long serialVersionUID = 1L;
          public DIRTPARTNER() {
         // Create Form Frame
-        super("GUNGEMON");
+        super("NEWERAPOGEMON");
         PROFILEPARTNER profilepartner = new PROFILEPARTNER();
         setSize(800, 600);
 
@@ -31,6 +32,7 @@ import java.awt.event.*;
 
         JLabel label = new JLabel("Choose your Partner");
         label.setBounds(330, 65, 200, 23);
+        label.setForeground(Color.WHITE);
 
         JButton dirt1 = new JButton("1 : Earthshaker");
         dirt1.setBounds(75, 400, 200, 23);
@@ -103,5 +105,12 @@ import java.awt.event.*;
     getContentPane().add(dirt1);  
     getContentPane().add(dirt2);  
     getContentPane().add(dirt3); 
+
+    Icon imageBG = new ImageIcon(getClass().getResource("/image/gif/dpcc.png"));          // FOOD
+    JLabel imgBg = new JLabel(imageBG);
+    imgBg.setBounds(0, 0, 800, 600);
+    getContentPane().add(imgBg);
+
+
     }  
 }

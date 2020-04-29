@@ -1,10 +1,29 @@
 package NEWERAPOKEMON;
 
-class FIRE extends LIFEPOKEMON{
+import java.util.Random;
+
+class FIRE extends LIFEPOKEMON {
   
 
     protected int attackFoes() {
-        return 0;
+        Random rand = new Random ();
+        int event = rand.nextInt(12);
+        int DMGf = 0;
+
+            if(event <= 6){
+                DMGf = getfDMG();
+                this.nameSkill = "NORMAL ATTACK" ;
+            }
+            else if(event > 6){
+                DMGf = getfs1DMG();
+                this.nameSkill = "SKILL 1";
+            }
+            else if(event > 10){
+                DMGf = getfs2DMG();
+                this.nameSkill = "SKILL 2";
+            }
+
+        return DMGf;
     }
 
     @Override

@@ -1,5 +1,7 @@
 package NEWERAPOKEMON;
 import javax.swing.*;
+
+import java.awt.Color;
 import java.awt.event.*;
 
 public class MAINGAMES extends JFrame {
@@ -11,7 +13,7 @@ public class MAINGAMES extends JFrame {
     
     public MAINGAMES(LIFEPOKEMON lifepokemon, PROFILEPARTNER profilepartner) {
     // Create Form Frame
-    super("GUNGEMON");
+    super("NEWERAPOGEMON");
 
     setSize(800, 600);
     setLocation(400, 200);
@@ -20,8 +22,11 @@ public class MAINGAMES extends JFrame {
     // Create Label
     JLabel labelHead = new JLabel(" Welcome to GUNGEMON ");
     labelHead.setBounds(320, 43, 300,14);
+    labelHead.setForeground(Color.WHITE);
+
     JLabel label = new JLabel(" GUNGEMON the WORLD of GEMON ");
     label.setBounds(290, 83, 300, 14);
+    label.setForeground(Color.WHITE);
 
     JLabel bagPic = new JLabel(new ImageIcon(getClass().getResource("/bagg.png")));
     bagPic.setSize(150, 150);
@@ -78,5 +83,12 @@ public class MAINGAMES extends JFrame {
     getContentPane().add(btnInventory);
     getContentPane().add(btnMeet);
     getContentPane().add(btnGym);
+
+    Icon imageBG = new ImageIcon(getClass().getResource("/image/gif/dpcc.png"));          // FOOD
+    JLabel imgBg = new JLabel(imageBG);
+    imgBg.setBounds(0, 0, 800, 600);
+    getContentPane().add(imgBg);
+
+
     }  
 }

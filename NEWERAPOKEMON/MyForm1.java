@@ -19,33 +19,43 @@ public class MyForm1 extends JFrame {
     }
     public MyForm1() {
         // Create Form Frame
-        super("GUNGEMON");
+        super("NEWERAPOGEMON");
         setSize(800, 600);
         setLocation(400, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
-
-            // add base item
-            ADDBASEITEM.addBaseItem();
 
             // Set image fo use
             Icon imageGOLD = new ImageIcon(getClass().getResource("/goldz.png"));          // GOLD
             Icon imagePotion = new ImageIcon(getClass().getResource("/potionz.png"));      // POTION
             Icon imageMana = new ImageIcon(getClass().getResource("/manaz.png"));          // MANA
             Icon imageFood = new ImageIcon(getClass().getResource("/foodz.png"));          // FOOD
-
+                    // FOOD
+           
             // Create Label
             JLabel labelHead = new JLabel("Welcome " + ACTIONONWORLD.getNamePlayer());   
-            JLabel goal = new JLabel(" You have GOLD 2000 Stung");
-            JLabel potion = new JLabel(" You have POTION 10");
-            JLabel mana = new JLabel(" You have MANA 10");
-            JLabel food = new JLabel(" You have FOOD 10");
+            labelHead.setForeground(Color.WHITE);
+
+            JLabel goal = new JLabel(" You have GOLD " +MONEY.getMoney()+" Stung");
+            goal.setForeground(Color.WHITE);
+         
+            JLabel potion = new JLabel(" You have POTION " + INVENTORYSYSYEM.checkThing("Potion"));
+            potion.setForeground(Color.WHITE);
+
+            JLabel mana = new JLabel(" You have MANA " + INVENTORYSYSYEM.checkThing("Mana"));
+            mana.setForeground(Color.WHITE);
+
+            JLabel food = new JLabel(" You have FOOD " + INVENTORYSYSYEM.checkThing("Food"));
+            food.setForeground(Color.WHITE);
+
             JLabel label = new JLabel("Choose Class Of Partner");
+            label.setForeground(Color.WHITE);
             // Create image Label
             JLabel imgGold = new JLabel(imageGOLD);
             JLabel imgPotion = new JLabel(imagePotion);
             JLabel imgMana = new JLabel(imageMana);
             JLabel imgFood = new JLabel(imageFood);
+          
             // Create Button
             JButton btnOpen = new JButton("1 : FIRE");
             JButton btnOpen1 = new JButton("2 : WATER");
@@ -62,7 +72,6 @@ public class MyForm1 extends JFrame {
                 imgPotion.setBounds(100, 170, 100, 100);
                 imgMana.setBounds(100, 280, 100, 100);
                 imgFood.setBounds(100, 390, 100, 100);
-                // Button
                 btnOpen.setBounds(500, 165, 100, 23);
                 btnOpen1.setBounds(500, 215, 100, 23);
                 btnOpen2.setBounds(500, 265, 100, 23);
@@ -113,6 +122,12 @@ public class MyForm1 extends JFrame {
                 getContentPane().add(btnOpen);
                 getContentPane().add(btnOpen1);  
                 getContentPane().add(btnOpen2);
+              
+
+                Icon imageBG = new ImageIcon(getClass().getResource("/image/gif/dpcc.png"));          // FOOD
+    JLabel imgBg = new JLabel(imageBG);
+    imgBg.setBounds(0, 0, 800, 600);
+    getContentPane().add(imgBg);
               
     }   
 }

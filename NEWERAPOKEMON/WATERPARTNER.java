@@ -24,7 +24,7 @@ public class WATERPARTNER extends JFrame {
     }
     public WATERPARTNER() {
         // Create Form Frame
-        super("GUNGEMON");
+        super("NEWERAPOGEMON");
         PROFILEPARTNER profilepartner = new PROFILEPARTNER();
         setSize(800, 600);
 
@@ -45,6 +45,7 @@ public class WATERPARTNER extends JFrame {
 
         JLabel label = new JLabel("Choose your Partner");
         label.setBounds(330, 65, 200, 23);
+        label.setForeground(Color.WHITE);
 
         JButton water1 = new JButton("1 : kunka");
         water1.setBounds(75, 400, 200, 23);
@@ -58,7 +59,7 @@ public class WATERPARTNER extends JFrame {
            
 
                 LIFEPOKEMON KUNKA = new FIRE();
-                KUNKA.addStatusPokemon("LINA","FIRE", 825, 455, 112,152,212);
+                KUNKA.addStatusPokemon("KUNKA","WATER", 825, 455, 112,152,212);
                 KUNKA.setMaxStatus(825, 455);
                 BAG.partner(KUNKA);
 
@@ -119,5 +120,11 @@ getContentPane().add(label);
 getContentPane().add(water1);  
 getContentPane().add(water2);  
 getContentPane().add(water3); 
+
+Icon imageBG = new ImageIcon(getClass().getResource("/image/gif/dpcc.png"));          // FOOD
+JLabel imgBg = new JLabel(imageBG);
+imgBg.setBounds(0, 0, 800, 600);
+getContentPane().add(imgBg);
+
 }  
 }

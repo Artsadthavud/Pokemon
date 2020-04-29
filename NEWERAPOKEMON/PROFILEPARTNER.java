@@ -1,6 +1,5 @@
 package NEWERAPOKEMON;
 
-
 public class PROFILEPARTNER extends NEWERAPOKEMON {
 
         protected String url;

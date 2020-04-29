@@ -1,6 +1,7 @@
 package NEWERAPOKEMON;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 public class INVENTORY extends JFrame {
@@ -12,7 +13,7 @@ public class INVENTORY extends JFrame {
     
     public INVENTORY(LIFEPOKEMON lifepokemon ,PROFILEPARTNER profilepartner) {
         // Create Form Frame
-        super("GUNGEMON");
+        super("NEWERAPOGEMON");
 
         setSize(800, 600);
 
@@ -42,15 +43,20 @@ public class INVENTORY extends JFrame {
 
         JLabel label = new JLabel(" YOUR INVENTORY ");
         label.setBounds(330, 65, 200, 50);
+        label.setForeground(Color.WHITE);
 
         JLabel statusMoney = new JLabel("Your Money : \n" + MONEY.getMoney() + " Stung");
         statusMoney.setBounds(75, 300, 150, 23);
+        statusMoney.setForeground(Color.WHITE);
         JLabel statusPotion = new JLabel("Your Potion : " + INVENTORYSYSYEM.checkThing("Potion"));
         statusPotion.setBounds(260, 300, 150, 23);
+        statusPotion.setForeground(Color.WHITE);
         JLabel statusMana = new JLabel("Your Mana : " + INVENTORYSYSYEM.checkThing("Mana"));
         statusMana.setBounds(410, 300, 150, 23);
+        statusMana.setForeground(Color.WHITE);
         JLabel statusFood = new JLabel("Your Food : " + INVENTORYSYSYEM.checkThing("Food"));
         statusFood.setBounds(560, 300, 150, 23);
+        statusFood.setForeground(Color.WHITE);
 
         JButton fire3 = new JButton("3 : BACK");
         fire3.setBounds(300, 500, 200, 23);
@@ -89,5 +95,10 @@ public class INVENTORY extends JFrame {
     getContentPane().add(statusFood);  
     getContentPane().add(fire3); 
     getContentPane().add(shop); 
+
+    Icon imageBG = new ImageIcon(getClass().getResource("/image/gif/dpcc.png"));          // FOOD
+JLabel imgBg = new JLabel(imageBG);
+imgBg.setBounds(0, 0, 800, 600);
+getContentPane().add(imgBg);
     }  
 }

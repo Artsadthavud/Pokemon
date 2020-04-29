@@ -1,5 +1,7 @@
 package NEWERAPOKEMON;
 import javax.swing.*;
+
+import java.awt.Color;
 import java.awt.event.*;
 
 public class DUEL extends JFrame {
@@ -11,7 +13,7 @@ public class DUEL extends JFrame {
    
     public DUEL(LIFEPOKEMON lifepokemon,LIFEPOKEMON foes, PROFILEPARTNER profilepartner,PROFILEFOES profilefoes) {
 // Create Form Frame
-        super("GUNGEMON");
+        super("NEWERAPOGEMON");
         setSize(800, 600);
         setLocation(400, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -24,34 +26,55 @@ public class DUEL extends JFrame {
             label.setBounds(290, 83, 300, 14);
 
             JLabel fNamex = new JLabel(foes.getfName());
-            fNamex.setBounds(450, 190, 400, 50);
+            fNamex.setBounds(450, 290, 400, 50);
+            fNamex.setForeground(Color.red);
             JLabel Namex = new JLabel(lifepokemon.getName());
-            Namex.setBounds(450, 280, 400, 50);
+            Namex.setBounds(450, 380, 400, 50);
+            Namex.setForeground(Color.red);
 
             JLabel statefNamex = new JLabel();
-            statefNamex.setBounds(450, 210, 400, 50);
+            statefNamex.setBounds(450, 320, 400, 50);
+            statefNamex.setForeground(Color.red);
             JLabel stateNamex = new JLabel();
-            stateNamex.setBounds(450, 300, 400, 50);
+            stateNamex.setBounds(450, 420, 400, 50);
+            stateNamex.setForeground(Color.red);
        
-            JLabel statusfHP = new JLabel(" HP :  " + foes.getfHP() + " / " + foes.getMaxHP());
-            statusfHP.setBounds(340, 30, 200, 50);
-            JLabel fName = new JLabel(foes.getfName());
-            fName.setBounds(360, 10, 200, 50);
+            JButton statusfHP = new JButton(" HP :  " + foes.getfHP() + " / " + foes.getMaxHP());
+            statusfHP.setBounds(340, 40, 200, 20);
+            statusfHP.setForeground(Color.white);
+            statusfHP.setBackground(Color.black);
 
-            JLabel Name = new JLabel(lifepokemon.getName());
-            Name.setBounds(35, 160, 200, 50);
-            JLabel statusHP = new JLabel(" HP :  " + lifepokemon.getHP() + " / " + lifepokemon.getMaxHP());
-            statusHP.setBounds(20, 180, 200, 50);
+            JButton fName = new JButton(foes.getfName());
+            fName.setBounds(340, 10, 200, 25);
+            fName.setForeground(Color.white);
+            fName.setBackground(Color.black);
+       
 
-            JLabel statusSP = new JLabel(" SP :  " + lifepokemon.getSP() + " / " + lifepokemon.getMaxSP());
-            statusSP.setBounds(20, 200, 200, 50);
+            JButton Name = new  JButton(lifepokemon.getName());
+            Name.setBounds(25, 150, 100, 30);
+            Name.setForeground(Color.white);
+            Name.setBackground(Color.black);
 
-            JLabel playerPic = new JLabel(new ImageIcon(getClass().getResource(profilepartner.getProfilePic())));
+            JButton statusHP = new  JButton(" HP :  " + lifepokemon.getHP() + " / " + lifepokemon.getMaxHP());
+            statusHP.setBounds(10, 180, 130, 20);
+            statusHP.setForeground(Color.white);
+            statusHP.setBackground(Color.black);
+
+            JButton statusSP = new JButton(" SP :  " + lifepokemon.getSP() + " / " + lifepokemon.getMaxSP());
+            statusSP.setBounds(10, 200, 130, 20);
+            statusSP.setForeground(Color.white);
+            statusSP.setBackground(Color.black);
+
+
+
+            JButton playerPic = new  JButton(new ImageIcon(getClass().getResource(profilepartner.getProfilePic())));
             playerPic.setSize(250, 300);
             playerPic.setLocation(20, 250);
 
             JButton btnBack = new JButton(" escape ");
             btnBack.setBounds(500, 540, 200, 23);
+            btnBack.setForeground(Color.white);
+            btnBack.setBackground(Color.black);
 
             JButton foesPic = new JButton(new ImageIcon(getClass().getResource(profilefoes.getsProfilePic())));
             foesPic.setSize(200, 100);
@@ -60,18 +83,24 @@ public class DUEL extends JFrame {
             // add skill
             JButton btnAtk = new JButton(new ImageIcon(getClass().getResource(profilepartner.getAtkPic())));
             btnAtk.setBounds(320, 250, 50, 50);
-            JLabel AtkDMG = new JLabel("Damage : " + lifepokemon.getDMG());
-            AtkDMG.setBounds(300, 280, 200, 50);
+            JButton AtkDMG = new JButton("Damage : " + lifepokemon.getDMG());
+            AtkDMG.setBounds(300, 300, 120, 20);
+            AtkDMG.setForeground(Color.white);
+            AtkDMG.setBackground(Color.black);
 
             JButton btnS1 = new JButton(new ImageIcon(getClass().getResource(profilepartner.getS1Pic())));
             btnS1.setBounds(320, 350, 50, 50);
-            JLabel s1DMG = new JLabel("Damage : " + lifepokemon.gets1DMG() + " sp : 150");
-            s1DMG.setBounds(300, 380, 200, 50);
+            JButton s1DMG = new JButton("Damage : " + lifepokemon.gets1DMG() + " sp : 150");
+            s1DMG.setBounds(285, 400, 155, 20);
+            s1DMG.setForeground(Color.white);
+            s1DMG.setBackground(Color.black);
 
             JButton btnS2 = new JButton(new ImageIcon(getClass().getResource(profilepartner.getS2Pic())));
             btnS2.setBounds(320, 460, 50, 50);
-            JLabel s2DMG = new JLabel("Damage : " + lifepokemon.gets2DMG()+" sp : 300");
-            s2DMG.setBounds(300, 490, 200, 50);
+            JButton s2DMG = new JButton("Damage : " + lifepokemon.gets2DMG()+" sp : 300");
+            s2DMG.setBounds(285, 510, 155, 20);
+            s2DMG.setForeground(Color.white);
+            s2DMG.setBackground(Color.black);
 
             JButton btnfAtk = new JButton(new ImageIcon(getClass().getResource(profilefoes.getAtkPic())));
             btnfAtk.setBounds(280, 70, 50, 50);
@@ -84,16 +113,22 @@ public class DUEL extends JFrame {
 
             // item
             JButton btnUsePotion = new JButton(new ImageIcon(getClass().getResource("/logo_potion.png")));
-            btnUsePotion.setBounds(120, 190, 50, 50);
+            btnUsePotion.setBounds(155, 160, 50, 50);
+            btnUsePotion.setBackground(Color.black);
 
             JButton btnUseMana = new JButton(new ImageIcon(getClass().getResource("/logo_mana.png")));
-            btnUseMana.setBounds(200, 190, 50, 50);
+            btnUseMana.setBounds(220, 160, 50, 50);
+            btnUseMana.setBackground(Color.black);
         
-            JLabel potion = new JLabel(" X " + INVENTORYSYSYEM.checkThing("Potion"));
-            potion.setBounds(170, 200, 200, 30);
+            JButton potion = new JButton("X" + INVENTORYSYSYEM.checkThing("Potion"));
+            potion.setBounds(145, 210, 70, 25);
+            potion.setForeground(Color.red);
+            potion.setBackground(Color.black);
 
-            JLabel mana = new JLabel(" X " + INVENTORYSYSYEM.checkThing("Mana"));
-            mana.setBounds(250, 200, 200, 30);
+            JButton mana = new JButton("X" + INVENTORYSYSYEM.checkThing("Mana"));
+            mana.setBounds(210, 210, 70, 25);
+            mana.setForeground(Color.red);
+            mana.setBackground(Color.black);
 
             btnUsePotion.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
@@ -166,15 +201,16 @@ public class DUEL extends JFrame {
     
 btnAtk.addActionListener(new ActionListener() {
     public void actionPerformed(ActionEvent evt) {
+        int damage = foes.attackFoes() ;
 
         foes.updatefHP(COMBATSYSTEM.calculateSystem(foes.fHP, lifepokemon.getDMG()));
-        lifepokemon.updateHP(COMBATSYSTEM.calculateSystem(lifepokemon.getHP(),foes.attackFoes()));
+        lifepokemon.updateHP(COMBATSYSTEM.calculateSystem(lifepokemon.getHP(),damage));
 
 
         Namex.setText(lifepokemon.getName() + " : HIT FOES BY NOMAL ATTACK ");
-        fNamex.setText(foes.getfName() + " : HIT " + lifepokemon.getName());
+        fNamex.setText(foes.getfName() + " : HIT " + lifepokemon.getName() + foes.nameSkill);
 
-        stateNamex.setText(lifepokemon.getName() + " : Recieve damage " + foes.attackFoes());
+        stateNamex.setText(lifepokemon.getName() + " : Recieve damage " + damage);
         statefNamex.setText(foes.getfName() + " : Recieve damage " + lifepokemon.getDMG());
 
         statusHP.setText(" HP :  " + lifepokemon.getHP() + " / " + lifepokemon.getMaxHP());
@@ -218,18 +254,19 @@ btnAtk.addActionListener(new ActionListener() {
 btnS1.addActionListener(new ActionListener() {
 public void actionPerformed(ActionEvent evt) {
     if( lifepokemon.SP - 150 >= 0){
+        int damage = foes.attackFoes() ;
         foes.updatefHP(COMBATSYSTEM.calculateSystem(foes.fHP, lifepokemon.gets1DMG()));
-        lifepokemon.updateHP(COMBATSYSTEM.calculateSystem(lifepokemon.getHP(),foes.attackFoes()));
+        lifepokemon.updateHP(COMBATSYSTEM.calculateSystem(lifepokemon.getHP(),damage));
         lifepokemon.useSP(150);
 
         Namex.setText(lifepokemon.getName() + " : HIT FOES BY SKILL 1 ");
-        fNamex.setText(foes.getfName() + " : HIT " + lifepokemon.getName());
+        fNamex.setText(foes.getfName() + " : HIT " + lifepokemon.getName() + foes.nameSkill);
 
-        stateNamex.setText(lifepokemon.getName() + " : Recieve damage " + foes.attackFoes());
+        stateNamex.setText(lifepokemon.getName() + " : Recieve damage " + damage);
         statefNamex.setText(foes.getfName() + " : Recieve damage " + lifepokemon.gets1DMG());
 
         statusHP.setText(" HP :  " + lifepokemon.getHP() + " / " + lifepokemon.getMaxHP());
-        statusfHP.setText(" HP :  " + foes.getfHP() + " / 2000");
+        statusfHP.setText(" HP :  " + foes.getfHP() + " / "+ foes.MaxHP);
         statusSP.setText(" SP :  " + lifepokemon.getSP() + " / " + lifepokemon.getMaxSP());
 
             if(foes.getfHP() == 0 ){
@@ -275,18 +312,19 @@ public void actionPerformed(ActionEvent evt) {
 btnS2.addActionListener(new ActionListener() {
     public void actionPerformed(ActionEvent evt) {
         if( lifepokemon.getSP() - 300 >= 0){
+            int damage = foes.attackFoes() ;
         foes.updatefHP(COMBATSYSTEM.calculateSystem(foes.fHP, lifepokemon.gets2DMG()));
-        lifepokemon.updateHP(COMBATSYSTEM.calculateSystem(lifepokemon.getHP(),foes.attackFoes()));
+        lifepokemon.updateHP(COMBATSYSTEM.calculateSystem(lifepokemon.getHP(),damage));
         lifepokemon.useSP(300);
 
         Namex.setText(lifepokemon.getName() + " : HIT FOES BY SKILL 2 ");
-        fNamex.setText(foes.getfName() + " : HIT " + lifepokemon.getName());
+        fNamex.setText(foes.getfName() + " : HIT " + lifepokemon.getName() + foes.nameSkill);
 
-        stateNamex.setText(lifepokemon.getName() + " : Recieve damage " + foes.attackFoes());
+        stateNamex.setText(lifepokemon.getName() + " : Recieve damage " + damage);
         statefNamex.setText(foes.getfName() + " : Recieve damage " + lifepokemon.gets2DMG());
 
         statusHP.setText(" HP :  " + lifepokemon.getHP() + " / " + lifepokemon.getMaxHP());
-        statusfHP.setText(" HP :  " + foes.getfHP() + " / 2000");
+        statusfHP.setText(" HP :  " + foes.getfHP() + " / " + foes.getMaxHP());
         statusSP.setText(" SP :  " + lifepokemon.getSP() + " / " + lifepokemon.getMaxSP());
 
         
@@ -360,8 +398,7 @@ getContentPane().add(Name);
 getContentPane().add(AtkDMG);
 getContentPane().add(s1DMG);
 getContentPane().add(s2DMG);
-getContentPane().add(btnUsePotion);
-getContentPane().add(btnUseMana);
+
 getContentPane().add(potion);
 getContentPane().add(mana);
 getContentPane().add(fNamex);
@@ -369,5 +406,14 @@ getContentPane().add(Namex);
 getContentPane().add(statefNamex);
 getContentPane().add(stateNamex);
 getContentPane().add(btnBack);
+
+getContentPane().add(btnUsePotion);
+getContentPane().add(btnUseMana);
+
+
+Icon imageBG = new ImageIcon(getClass().getResource(profilefoes.getbgF()));          // FOOD
+JLabel imgBg = new JLabel(imageBG);
+imgBg.setBounds(0, 0, 800, 600);
+getContentPane().add(imgBg);
 }   
 }
