@@ -28,7 +28,7 @@ public class DARK extends LIFEPOKEMON {
             }
             else if(event > 6){
                 if(eventCri < 2 ){
-                    DMGf = getfDMG() + cri ;
+                    DMGf = getfs1DMG() + cri ;
                     this.nameSkill = " by SKILL 1 + Critical" ;
                 }
                 else{
@@ -39,7 +39,7 @@ public class DARK extends LIFEPOKEMON {
             }
             else if(event > 10){
                 if(eventCri < 2){
-                    DMGf = getfDMG() + cri ;
+                    DMGf = getfs2DMG() + cri ;
                     this.nameSkill = " by SKILL 2 + Critical" ;
                 }
                 else{
@@ -50,6 +50,7 @@ public class DARK extends LIFEPOKEMON {
 
         return DMGf;
     }
+    
 
     @Override
     protected void addStatusPokemon(String Name, String cLass, int HP, int SP, int DMG, int s1dmg, int s2dmg) {

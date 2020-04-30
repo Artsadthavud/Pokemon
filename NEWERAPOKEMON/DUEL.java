@@ -214,7 +214,7 @@ btnAtk.addActionListener(new ActionListener() {
         statefNamex.setText(foes.getfName() + " : Recieve damage " + lifepokemon.getDMG());
 
         statusHP.setText(" HP :  " + lifepokemon.getHP() + " / " + lifepokemon.getMaxHP());
-        statusfHP.setText(" HP :  " + foes.getfHP() + " / 2000");
+        statusfHP.setText(" HP :  " + foes.getfHP() + " / "+foes.MaxHP);
 
             if(foes.getfHP() == 0 ){
 
